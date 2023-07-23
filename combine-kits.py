@@ -21,9 +21,9 @@
 # and these examples are for files residing in a folder called 'test-data'.
 # All data files must be based on build 37.
 INFILES = [
-  'test-data/37_C_Treece_Chrom_Autoso_20170722.csv.gz',
-  'test-data/genome_Carl_Treece_v5_Full_20190110124151.zip',
-  'test-data/CarlTreece-AncestryDNA-dna-data-2017-12-13.zip',
+#  'test-data/37_C_Treece_Chrom_Autoso_20170722.csv.gz',
+#  'test-data/genome_Carl_Treece_v5_Full_20190110124151.zip',
+#  'test-data/CarlTreece-AncestryDNA-dna-data-2017-12-13.zip',
 #  'test-data/MyHeritage_raw_dna_data.zip',
 #  'test-data/no-data.csv', # fails, empty file
 #  'test-data/unreadable.csv', # fails, no file permissions
@@ -36,20 +36,83 @@ INFILES = [
   ]
 OUTFILE = 'combined-output.csv'
 
+# these are used variously to indicate a no-call at the position
+# in the combined kit, we omit these
+NOVALUE = ('-', '--', '00', 'DD', 'II', 'I', 'D', 'DI')
+
+# resulting mash-up
+geno = {}
+
 #--- adjust file names above this line, then run ---
 
 import zipfile
 import csv
 import gzip
 import errno
+import os
 import io
+import sys, getopt
 
-# These are used variously to indicate no allele called at the position.
-# In the combined kit, we omit these. See also https://learn.familytreedna.com/autosomal-ancestry/universal-dna-matching/read-family-finder-raw-data-file/
-NOVALUE = ('-', '--', '00', 'DD', 'II', 'I', 'D', 'DI')
+def script_usage():
+  scrpt_name=os.path.basename(sys.argv[0])
+  print('')
+  print('Purpose:  Combine raw data files from multiple autosomal tests into one file.')
+  print('The combined file may have better coverage than the individual files.  Currently') 
+  print('handles AncestryDNA, 23andMe and FTDNA, MyHeritage, and LivingDNA.') 
+  print('It may support others not yet tested.  The resulting file can be uploaded') 
+  print('to gedmatch.') 
+  print('') 
+  print('Requires:')
+  print('1: python2 or python3') 
+  print('2: Two or more input file:')
+  print('  - It does not matter if the files are extracted or compressed.') 
+  print('  - All data files must be based on build 37.') 
+  print('  - Input File names should be specified as a comma (,) seperated list, no spaces')
+  print('')
+  print('Defaults: --ofile=={}'.format(OUTFILE))
+  print('')
+  print('Usage: {} -h|--help -i|--ifiles "<genotype_file.1>","<genotype_file.2>",... [-o|--ofile <combined-output.csv>]'.format(scrpt_name))
+  print('e.g.')
+  print('python ~/{} -o combined_file.csv --ifiles="test-data/37_C_Treece_Chrom_Autoso_20170722.csv.gz","test-data/genome_Carl_Treece_v5_Full_20190110124151.zip"'.format(scrpt_name))
+  print('')
 
-# resulting mash-up
-geno = {}
+
+def main(argv):
+   global INFILES
+   global OUTFILE
+   try:
+      opts, args = getopt.getopt(argv,"hi:o:",["ifiles=","ofile="])
+   except getopt.GetoptError:
+      script_usage()
+      print('Error: Invalid options')
+      sys.exit(2)
+   for opt, arg in opts:
+      if opt in ("-h","--help:"):
+         script_usage()
+         sys.exit()
+      elif opt in ("-o", "--ofile"):
+         OUTFILE = arg
+      elif opt in ("-i", "--ifiles"):
+         INFILES = arg.split(',')
+   print 'Input files are:', INFILES
+   print 'Ourput file is: ', OUTFILE
+
+   if not OUTFILE:
+     script_usage()
+     print('Error - No OUFFILE specified')
+     sys.exit(3)
+
+   if not INFILES:
+     script_usage()
+     print('Error - No INFILES specified')
+     sys.exit(4)
+
+   for ifile in INFILES:
+     if not os.path.isfile(ifile):
+       script_usage()
+       print('Error - Soruce file does not exist - ' + ifile)
+       sys.exit(5)
+
 
 # Put the 2-char allele pair in deterministic order.
 # e.g., the combined output considers "GT" equivalent to "TG"
@@ -69,6 +132,7 @@ def normalize_result(result):
 xmap = {'X': '23', '25': '23', 'XY': '23',
         '26': 'MT',
         '24': 'Y'}
+
 def normalize_chr(chrom):
     try:
         c = xmap[chrom]
@@ -114,6 +178,12 @@ def guess_gender(kit):
         gender = 'M'
     return gender
 
+############################################################################
+print 'Number of arguments:', len(sys.argv), 'arguments.'
+print 'Argument List:', str(sys.argv)
+
+if __name__ == "__main__":
+   main(sys.argv[1:])
 
 # Loop through data files:
 # To support additional company data files, this loop may need to be tweaked.
