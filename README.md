@@ -306,10 +306,13 @@ Requires:
 3: the name of the haplotree, within the JSON file, default "mt-MRCA(RSRS)"
 
 Usage:
-1: lookup_Haplogroup.py -s  <SNP_file> [-t <haplogroup_file> -n <haplotree_name>]
-2: lookup_Haplogroup.py -snpfl=<SNP_file> [--treefl=<haplogroup_file> --name=<haplotree_name>]
-3: lookup_Haplogroup.py -h
-4: lookup_Haplogroup.py --help
+ lookup_Haplogroup.py -s  <SNP_file> [-t <haplogroup_file> -n <haplotree_name>]
+
+ lookup_Haplogroup.py -snpfl=<SNP_file> [--treefl=<haplogroup_file> --name=<haplotree_name>]
+
+ lookup_Haplogroup.py -h
+
+ lookup_Haplogroup.py --help
 
 e.g.
 python ~/lookup_Haplogroup.py -s mtDNA_SNPS_combined.csv  -t mtDNA-tree-Build-17.json -n mt-MRCA(RSRS)
