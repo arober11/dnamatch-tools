@@ -20,7 +20,11 @@
 # Author:  A.Robers 2023-07-05
 # License: GPLv3. See accompanying LICENSE file.
 # No warranty. You are responsible for your use of this program.
- 
+
+# ------------
+# Set to 0 to disable
+DEBUG_TO_CSV=0
+DEBUG_TO_JSON=1
 #--------------
 DEPTH=""
 POS=0
@@ -41,6 +45,10 @@ HAPLOS_FILE="$FILE_NAME.Haplogroups.txt"
 HAPLOS_MUTS="$FILE_NAME.Haplogroup_mutations.csv"
 HAPLOS_SNPS="$FILE_NAME.SNP_Positions_used.txt"
 HAPLOS_JSON="$FILE_NAME.json"
+#--------------
+THIS_SCRIPT_NAME=$(basename $0)
+THIS_DIR_NAME=$(dirname $0)
+THIS_LIB_NAME="$(dirname $0)/DNA_HELPER_LIB.sh"
 
 ####################################################################
 
@@ -135,91 +143,8 @@ function expand_mutation () {
   echo "{\"posStart\":\"$posStart\"$extra,\"ancestral\":\"$ancestral\",\"descendant\":\"$descendant\",\"type\":\"$type\",\"display\":$1}"
 }
 
-function to_JSON_array () {
-  local LOC_FROM="$1"
-  local LOC_TO="$2"
-  local LOC_COL1=$3
-
-  local LOC_COL2=1
-  local haploGRP=""
-  local LOC_CD=0
-  local LOC_P1=""
-  local LOC_P2=""
-  local LOC_i=0
-  local LOC_KIDS=0
-  local LOC_toFromArray=()
-  local LOC_mutatiions_Array=()
-
-  if [ "$LOC_FROM" != "START" ]
-  then
-    LOC_P1="0,/,$LOC_FROM,|^$LOC_FROM,/d"
-    ((LOC_COL2=LOC_COL1+1))
-    echo -n ',"children":[' >> "$HAPLOS_JSON"
-  fi
-
-  if [ "$LOC_TO" != "END" ]
-  then
-    LOC_P2="/$LOC_TO,/,$ d"
-  fi
-
-  local LOC_SEARCH="^,{$LOC_COL1}$HAPLO_PAT"
-
-#echo "$@ - COL1=$LOC_COL1 - COL2=$LOC_COL2 - P1=$LOC_P1 - P2=$LOC_P2 - FROM=$LOC_FROM - TO=$LOC_TO - PAT=$HAPLO_PAT - $LOC_SEARCH"
-#echo "$SED -e '$LOC_P1' -e '$LOC_P2' '$FILE_CSV' | egrep \"$LOC_SEARCH\" | cut -d, -f\"$LOC_COL2\""
-#echo "$SED -e '$LOC_P1' -e '$LOC_P2' '$FILE_CSV' | egrep \"$LOC_SEARCH\" | $SED -e \"s/^,*[^,]*,//\""
-#echo Lines between = $($SED -e "$LOC_P1" -e "$LOC_P2" "$FILE_CSV" | wc -l  ) 
-
-  if [ $MAX_DEPTH -lt $LOC_COL1 ]
-  then
-    echo "Error: DEPTHE EXCEDED !!!!! $LOC_COL1 -gt MAX_DEPTH=$MAX_DEPTH"
-    exit 6
-  fi 
-
-  LOC_toFromArray=($($SED -e "$LOC_P1" -e "$LOC_P2" "$FILE_CSV" | egrep "$LOC_SEARCH" | cut -d, -f"$LOC_COL2"))
-  LOC_mutatiions_Array=($($SED -e "$LOC_P1" -e "$LOC_P2" "$FILE_CSV" | egrep "$LOC_SEARCH" | $SED -e "s/^,*[^,]*,//"))
-  LOC_KIDS=${#LOC_toFromArray[@]}
-
-  # use for loop to read all values and indexes
-  for haploGrp in "${LOC_toFromArray[@]}"
-  do
-    ((PROC_HAPLO_CNT+=1))
-    >&2 echo -n -e "\\rProcessing: $PROC_HAPLO_CNT of $HAPLOGRPS - $haploGrp                  "
-    if [ $PROC_HAPLO_CNT -gt $HAPLOGRPS ]
-    then
-      echo "Error -PROC_HAPLO_CNT = $PROC_HAPLO_CNT -gt HAPLOGRPS = $HAPLOGRPS -  Something went wrong"
-      exit 4
-    fi
-    if [ $haploGrp != ${LOC_toFromArray[$LOC_i]} ]
-    then
-      echo "Error $haploGrp != ${LOC_toFromArray[$LOC_i]} - Something went wrong"
-      exit 5
-    fi
-
-    echo -n '{"haplogroup":' >> "$HAPLOS_JSON"
-    echo -n "\"${LOC_toFromArray[$LOC_i]}\"," >> "$HAPLOS_JSON"
-    echo -n "${LOC_mutatiions_Array[$LOC_i]}" >> "$HAPLOS_JSON"
-
-    local LOC_COL0=$LOC_COL1
-    if [ $LOC_COL0 -gt 0 ]
-    then
-      ((LOC_COL0-=1))
-    fi
-    local LOC_P4="^,{0,$LOC_COL0}[^,]+"
-    local LOC_NEXT_POS=$LOC_i
-    ((LOC_NEXT_POS+=1))
-    if [ "$LOC_NEXT_POS" -lt "$LOC_KIDS" ]
-    then
-      LOC_P4="${LOC_toFromArray[$LOC_NEXT_POS]}"
-    fi 
-    to_JSON_array "${LOC_toFromArray[$LOC_i]}" "$LOC_P4" "$LOC_COL2" 
-    echo -n "}," >> "$HAPLOS_JSON"
-    ((LOC_i+=1)) 
-  done
-  if [ "$LOC_FROM" != "START" ]
-  then
-    echo -n "]" >> "$HAPLOS_JSON"
-  fi
-}
+# CSV to JSON function
+source $THIS_LIB_NAME
 
 function fill_in_precursors {
   if [ "$1" -gt 0 -a -f "$FILE.$1" ]
@@ -241,7 +166,7 @@ function set_anon_cnt {
 
 if [ $# -gt 1 -o $# -eq 1 -a ! -f "$1" -o $# -eq 0 -a ! -f "$FILE" ]
 then
-  echo "Usage:   $(basename $0) [<mtDNA-tree-Build-##.htm>]"
+  echo "Usage:   $THIS_SCRIPT_NAME [<mtDNA-tree-Build-##.htm>]"
   echo
   echo "Purpose: Extract the mtDNA Haplogroup names as a text file and the assosiated mutations from the Revised Cambridge / Sapienb sequence as a JSON file"
   echo "          - Source file:  https://www.phylotree.org/builds/mtDNA_tree_Build_17.zip"
@@ -259,7 +184,7 @@ else
 fi
 
 # Produce CSV file
-if [ -f "$FILE" -a -s "$FILE" ]
+if [ $DEBUG_TO_CSV -ne 0 -a -f "$FILE" -a -s "$FILE" ]
 then
   #Remove non-ASCII characters
   ( export LC_ALL=C; tr -d '\200-\277' < "$FILE" | tr '\300-\377' '[?*]' > "$FILE.1")
@@ -377,18 +302,23 @@ fi
 
 ###################
 # Produce JSON file
-if [ -f "$FILE_CSV" -a -s "$FILE_CSV" ]
+if [ $DEBUG_TO_JSON -ne 0 ]
 then
-  echo '{"mt-MRCA(RSRS)":[' > "$HAPLOS_JSON"
-  to_JSON_array "START" "END" "0" 
-  echo "]}" >> "$HAPLOS_JSON"
-  echo "Written: $PROC_HAPLO_CNT"
+  if [ -f "$FILE_CSV" -a -s "$FILE_CSV" ]
+  then
+    echo '{"mt-MRCA(RSRS)":[' > "$HAPLOS_JSON"
+    to_JSON_array "START" "END" "0" "$HAPLOGRPS" "$MAX_DEPTH" "$FILE_CSV" "$HAPLOS_JSON" "$HAPLO_PAT" "$PROC_HAPLO_CNT"
+    echo "]}" >> "$HAPLOS_JSON"
+    echo "Written: $PROC_HAPLO_CNT"
 
-  #Tidy - remove blank lines, empty "children" arrays, and add some other new lines
-  cat "$HAPLOS_JSON" | tr -d "\n" | $SED -e 's/"children":\[\]//g' -e "s/,[[:space:]]+}/}/g" -e "s/,[[:space:]]*\]/]/g" -e 's/]/]\n/g' > "$HAPLOS_JSON.tmp"
-  mv "$HAPLOS_JSON.tmp" "$HAPLOS_JSON"
-else
-  echo "No FILE $FILE_CSV"
+    #Tidy - remove blank lines, empty "children" arrays, and add some other new lines
+    cat "$HAPLOS_JSON" | tr -d "\n" | $SED -e 's/"children":\[\]//g' -e "s/,[[:space:]]+}/}/g" -e "s/,[[:space:]]*\]/]/g" -e 's/]/]\n/g' > "$HAPLOS_JSON.tmp"
+    mv "$HAPLOS_JSON.tmp" "$HAPLOS_JSON"
+  else
+    echo "No FILE $FILE_CSV"
+    echo $DEBUG_TO_JSON
+    ls -l $FILE_CSV
+  fi
 fi
 
 2>&1 echo
