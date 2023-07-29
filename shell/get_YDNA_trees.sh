@@ -4,7 +4,7 @@
 # 
 # Note: 
 #   - Source Google sheets have a growing collection of comments / annotations, along with some unhelpful / incosistent foratting, that needs to be removed, as will blow the script
-#   - the 'get_YDNA_trees.sh' will attempt to download, strip and merge the ISOGG sheets into something usable by this script.
+#   - the 'YDNA-tree-to-all.sh' script will attempt to convert the output from this script and the 'get_YDNA_rsid.sh' scriptg into a single JSON file
 #
 # Author:  A.Robers 2023-07-24
 # License: GPLv3. See accompanying LICENSE file.
@@ -12,30 +12,28 @@
 
 # ------------
 # Set to 0 to disable
-DEBUG_DOWNLOAD_FILES=0
+DEBUG_DOWNLOAD_FILES=1
 DEBUG_STRIP_FILES=1
 DEBUG_TIDY_FILES=1
-DEBUG_MISSING_MUTES=0   # Not Needed
+DEBUG_MISSING_MUTES=1
 DEBUG_REMOVE_DUP=1
 # ------------
-SED="gsed -E"
+SED="gsed -E"                                       ; export SED
 
 THIS_SCRIPT_NAME=$(basename $0)
 THIS_DIR_NAME=$(dirname $0)
 THIS_LIB_NAME="$(dirname $0)/DNA_HELPER_LIB.sh"
 # ------------
 BUILD=37
-YDNA_SNPS="YDNA_SNPS.csv"
 YDNA_RSIDS="YDNA_rsid_names-Build$BUILD.txt"
 YDNA_MUTS="YDNA_rsid_mutations-Build$BUILD.csv"
-YDNA_HAPGRP_MUTS="YDNA_HAPGRP_muts-Build$BUILD.csv"
-YDNA_HAPGRP_MUTS_TMP="YDNA_HAPGRP_muts-Build$BUILD.tmp"
+YDNA_HAPGRP_MUTS="YDNA_HAPGRP_muts-Build$BUILD.csv" ; export YDNA_HAPGRP_MUTS
 YDNA_RSID_MUTS="YDNA_rsid_muts-Build$BUILD.csv"
 YDNA_BASE="YDNA_ISOGG_Haplogrp_Tree"
-YDNA_HAPLOGRPS="$YDNA_BASE.haplogrps.txt"
+YDNA_HAPLOGRPS="$YDNA_BASE.haplogrps.txt"           ; export YDNA_HAPLOGRPS
 YDNA_TRUNK="$YDNA_BASE.TRUNK.csv"
-YDNA_TRUNK_NESTED="$YDNA_BASE.Haplos.nested.csv"
-YDNA_TRUNK_MERGED="$YDNA_BASE.merged.csv"
+YDNA_TRUNK_NESTED="$YDNA_BASE.Haplos.nested.csv"    ; export YDNA_TRUNK_NESTED
+YDNA_TRUNK_MERGED="$YDNA_BASE.merged.csv"           ; export YDNA_TRUNK_MERGED
 YDNA_HAPGRP_A="$YDNA_BASE.A.csv"
 YDNA_HAPGRP_B="$YDNA_BASE.B.csv"
 YDNA_HAPGRP_C="$YDNA_BASE.C.csv"
@@ -61,10 +59,6 @@ YDNA_HAPGRP_T="$YDNA_BASE.T.csv"
 function download_files {
 
 # Obtain latest ISOGG YDNA Haplogroup Google sheets
-
-# SNPS
-# COLS: Name,Subgroup Name,Alternate Names,rs numbers,Build 37 Number,Build 38 Number,Mutation Info
-wget https://docs.google.com/spreadsheets/d/1UY26FvLE3UmEmYFiXgOy0uezJi_wOut-V5TD0a_6-bE/export?format=csv#gid=193439206 -O "$YDNA_SNPS"
 
 # Haplogroups:	
 # Haplogroup - TRUNK 
@@ -336,7 +330,7 @@ then
   echo "Altering TRUNK to better match files"
   cat tree.$YDNA_TRUNK
   echo "------------------"
-  echo "Seeing if the first line of the split files has a haplogroup names ithat occurs (exactly) in the TRUNK, or failing that one of the other files"
+  echo "Seeing if the first line of the split files has a haplogroup names that occurs (exactly) in the TRUNK, or failing that one of the other files"
   hap=""
   flNam=""
   while read line
@@ -369,9 +363,9 @@ then
     indent_tree_files $flName
   done < <(ls tree.$YDNA_HAPGRP_A tree.$YDNA_HAPGRP_B tree.$YDNA_HAPGRP_C tree.$YDNA_HAPGRP_D tree.$YDNA_HAPGRP_E tree.$YDNA_HAPGRP_F tree.$YDNA_HAPGRP_G tree.$YDNA_HAPGRP_H tree.$YDNA_HAPGRP_I tree.$YDNA_HAPGRP_J tree.$YDNA_HAPGRP_K tree.$YDNA_HAPGRP_L tree.$YDNA_HAPGRP_M tree.$YDNA_HAPGRP_N tree.$YDNA_HAPGRP_O tree.$YDNA_HAPGRP_P tree.$YDNA_HAPGRP_Q tree.$YDNA_HAPGRP_R tree.$YDNA_HAPGRP_S tree.$YDNA_HAPGRP_T)
 
-  #remove nesting from tree files
+  #joining tree files
   echo "------------------"
-  echo removing nesting
+  echo joining tree files
   nesting=1
   changed=0
   while [ $nesting -eq 1 ]
@@ -423,42 +417,14 @@ ls -l $YDNA_TRUNK_MERGED
 wc -l $YDNA_TRUNK_MERGED
 echo -----------------
 
+echo "Checking nesting dose not increase by more than one level"
 
-echo "Checking nesting dose not increase by more than one - TAKES A WHILE !!!!!"
-last=0;
-lastLn="";
-nestCnt=0;
-while read line
-do
-  ((nestCnt+=1));
-  ln=$(echo $line| $SED -e 's/^([,]*)[^,].*/\1/')
-  lineLn=${#ln}
-  diff=$((lineLn-last))
-  if [ $diff -gt 1 ]
-  then
-    printf "Error: ln: $nestCnt - $last - $lineLn\n$lastLn\n$line\n---------\n"
-    if [ $diff -eq 2 ]
-    then
-        echo "removing a comma"
-        $SED -i -e "/$line/ s/^,//" $YDNA_TRUNK_MERGED
-        echo "Return code: $?"
-    fi
-  fi
-  last=$lineLn
-  lastLn=${line:1}
-done < <(cat $YDNA_TRUNK_MERGED)
-
+perl -e 'my @lines=`cat $ENV{YDNA_TRUNK_MERGED}`; my $lineLen=0; my $lastLen=0; my $lastLn=""; my $nestCnt=0; my $fillCnt=0; my $lnCnt=$#lines+1; my $ln, $newLn, $cmd; foreach my $line (@lines) { $nestCnt++; print STDERR "Checking: $nestCnt    of $lnCnt\r"; $ln=$line; $ln=~s/^([,]*)[^,].*$/\1/; $lineLen=$#ln+1; $diff=$lineLen-$lastLen; if ( $diff >  1 ) { printf "Error: line: $nestCnt - $lastLen - $lineLen\n$lastLn\n$line\n---------\n"; if ( $diff == 2 ) { $fillCnt++; print "removing a comma\n"; $cmd = "$ENV{SED} -i -e \"/^$line/ s/^,//\" $ENV{YDNA_TRUNK_MERGED}"; system($cmd);}i } $lastLn=$line; $lastLen=$lineLen; } print STDERR "Checked: $nestCnt\nBack filled: $fillCnt\n";'
 
 if [ $DEBUG_REMOVE_DUP -ne 0 ]
 then
   echo "Check if any Duplicates:"
-  while read dup
-  do
-    echo $dup
-    echo "suffixing duplicate instancess with a '@'"
-    $SED -e "s/(,*$dup$)/\1@/" $YDNA_TRUNK_MERGED > $YDNA_TRUNK_MERGED.dup.tmp
-    $SED -z -e "s/(,*$dup)@$/\1/" $YDNA_TRUNK_MERGED.dup.tmp > $YDNA_TRUNK_MERGED
-  done < <(cat $YDNA_TRUNK_MERGED | $SED -e 's/^,+//' | sort | uniq -d)
+  perl -e 'my @lines = `cat $ENV{YDNA_TRUNK_MERGED}`; my $ln; my @dupHaplo = (); my @sortedDupHaplo = (); my %haplogroups = {}; my $lnCnt=$#lines; my $dupCnt=0; my $suffCnt=0; my $found=0; my $uniqDup=0; foreach my $line (@lines){ $line=~s/^,*([^,]+)/\1/; $line=~s/\n//; if (exists $haplogroups{$line}) { $dupCnt++; $haplogroups{$line}++; if ( $haplogroups{$line} == 2) { push(@dupHaplo, $line); } } else { $haplogroups{$line}=1; } } @sortedDupHaplo=sort @dupHaplo; $uniqDup=1+$#sortedDupHaplo; print "\nDuplicates: $dupCnt - Unique Duplicates: $uniqDup\n"; foreach my $dup (@sortedDupHaplo){ print "suffixing duplicate instancess of \"$dup\" with a \"@\"\n"; $found=0; foreach my $line (@lines){ #$ln=$lines[$i]; $ln=$line; $ln=~s/\n//; $haplo=$ln; $haplo=~s/^,*([^,]+)/\1/; if ( $haplo eq $dup ) { if ($found == 1) { $ln=~s/^(.*[^,]+)/\1@/; $line=$ln; $suffCnt++; } else { $found = 1; } } } } open(FH, ">", "$ENV{YDNA_TRUNK_MERGED}") or die $!; foreach (@lines) { print FH "$_\n"; } close(FH); print STDERR "Suffixed: $suffCnt\n";'
   echo -----------------
   cat $YDNA_TRUNK_MERGED | $SED -e 's/^,+//' > $YDNA_HAPLOGRPS
   lines=$(cat $YDNA_HAPLOGRPS | wc -l); ((lines+=0))
@@ -467,24 +433,7 @@ fi
 if [ $DEBUG_MISSING_MUTES -ne 0 ]
 then
   echo "Check if lacking mutations:"
-  cnt=0
-  found=0
-  diff=0
-  while read haplo
-  do
-    ((cnt+=1))
-    >&2 echo -n -e "\\rJoining: $cnt    of $lines - diff: $diff"
-    if (egrep "^$haplo," "$YDNA_HAPGRP_MUTS" >/dev/null)
-    then
-      ((found+=1))
-    else 
-      ((diff+=1)) 
-      echo "Error - not found: $haplo" >&2
-    fi 
-  done < <(cat $YDNA_HAPLOGRPS)
-  echo >&2
-  echo "Checked: $cnt" >&2
-  Found: $found
+  perl -e 'my @lines=`cat $ENV{YDNA_HAPLOGRPS}`; my @mutes=`cat $ENV{YDNA_HAPGRP_MUTS}`; my $cnt=0; my $foundCnt=0; my $diffCnt=0; my $missing=1; my $lnCnt=$#lines+1; foreach my $line (@lines) { $line=~s/\n//; $cnt++; print STDERR "Joining : $cnt    of $lnCnt  -  Found: $foundCnt  -   Missing: $diffCnt\r"; $missing=1; foreach my $mut (@mutes) { if ( $mut =~ m/^$line,/ ) { $foundCnt++; $missing=0; last; } } if ( $missing == 1 ) { $diffCnt++; print STDERR "\nError - missing mutations: $line\n"; } } print STDERR "\nFound: $foundCnt\nMissing: $diffCnt\n";'
   echo -----------------
 fi
 echo

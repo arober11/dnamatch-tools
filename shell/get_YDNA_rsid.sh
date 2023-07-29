@@ -17,7 +17,7 @@ BUILD=37
 YDNA_SNPS="YDNA_SNPS.csv"
 YDNA_RSIDS="YDNA_rsid_names-Build$BUILD.txt"
 YDNA_MUTS="YDNA_rsid_mutations-Build$BUILD.csv"
-YDNA_HAPGRP_MUTS="YDNA_HAPGRP_muts-Build$BUILD.csv"
+YDNA_HAPGRP_MUTS="YDNA_HAPGRP_muts-Build$BUILD.csv"     ; export YDNA_HAPGRP_MUTS
 YDNA_HAPGRP_MUTS_TMP="YDNA_HAPGRP_muts-Build$BUILD.tmp"
 YDNA_RSID_MUTS="YDNA_rsid_muts-Build$BUILD.csv"
 SED="gsed -E"
@@ -43,7 +43,7 @@ else
   exit 1
 fi
 
-perl -e 'my @lines = `cat YDNA_HAPGRP_muts-Build37.csv` ; my $haploGrp="*"; my $thisHaploGrp; my $cnt=0; foreach my $ln (@lines) { $cnt++; $thisHaploGrp=$ln; $thisHaploGrp=~s/^([^,]+),.*$/\1/; chop $ln; chop $ln; if ($haploGrp eq "*"){ print "$ln"; } else { if ($thisHaploGrp ne $haploGrp) { print "]\n$ln";} else { $ln =~ s/^[^{]*({[^}]*})/\1/ ; print ",$ln"; }} $haploGrp=$thisHaploGrp; } print "]\n";' > $YDNA_HAPGRP_MUTS_TMP
+perl -e 'my @lines = `cat $ENV{YDNA_HAPGRP_MUTS}` ; my $haploGrp="*"; my $thisHaploGrp; my $cnt=0; foreach my $ln (@lines) { $cnt++; $thisHaploGrp=$ln; $thisHaploGrp=~s/^([^,]+),.*$/\1/; chop $ln; chop $ln; if ($haploGrp eq "*"){ print "$ln"; } else { if ($thisHaploGrp ne $haploGrp) { print "]\n$ln";} else { $ln =~ s/^[^{]*({[^}]*})/\1/ ; print ",$ln"; }} $haploGrp=$thisHaploGrp; } print "]\n";' > $YDNA_HAPGRP_MUTS_TMP
 
 mv $YDNA_HAPGRP_MUTS_TMP $YDNA_HAPGRP_MUTS
 
