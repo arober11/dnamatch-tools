@@ -15,8 +15,8 @@
 DEBUG_DOWNLOAD_FILES=1
 DEBUG_STRIP_FILES=1
 DEBUG_TIDY_FILES=1
-DEBUG_MISSING_MUTES=1
 DEBUG_REMOVE_DUP=1
+DEBUG_MISSING_MUTES=1
 # ------------
 SED="gsed -E"                                       ; export SED
 
@@ -424,7 +424,7 @@ perl -e 'my @lines=`cat $ENV{YDNA_TRUNK_MERGED}`; my $lineLen=0; my $lastLen=0; 
 if [ $DEBUG_REMOVE_DUP -ne 0 ]
 then
   echo "Check if any Duplicates:"
-  perl -e 'my @lines = `cat $ENV{YDNA_TRUNK_MERGED}`; my $ln; my @dupHaplo = (); my @sortedDupHaplo = (); my %haplogroups = {}; my $lnCnt=$#lines; my $dupCnt=0; my $suffCnt=0; my $found=0; my $uniqDup=0; foreach my $line (@lines){ $line=~s/^,*([^,]+)/\1/; $line=~s/\n//; if (exists $haplogroups{$line}) { $dupCnt++; $haplogroups{$line}++; if ( $haplogroups{$line} == 2) { push(@dupHaplo, $line); } } else { $haplogroups{$line}=1; } } @sortedDupHaplo=sort @dupHaplo; $uniqDup=1+$#sortedDupHaplo; print "\nDuplicates: $dupCnt - Unique Duplicates: $uniqDup\n"; foreach my $dup (@sortedDupHaplo){ print "suffixing duplicate instancess of \"$dup\" with a \"@\"\n"; $found=0; foreach my $line (@lines){ #$ln=$lines[$i]; $ln=$line; $ln=~s/\n//; $haplo=$ln; $haplo=~s/^,*([^,]+)/\1/; if ( $haplo eq $dup ) { if ($found == 1) { $ln=~s/^(.*[^,]+)/\1@/; $line=$ln; $suffCnt++; } else { $found = 1; } } } } open(FH, ">", "$ENV{YDNA_TRUNK_MERGED}") or die $!; foreach (@lines) { print FH "$_\n"; } close(FH); print STDERR "Suffixed: $suffCnt\n";'
+  #perl -e 'my @lines = `cat $ENV{YDNA_TRUNK_MERGED}`; my $ln; my @dupHaplo = (); my @sortedDupHaplo = (); my %haplogroups = {}; my $lnCnt=$#lines; my $dupCnt=0; my $suffCnt=0; my $found=0; my $uniqDup=0; foreach my $line (@lines){ $line=~s/^,*([^,]+)/\1/; $line=~s/\n//; if (exists $haplogroups{$line}) { $dupCnt++; $haplogroups{$line}++; if ( $haplogroups{$line} == 2) { push(@dupHaplo, $line); } } else { $haplogroups{$line}=1; } } @sortedDupHaplo=sort @dupHaplo; $uniqDup=1+$#sortedDupHaplo; print "\nDuplicates: $dupCnt - Unique Duplicates: $uniqDup\n"; foreach my $dup (@sortedDupHaplo){ print "suffixing duplicate instancess of \"$dup\" with a \"@\"\n"; $found=0; foreach my $line (@lines){ $ln=$line; $ln=~s/\n//; $haplo=$ln; $haplo=~s/^,*([^,]+)/\1/; if ( $haplo eq $dup ) { if ($found == 1) { $ln=~s/^(.*[^,]+)/\1@/; $line=$ln; $suffCnt++; } else { $found = 1; } } } } open(FH, ">", "$ENV{YDNA_TRUNK_MERGED}") or die $!; foreach (@lines) { print FH "$_\n"; } close(FH); print STDERR "Suffixed: $suffCnt\n";'
   echo -----------------
   cat $YDNA_TRUNK_MERGED | $SED -e 's/^,+//' > $YDNA_HAPLOGRPS
   lines=$(cat $YDNA_HAPLOGRPS | wc -l); ((lines+=0))
@@ -433,7 +433,7 @@ fi
 if [ $DEBUG_MISSING_MUTES -ne 0 ]
 then
   echo "Check if lacking mutations:"
-  perl -e 'my @lines=`cat $ENV{YDNA_HAPLOGRPS}`; my @mutes=`cat $ENV{YDNA_HAPGRP_MUTS}`; my $cnt=0; my $foundCnt=0; my $diffCnt=0; my $missing=1; my $lnCnt=$#lines+1; foreach my $line (@lines) { $line=~s/\n//; $cnt++; print STDERR "Joining : $cnt    of $lnCnt  -  Found: $foundCnt  -   Missing: $diffCnt\r"; $missing=1; foreach my $mut (@mutes) { if ( $mut =~ m/^$line,/ ) { $foundCnt++; $missing=0; last; } } if ( $missing == 1 ) { $diffCnt++; print STDERR "\nError - missing mutations: $line\n"; } } print STDERR "\nFound: $foundCnt\nMissing: $diffCnt\n";'
+  perl -e 'my @lines=`cat $ENV{YDNA_HAPLOGRPS}`; my @mutes=`cat $ENV{YDNA_HAPGRP_MUTS}`; my $cnt=0; my $foundCnt=0; my $diffCnt=0; my $tweakCnt=0; my $missing=1; my $lnCnt=$#lines+1; my $baseHaplo; sub check_mutes($) { my $checkHaplo; ($checkHaplo) = @_; foreach my $mut (@mutes) { if ( $mut =~ m/^$checkHaplo,/ ) { $foundCnt++; $missing=0; last; } } } foreach my $line (@lines) { $line=~s/\n//; $cnt++; print STDERR "Checking : $cnt    of $lnCnt  -  Found: $foundCnt  -   Missing: $diffCnt\r"; $baseHaplo=$line; $baseHaplo=~s/@//g; if ( $baseHaplo ne $line ) { print STDERR "\nProcessing duplicate: $line\n";} $missing=1; check_mutes $baseHaplo; if ( $missing == 1 ) { if ( $baseHaplo =~ m/ or / ) { $try1=$baseHaplo; $try1=~s/ or .*$//; check_mutes $try1; if ( $missing == 1 ) { $try2=$baseHaplo; $try2=~s/^.* or //; check_mutes $try2; } if ( $missing == 0 ) { $tweakCnt++; } } if ( $missing == 1 ) { $diffCnt++; print STDERR "\nError - missing mutations: $line\n"; } } } print STDERR "\nFound: $foundCnt\nTweaked: $tweakCnt\nMissing: $diffCnt\n";'
   echo -----------------
 fi
 echo
