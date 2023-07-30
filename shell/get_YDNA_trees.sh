@@ -12,7 +12,7 @@
 
 # ------------
 # Set to 0 to disable
-DEBUG_DOWNLOAD_FILES=0
+DEBUG_DOWNLOAD_FILES=1
 DEBUG_STRIP_FILES=1
 DEBUG_TIDY_FILES=1
 DEBUG_REMOVE_DUP=1
@@ -294,16 +294,50 @@ then
       rep=$node
       if [ "$node" != "$try1" ] 
       then
-        if ! egrep ",$try1$|^$try2$" tree.YDNA_ISOGG_Haplogrp_Tree.?.csv 2>&1 > /dev/null
+        if ! egrep ",$try1$|^$try2$" tree.YDNA_ISOGG_Haplogrp_Tree.?.csv  2>&1 > /dev/null
         then 
-          if ! egrep ",$try2$|^$try2$" tree.YDNA_ISOGG_Haplogrp_Tree.?.csv 2>&1 > /dev/null
+          if ! egrep ",$try2$|^$try2$" tree.YDNA_ISOGG_Haplogrp_Tree.?.csv  2>&1 > /dev/null
           then
-            if ! egrep ",$try3$|^$try3$" tree.YDNA_ISOGG_Haplogrp_Tree.?.csv 2>&1 > /dev/null
+            if ! egrep ",$try3$|^$try3$" tree.YDNA_ISOGG_Haplogrp_Tree.?.csv  2>&1 > /dev/null
             then
-              if ! egrep ",$try3$|^$try3$" tree.YDNA_ISOGG_Haplogrp_Tree.?.csv 2>&1 > /dev/null
+              if ! egrep ",$try4$|^$try4$" tree.YDNA_ISOGG_Haplogrp_Tree.?.csv  2>&1 > /dev/null
               then
-                echo "not found - $node #### try1:$try1 ### try2:$try2 ### try3:$try3 ### try4:$try4 - deleting"
-                $SED -i -e "/$tst$/d" "tree.$YDNA_BASE.TRUNK.csv"
+                if (echo $node | egrep '~$')
+                then
+                  try5=$(echo $try1 | $SED -e 's/~$//g')
+                  try6=$(echo $try2 | $SED -e 's/~$//g')
+                  try7=$(echo $try3 | $SED -e 's/~$//g')
+                  try8=$(echo $try4 | $SED -e 's/~$//g')
+                  if ! egrep ",$try5$|^$try5$" tree.YDNA_ISOGG_Haplogrp_Tree.?.csv  2>&1 > /dev/null
+                  then
+                    if ! egrep ",$try6$|^$try6$" tree.YDNA_ISOGG_Haplogrp_Tree.?.csv  2>&1 > /dev/null
+                    then
+                      if ! egrep ",$try7$|^$try7$" tree.YDNA_ISOGG_Haplogrp_Tree.?.csv  2>&1 > /dev/null
+                      then
+                        if ! egrep ",$try8$|^$try3$" tree.YDNA_ISOGG_Haplogrp_Tree.?.csv  2>&1 > /dev/null
+                        then
+                          echo "NEITHER node or PARENT found - $node #### try1:$try1 ### try2:$try2 ### try3:$try3 ### try4:$try4 #### try5:$try5 ### try6:$try6 ### try7:$try7 ### try8:$try8 - deleting"
+                          $SED -i -e "/$node$/d" "tree.$YDNA_BASE.TRUNK.csv"
+                        else
+                          echo "PARENT found '$try5' but not '$node' - trunk more detailed than branch" 
+                          rep="$try8~"
+                        fi 
+                      else
+                        echo "PARENT found '$try5' but not '$node'  - trunk more detailed than branch" 
+                        rep="$try7~"
+                      fi
+                    else
+                      echo "PARENT found '$try5' but not '$node'  - trunk more detailed than branch" 
+                      rep="$try6~"
+                    fi
+                  else
+                    echo "PARENT found '$try5' but not '$node'  - trunk more detailed than branch" 
+                    rep="$try5~"
+                  fi
+                else
+                  echo "not found - $node #### try1:$try1 ### try2:$try2 ### try3:$try3 ### try4:$try4 - deleting"
+                  $SED -i -e "/$node$/d" "tree.$YDNA_BASE.TRUNK.csv"
+                fi
               fi
             else
               rep=$try3
@@ -323,7 +357,7 @@ then
       fi
     fi
   done < <(cat "tree.$YDNA_BASE.TRUNK.csv")
-
+    
   echo "------------------"
   echo "Altering TRUNK to better match files"
   cat tree.$YDNA_TRUNK
@@ -406,7 +440,7 @@ then
     fi
     changed=0
   done
-  rm -f tree.$YDNA_BASE* $YDNA_BASE*.csv-e
+  #rm -f tree.$YDNA_BASE* $YDNA_BASE*.csv-e
 fi
 
 echo -----------------

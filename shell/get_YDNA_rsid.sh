@@ -33,7 +33,7 @@ then
   rm -f $YDNA_RSIDS $YDNA_MUTS $YDNA_HAPGRP_MUTS $YDNA_RSID_MUTS
 
   #Tidy a couple of Haplogroup names
-  $SED -i -e 's/#REF!/C1a2b1b2/' -e 's/^"A9832,2"/A9832.2/' -e 's/^",//' -e 's/["]//g' -e 's/; /-/g' $YDNA_SNPS
+  $SED -i -e 's/#REF!/C1a2b1b2/' -e 's/^"A9832,2"/A9832.2/' -e 's/^",//' -e 's/["]//g' -e 's/; /-/g' -e 's/[ ]*\(Notes\)//' -e 's/ ~/~/g' $YDNA_SNPS
 
   #Stick the columns in a JSON like structure and sort on haplogroup name
   $SED -e '/->/!d' -e 's/^[[:space:]]+//g' -e '/^$/d' -e 's/->/,/' $YDNA_SNPS | perl -F, -ane '$names="$F[0]" ; $names =~ s/[-]+$// ; $type=0 ; $rsid= "" ; if ($F[2] ne "") { $alias=",\"alias\":\"$F[2]\""; } if ($F[3] ne "") { $rsid=",\"rsid\":\"$F[3]\""; } $F[7] =~ s/\n//g ; $descendant=$F[7] ; if($descendant =~ /^del/){ $descendant="";$type=3; } if($descendant =~ /^ins/){ $descendant="";$type=4; } print "$F[1],\"mutations\":[{\"posStart\":\"$F[4]\",\"ancestral\":\"$F[6]\",\"descendant\":\"$descendant\",\"type\":\"$type\",\"display\":\"$F[6]$F[4]$F[7]\",\"label\":\"$names\"$alias$rsid}]\n";' | sort -t, -k1 | $SED -e 's/\t//g' > $YDNA_HAPGRP_MUTS
