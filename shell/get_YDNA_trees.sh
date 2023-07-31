@@ -440,7 +440,7 @@ then
     fi
     changed=0
   done
-  #rm -f tree.$YDNA_BASE* $YDNA_BASE*.csv-e
+  rm -f tree.$YDNA_BASE* $YDNA_BASE*.csv-e
 fi
 
 echo -----------------
