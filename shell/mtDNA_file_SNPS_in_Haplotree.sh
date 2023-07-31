@@ -35,6 +35,7 @@ function mtDNA_extract_and_convert_NOCALLS {
 }
 
 function mtDNA_extract_SNPS {
+  echo cut $DELIM -f3 "$1" | sort -nu > "$2"
   cut $DELIM -f3 "$1" | sort -nu > "$2"
 }
 
@@ -66,24 +67,37 @@ function notInHaploTree {
   rm -f $1.tmp $1.tmp.uniq
 }
 
-#----------------------------------------
-
-if [ $# -eq 0 -o ! -f "$1" -o $# -gt 1 -a ! -f "$2" -o $# -eq 1 -a ! -f "$INFILE2" ]
-then
+function usage {
   echo
   echo "Usage:   `basename $0` <rawfile1[.txt|.csv]> [<mtDNA-tree-Build-##_SNP_Positions_used.txt>]"
   echo
   echo "Purpose: lookup mtDNA calls from an autosomal DNA file and a published mtDNA haplotree"
   echo
   echo "defaults: "
-  echo "  rawfile  = $INFILE1"
-  echo "  treefile = $INFILE2"
-  echo
+  echo "  rawfile  = $INFILE1"                                   - genotyped call file, as offered by AncestryDNA, 23AndMe, FTDNA, ...
+  echo "  treefile = $INFILE2" - numeric list of the mtDNA SNP positions foung in tree e.g.
+  echo "                        10"
+  echo "                        16"
+  echo "                        26"
+  echo "                        41"
+  echo "                        42"
+  echo "                        44"
+  echo "                        47"
+  echo "                        53"
+  echo "                        54"
+  echo "                        ..."
   echo "outputs: "
   echo "  rawfile-mtDNA-snps = <rawfile1>_mtDNA           - mtDNA data as it appeared in the rawfile"
   echo "  rawfile-mtDNA-snps = <rawfile1>_mtDNA.SNPS.txt  - mtDNA SNP list from the rawfile"
   echo "  rawfile-mtDNA-snps = <rawfile1>_mtDNA.SNPS.csv  - mtDNA SNP calls from the rawfile"
+  echo
+}
 
+#----------------------------------------
+
+if [ $# -eq 0 -o ! -f "$1" -o $# -gt 1 -a ! -f "$2" -o $# -eq 1 -a ! -f "$INFILE2" ]
+then
+  usage
   if [ $# -gt 0 -a ! -f "$1" ]
   then
     echo "Error: No valid raw file specified - $1"
@@ -118,6 +132,7 @@ fi
 grep -v '^\d*$' "$INFILE2" 2>&1 >/dev/null
 if [ ! -s "$INFILE2" -o $? -eq 0 ]
 then
+  usage
   echo "Error - $INFILE2 contains no list of mtDNA HAPLOGRP SNP positions, or some non-numeric data"
   exit 5
 fi
@@ -126,6 +141,7 @@ mtDNA_extract_and_convert_NOCALLS $INFILE1 $INFILE1_mtDNA
 
 if [ ! -s "$INFILE1_mtDNA" ]
 then
+  usage
   echo "Error - $INFILE1 contains no SNP calls"
   rm -f $INFILE1_mtDNA 
   exit 6
@@ -137,6 +153,7 @@ mtDNA_extract_SNPS $INFILE1_mtDNA $INFILE1_SNPS
 egrep -v '^\d*$' "$INFILE1_SNPS" 2>&1 >/dev/null
 if [ ! -s "$INFILE1_SNPS" -o $? -eq 0 ]
 then
+  usage
   echo "Error - $INFILE1 contains no or nonumeric SNP positions"
   grep -v '^\d*$' "$INFILE1_SNPS"
   echo RC: $?
@@ -148,10 +165,12 @@ mtDNA_extract_CALLS $INFILE1_mtDNA $INFILE1_CALL
 egrep -E -v '^\d+,[actgACTGI0-dD]+$' -e '/^$/d' "$INFILE1_CALL" 2>&1 >/dev/null
 if [ ! -s "$INFILE1_CALL" -o $? -eq 0 ]
 then
+  usage
   echo "Error - $INFILE1 contains no or nonumeric SNP positions or valid calls"
-  grep -v '^\d*$' "$INFILE1_SNPS"
+  egrep -E -v '^\d+,[actgACTGI0-dD]+$' -e '/^$/d' "$INFILE1_CALL" | head
+  egrep -E -v '^\d+,[actgACTGI0-dD]+$' -e '/^$/d' "$INFILE1_CALL" 2>&1 >/dev/null
   echo RC: $?
-  #rm -f $INFILE1_mtDNA $INFILE1_SNPS $INFILE1_CALL
+  rm -f $INFILE1_mtDNA $INFILE1_SNPS $INFILE1_CALL
   exit 8
 fi
 

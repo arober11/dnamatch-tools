@@ -10,6 +10,8 @@ start=`date +%s`
 INFILE1="DNA1.txt"
 INFILE2="YDNA_HAPGRP-Build37.SNP_Positions_used.txt"
 DELIM=""
+
+SED="gsed -E"
 #----------------------------------------
 
 function guess_deliminator {
@@ -38,7 +40,8 @@ function YDNA_extract_SNPS {
 }
 
 function YDNA_extract_CALLS {
-  cut $DELIM -f3,4 "$1" | sort -nu | gsed -e 's/[	 ]+/,/' > "$2"
+  echo cut $DELIM -f3,4 "$1" : sort -nu : $SED -e 's/[\t ]+/,/' - "$2"
+  cut $DELIM -f3,4 "$1" | sort -nu | $SED -e 's/[\t ]+/,/' > "$2"
 }
 
 function inHaploTree {
@@ -65,19 +68,22 @@ function notInHaploTree {
   rm -f $1.tmp $1.tmp.uniq
 }
 
-#----------------------------------------
-
-if [ $# -eq 0 -o ! -f "$1" -o $# -gt 1 -a ! -f "$2" -o $# -eq 1 -a ! -f "$INFILE2" ]
-then
+function usage {
   echo
   echo "Usage:   `basename $0` <rawfile1[.txt|.csv]> [<YDNA-tree-Build-##_SNP_Positions_used.txt>]"
   echo
   echo "Purpose: lookup YDNA calls from an autosomal DNA file and a published YDNA haplotree"
   echo
   echo "defaults: "
-  echo "  rawfile  = $INFILE1"
-  echo "  treefile = $INFILE2"
-  echo
+  echo "  rawfile  = $INFILE1"                                   - genotyped call file, as offered by AncestryDNA, 23AndMe, FTDNA, ...
+  echo "  treefile = $INFILE2" - numeric list of the YDNA SNP positions foung in tree e.g.
+  echo "                        10000350"
+  echo "                        10000477"
+  echo "                        10000888"
+  echo "                        10001590"
+  echo "                        10001720"
+  echo "                        10002452"
+  echo "                        ..."
   echo "outputs: "
   echo "  rawfile-YDNA-snps = <rawfile1>_YDNA           - YDNA data as it appeared in the rawfile"
   echo "  rawfile-YDNA-snps = <rawfile1>_YDNA.SNPS.txt  - YDNA SNP list from the rawfile"
@@ -85,6 +91,13 @@ then
   echo
   echo "See: get_YDNA_rsid.sh for obtaining the SNP position list"
   echo
+}
+
+#----------------------------------------
+
+if [ $# -eq 0 -o ! -f "$1" -o $# -gt 1 -a ! -f "$2" -o $# -eq 1 -a ! -f "$INFILE2" ]
+then
+  usage
 
   if [ $# -gt 0 -a ! -f "$1" ]
   then
@@ -117,9 +130,14 @@ then
   INFILE2="$2"
 fi
 
+echo -----------------
+ls -l $INFILE1 $INFILE2
+echo -----------------
+
 grep -v '^\d*$' "$INFILE2" 2>&1 >/dev/null
 if [ ! -s "$INFILE2" -o $? -eq 0 ]
 then
+  usage
   echo "Error - $INFILE2 contains no list of YDNA HAPLOGRP SNP positions, or some non-numeric data"
   exit 5
 fi
@@ -128,6 +146,7 @@ YDNA_extract_and_convert_NOCALLS $INFILE1 $INFILE1_YDNA
 
 if [ ! -s "$INFILE1_YDNA" ]
 then
+  usage
   echo "Error - $INFILE1 contains no SNP calls"
   rm -f $INFILE1_YDNA 
   exit 6
@@ -139,19 +158,24 @@ YDNA_extract_SNPS $INFILE1_YDNA $INFILE1_SNPS
 egrep -v '^\d*$' "$INFILE1_SNPS" 2>&1 >/dev/null
 if [ ! -s "$INFILE1_SNPS" -o $? -eq 0 ]
 then
+  usage
   echo "Error - $INFILE1 contains no or nonumeric SNP positions"
-  grep -v '^\d*$' "$INFILE1_SNPS"
+  echo "File - $INFILE1_SNPS"
+  grep -v '^\d*$' "$INFILE1_SNPS" | head
+  grep -v '^\d*$' "$INFILE1_SNPS" 2>&1 > /dev/null
   echo RC: $?
   rm -f $INFILE1_YDNA $INFILE1_SNPS
   exit 7
 fi
 
-YDNA_extract_CALLS $INFILE1_YDNA $INFILE1_SNPS 
-egrep -E -v '^\d+,[actgACTGI0-]+$' "$INFILE1_CALL" 2>&1 >/dev/null
+YDNA_extract_CALLS $INFILE1_YDNA $INFILE1_CALL 
+egrep -E -v '^\d+,[actgACTGI0-dD]+$' -e '/^$/d' "$INFILE1_CALL" 2>&1 >/dev/null
 if [ ! -s "$INFILE1_CALL" -o $? -eq 0 ]
 then
+  usage
   echo "Error - $INFILE1 contains no or nonumeric SNP positions or valid calls"
-  grep -v '^\d*$' "$INFILE1_SNPS"
+  egrep -E -v '^\d+,[actgACTGI0-dD]+$' -e '/^$/d' "$INFILE1_CALL" | head
+  egrep -E -v '^\d+,[actgACTGI0-dD]+$' -e '/^$/d' "$INFILE1_CALL" 2>&1 > /dev/null
   echo RC: $?
   rm -f $INFILE1_YDNA $INFILE1_SNPS $INFILE1_CALL
   exit 8
@@ -167,5 +191,5 @@ fi
 inHaploTree "$INFILE1_SNPS" "$INFILE2"
 notInHaploTree "$INFILE1_SNPS" "$INFILE2"
 
-#rm -f "$INFILE1_YDNA" "$INFILE1_SNPS" 
+rm -f "$INFILE1_YDNA" "$INFILE1_SNPS" 
 exit 0

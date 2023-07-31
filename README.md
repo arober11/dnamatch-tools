@@ -441,8 +441,22 @@ Usage:   mtDNA_file_SNPS_in_Haplotree.sh <rawfile1[.txt|.csv]> [<mtDNA-tree-Buil
 Purpose: lookup mtDNA calls from an autosomal DNA file and a published mtDNA haplotree
 
 defaults: 
-  rawfile  = DNA1.txt
-  treefile = mtDNA-tree-Build-17.SNP_Positions_used.txt
+  rawfile  = DNA1.txt                                   - genotyped call file, as offered by AncestryDNA, 23AndMe, FTDNA, ...
+  treefile = mtDNA-tree-Build-17.SNP_Positions_used.txt - numeric list of the mtDNA SNP positions foung in tree e.g.
+                        10
+                        16
+                        26
+                        41
+                        42
+                        44
+                        47
+                        53
+                        54
+                        ...
+outputs: 
+  rawfile-mtDNA-snps = <rawfile1>_mtDNA           - mtDNA data as it appeared in the rawfile
+  rawfile-mtDNA-snps = <rawfile1>_mtDNA.SNPS.txt  - mtDNA SNP list from the rawfile
+  rawfile-mtDNA-snps = <rawfile1>_mtDNA.SNPS.csv  - mtDNA SNP calls from the rawfile
 
 outputs: 
   rawfile-mtDNA-snps = <rawfile1>_mtDNA           - mtDNA data as it appeared in the rawfile
@@ -459,10 +473,16 @@ Usage:   YDNA_file_SNPS_in_Haplotree.sh <rawfile1[.txt|.csv]> [<YDNA-tree-Build-
 
 Purpose: lookup YDNA calls from an autosomal DNA file and a published YDNA haplotree
 
-defaults: 
-  rawfile  = DNA1.txt
-  treefile = YDNA_HAPGRP-Build37.SNP_Positions_used.txt
-
+defaults:
+  rawfile  = DNA1.txt                                   - genotyped call file, as offered by AncestryDNA, 23AndMe, FTDNA, ...
+  treefile = YDNA_HAPGRP-Build37.SNP_Positions_used.txt - numeric list of the YDNA SNP positions foung in tree e.g.
+                        10000350
+                        10000477
+                        10000888
+                        10001590
+                        10001720
+                        10002452
+                        ...
 outputs: 
   rawfile-YDNA-snps = <rawfile1>_YDNA           - YDNA data as it appeared in the rawfile
   rawfile-YDNA-snps = <rawfile1>_YDNA.SNPS.txt  - YDNA SNP list from the rawfile
