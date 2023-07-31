@@ -56,7 +56,7 @@ def search_tree(target, children):
     else:
       if 'children' in haplogroup:
         resultStr=search_tree(target, haplogroup['children'])
-        if resultStr <> "":	
+        if resultStr != "":	
           return resultStr + haplogroup['haplogroup'] + '<-'
   return ""
 
@@ -73,7 +73,7 @@ def walk_tree(children, parent, mutOverrideDict):
           if mutation['posStart']:
             if not (snpDict.get(mutation['posStart']) is None):
               #print(mutation['posStart'],":",snpDict.get(mutation['posStart']),":",mutation['descendant'])
-              if snpDict.get(mutation['posStart']) <> mutation['descendant']:
+              if snpDict.get(mutation['posStart']) != mutation['descendant']:
                 if (mutOverrideDict.get(mutation['posStart']) is None):
                   call_status=3
                 else:
@@ -97,7 +97,7 @@ def check_parents(haplogrp, status):
   if status > 2:
     return status
  
-  if parDict[haplogrp] <> tree_name:
+  if parDict[haplogrp] != tree_name:
     status=check_parents(parDict[haplogrp], status)
 
   return status
@@ -116,7 +116,7 @@ def store_longest_string(haplogroup, seartchStr):
 
   resultsDict.update({haplogroup:seartchStr})
   for dupCheck in resultsDict:
-    if haplogroup <> dupCheck and resultsDict[dupCheck] in seartchStr:
+    if haplogroup != dupCheck and resultsDict[dupCheck] in seartchStr:
       dupList.append(dupCheck)
 
   for delStr in dupList:
