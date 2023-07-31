@@ -1,10 +1,59 @@
 #!/bin/bash
 #
-# Purpose:Attempt to combine and convert the ISOGG YDNA files from https://isogg.org/tree/index.html
-# 
-# Note: 
-#   - Source Google sheets have a growing collection of comments / annotations, along with some unhelpful / incosistent foratting, that needs to be removed, as will blow the script
-#   - the 'YDNA-tree-to-all.sh' script will attempt to convert the output from this script and the 'get_YDNA_rsid.sh' scriptg into a single JSON file
+# Purpose:Attempt to download, combine, and convert the ISOGG YDNA files from https://isogg.org/tree/index.html
+#
+#   - Outputs: 
+#     - YDNA_ISOGG_Haplogrp_Tree.A.csv through YDNA_ISOGG_Haplogrp_Tree.T.csv and YDNA_ISOGG_Haplogrp_Tree.TRUK.csv
+#       -- downloaded Google sheets
+#       -- with notes, comments and severl inconsistencies removed.
+#     - YDNA_ISOGG_Haplogrp_Tree.haplogrps.txt       - list of YDNA haplogroup names use, e.g.d
+#      Y
+#      A0000
+#      A000-T
+#      A000
+#      A000a
+#      A000b
+#      A000b1
+#      A00-T
+#      A00-T~
+#      A00
+#      ...
+#     - YDNA_ISOGG_Haplogrp_Tree.TRUNK.csv           - haplogroup names and mutations indented to reflect tree structure, e.g.
+#      Y,Root (Y-Adam),,,,,,,,,,,,,,,,,,,,,,
+#      ,A0000,A8864,,,,,,,,,,,,,,,,,,,,,
+#      ,A000-T,A8835,,,,,,,,,,,,,,,,,,,,,
+#      ,,A000,A10805,,,,,,,,,,,,,,,,,,,,
+#      ,,A00-T,PR2921,,,,,,,,,,,,,,,,,,,,
+#      ,,,A00,AF6/L1284,,,,,,,,,,,,,,,,,,,
+#      ,,,A0-T,L1085,,,,,,,,,,,,,,,,,,,
+#      ,,,,A0,CTS2809.1/L991.1,,,,,,,,,,,,,,,,,,
+#      ,,,,A1,P305,,,,,,,,,,,,,,,,,,
+#      ,,,,,A1b,P108,,,,,,,,,,,,,,,,,
+#      ...
+#     - YDNA_ISOGG_Haplogrp_Tree.merged.csv          - haplogroup names indented to reflect tree structure, e.g.
+#      Y
+#      ,A0000
+#      ,A000-T
+#      ,,A000
+#      ,,,A000a
+#      ,,,A000b
+#      ,,,,A000b1
+#      ,,A00-T
+#      ,,A00-T~
+#      ,,,A00
+#      ,,,,A00a
+#      ,,,,A00b
+#      ,,,,A00c
+#      ,,,A0-T
+#
+# Notes: 
+#   - Source Google sheets have a growing collection of comments / annotations, along with some unhelpful / incosistent foratting, that needs to be removed, 
+#     as will blow the script
+#   - Output JSON mutation type:
+#    type 0     - transitions    - upper case (e.g., G->A)
+#    type 3     - deletions      - “del”
+#    type 4     - insertions     - "ins"
+#   - the 'YDNA-tree-to-all.sh' script will attempt to convert the output from this script and the 'get_YDNA_rsid.sh' script into a single JSON file
 #
 # Author:  A.Robers 2023-07-24
 # License: GPLv3. See accompanying LICENSE file.
@@ -24,9 +73,6 @@ THIS_DIR_NAME=$(dirname $0)
 THIS_LIB_NAME="$(dirname $0)/DNA_HELPER_LIB.sh"
 # ------------
 BUILD=37
-YDNA_RSIDS="YDNA_rsid_names-Build$BUILD.txt"
-YDNA_MUTS="YDNA_rsid_mutations-Build$BUILD.csv"
-YDNA_RSID_MUTS="YDNA_rsid_muts-Build$BUILD.csv"
 YDNA_BASE="YDNA_ISOGG_Haplogrp_Tree"
 YDNA_HAPLOGRPS="$YDNA_BASE.haplogrps.txt"           ; export YDNA_HAPLOGRPS
 YDNA_TRUNK="$YDNA_BASE.TRUNK.csv"

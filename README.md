@@ -315,7 +315,8 @@ Usage:
  lookup_Haplogroup.py --help
 
 e.g.
-python ~/lookup_Haplogroup.py -s mtDNA_SNPS_combined.csv  -t mtDNA-tree-Build-17.json -n mt-MRCA(RSRS)
+python ~/lookup_Haplogroup.py -s mtDNA_SNPS_combined.csv  -t output/mtDNA-tree-Build-17.json -n "mt-MRCA(RSRS)"
+python ~/lookup_Haplogroup.py -snpfl=some_YDNA.csv -treefl=output/YDNA_ISOGG_Haplogrp_Tree.json -n "ISOGG-YDNA-BUILD-37"
 
 **Usage**: refer to comments in the script, and see example output in the output folder
 
@@ -323,6 +324,16 @@ python ~/lookup_Haplogroup.py -s mtDNA_SNPS_combined.csv  -t mtDNA-tree-Build-17
 
 Indicates the SNPS per chromosome in an autosmal file from the like of Ancestry, 23AndMe, FTDNA, ... , or a combined file
 Along with counts of the CALLS and NO CALLS per chromosome
+
+Usage:   DNA_file_state.sh <rawfile[.txt|.csv]> [,]
+
+Purpose: Reports SNP counts, per chromosome, with a count of calls, and no calls.
+
+defaults: 
+  rawfile = AncestryDNA.txt
+  deliminator  = tab (AncestryDNA)
+
+Nb: To use the with a FTDNA raw file, sepcify a deliminator of ',' withoug (the quotes).
 
 **Usage**: refer to comments in the script, and see example output in the output folder
 
@@ -338,7 +349,8 @@ Purpose: Diff the mtDNA calls between two DNA files.
 Opions - [M|Missing]  - List SNPS in one file but not the other
 
 defaults: 
-  rawfile = 
+  rawfile = DNA1.txt
+          = DNA2.txt
 
 **Usage**: refer to comments in the script
 
@@ -354,7 +366,59 @@ Purpose: Diff the YDNA calls between two DNA files.
 Opions - [M|Missing]  - List SNPS in one file but not the other
 
 defaults: 
-  rawfile = 
+  rawfile = DNA1.txt
+          = DNA2.txt
+
+**Usage**: refer to comments in the script
+
+## get_YDNA_rsid.sh
+
+Download the latest ISOGG YDNA SNP list,
+          Correct for a few anomalies in the list,
+          Extract the rsid names, mutation names and the Build 37 SNP positions to a series of files:
+            - YDNA_SNPS.csv - downloaded file with any:
+               -- '#REF!' swapped for C1a2b1b2
+               -- A9832,2 swapped for A9832.2
+               -- ; removed
+               -- 'Notes' blanked
+               -- Haplogroup names with a spave between the name and a '~' suffix removed
+               -- 'Freq. Mut. SNP in ' removed from Haplogroup names
+            - Outputs:
+              -- YDNA_SNPS.csv                               - Downloaded file with above alterations
+              -- YDNA_rsid_mutations-Build37.csv             - list of rsid names in file, e.g.
+                rs,numbers
+                rs1000104620,G->A
+                rs1000104755,C->A
+                ...
+              -- YDNA_rsid_muts-Build37.csv                  - list of rsids, with mutation and mutation name used, e.g.
+                rs,numbers,Name
+                rs1000104620,G->A,Z12464
+                rs1000104755,C->A,FGC1864
+                rs1000104755,C->A,Y2087
+                ...
+              -- YDNA_HAPGRP-Build37.SNP_Positions_used.txt  - list of Y chromosome, build 37, range expanded, positions used e.g.
+                10000350
+                10000477
+                10000888
+                ...
+              -- YDNA_HAPGRP_muts-Build37.csv                - list of muations use in a hybrid CSV and JSON format, eg.
+                A,"mutations":[{"posStart":"14814060","ancestral":"G","descendant":"C","type":"0","display":"G14814060C","label":"M171","alias":"CTS10804"},
+                               {"posStart":"21868776","ancestral":"A","descendant":"C","type":"0","display":"A21868776C","label":"M59","alias":"CTS1816"},
+                               {"posStart":"6851661","ancestral":"C","descendant":"T","type":"0","display":"C6851661T","label":"L1100","alias":"V1143"}]
+                  A0,"mutations":[{"posStart":"14001289","ancestral":"G", ...
+              -- YDNA_HAPGRP_muts-Build37.json               - above file in just JSON format, e.g.
+                [{"haploGrp":"A","mutations":[{"posStart":"14814060","ancestral":"G","descendant":"C","type":"0","display":"G14814060C","label":"M171","alias":"CTS10804"},
+                                              {"posStart":"21868776","ancestral":"A","descendant":"C","type":"0","display":"A21868776C","label":"M59","alias":"CTS1816"},
+                                              {"posStart":"6851661","ancestral":"C","descendant":"T","type":"0","display":"C6851661T","label":"L1100","alias":"V1143"}]}
+                ...
+                ]
+
+Notes 
+      - AncestryDNA v2 + 23AndMe v5 appear to use the Build 37 positions
+      - Mutation code types output
+       type 0     - transitions    - upper case (e.g., G->A)
+       type 3     - deletions      - “del”
+       type 4     - insertions     - "ins"
 
 **Usage**: refer to comments in the script
 
@@ -372,12 +436,18 @@ Purpose: Identify the duplicate RSID names in a genotype file.
 
 Identifies the mtDNA SNPS from a Ancestry, 23AndMe, FTDNA, ... , or combined file that are common with those of a mtDNA HaploTree, and those not in the tree.
 
-Usage:   mtDNA_file_SNPS_in_Haplotree.sh <rawfile1[.txt|.csv]> <mtDNA-tree-Build-##_SNP_Positions_used.txt>
+Usage:   mtDNA_file_SNPS_in_Haplotree.sh <rawfile1[.txt|.csv]> [<mtDNA-tree-Build-##_SNP_Positions_used.txt>]
 
-Purpose: lookup mtDNA calls from an autosomal DNA file and a published mtDNA haplotree"
+Purpose: lookup mtDNA calls from an autosomal DNA file and a published mtDNA haplotree
 
 defaults: 
-  rawfile = 
+  rawfile  = DNA1.txt
+  treefile = mtDNA-tree-Build-17.SNP_Positions_used.txt
+
+outputs: 
+  rawfile-mtDNA-snps = <rawfile1>_mtDNA           - mtDNA data as it appeared in the rawfile
+  rawfile-mtDNA-snps = <rawfile1>_mtDNA.SNPS.txt  - mtDNA SNP list from the rawfile
+  rawfile-mtDNA-snps = <rawfile1>_mtDNA.SNPS.csv  - mtDNA SNP calls from the rawfile
 
 **Usage**: refer to comments in the script, and see example output in the output folder
 
@@ -385,30 +455,44 @@ defaults:
 
 Identifies the YDNA SNPS from a Ancestry, 23AndMe, FTDNA, ... , or combined file that are common with those of a YDNA HaploTree, and those not in the tree.
 
-Usage:   YDNA_file_SNPS_in_Haplotree.sh <rawfile1[.txt|.csv]> <YDNA-tree-Build-##_SNP_Positions_used.txt>
+Usage:   YDNA_file_SNPS_in_Haplotree.sh <rawfile1[.txt|.csv]> [<YDNA-tree-Build-##_SNP_Positions_used.txt>]
 
-Purpose: Purpose: lookup YDNA calls between a autosomal DNA filesi and a published YDNA haplotree
-
-defaults: 
-  rawfile = 
-
-**Usage**: refer to comments in the script
-## mtDNA_file_SNPS_in_Haplotree.sh	
-
-Identifies the mtDNA SNPS from a Ancestry, 23AndMe, FTDNA, ... , or combined file that are common with those of a YDNA HaploTree, and those not in the tree.
-
-Usage:   mtDNA_file_SNPS_in_Haplotree.sh <rawfile1[.txt|.csv]> <mtDNA-tree-Build-##_SNP_Positions_used.txt>
-
-Purpose: Purpose: lookup YDNA calls between a autosomal DNA filesi and a published YDNA haplotree
+Purpose: lookup YDNA calls from an autosomal DNA file and a published YDNA haplotree
 
 defaults: 
-  rawfile = 
+  rawfile  = DNA1.txt
+  treefile = YDNA_HAPGRP-Build37.SNP_Positions_used.txt
+
+outputs: 
+  rawfile-YDNA-snps = <rawfile1>_YDNA           - YDNA data as it appeared in the rawfile
+  rawfile-YDNA-snps = <rawfile1>_YDNA.SNPS.txt  - YDNA SNP list from the rawfile
+  rawfile-YDNA-snps = <rawfile1>_YDNA.SNPS.csv  - YDNA SNP calls from the rawfile
+
+See: get_YDNA_rsid.sh for obtaining the SNP position list
 
 **Usage**: refer to comments in the script
 
 ## mtDNA-tree-to-all.sh	
 
 Covert one of the phylotree.org mtDNA Haplotree HTML pages into a series of txt, csv, and json files.	
+
+Extracting the mtDNA Haplogroup names as a text file, the unique mutations from the Revised Cambridge / Sapien sequence, and reformat the Webpage to both a CSV and JSON file
+Source page: https://www.phylotree.org/builds/mtDNA_tree_Build_17.zip
+
+Requires: GNU perl + GNU sed + GNE egrep
+
+Notes:
+ - Partially hacked together on MacOS 10.13.6 using the bundeled POSIX (BSD), rather than GNU utilites, but hit issues with the mixed ASCII, UTF-8 and HTML escape chars in the source HTML file, now tweaked so use the GNU variants of sed and egrep.
+ -- An abort with a count error will likley be down to an unexpected, escaped character in the HTML
+ - Novel convention - The Tree contains ANONYMOUS precursor mutations, to a set of one or more Haplogroups, that have no haplogroup label themselves eg.
+ -- Parent Haplogroup: H2a1 [ G951A  C16354T]
+    -- Precursor: [T146C!]
+       -- Child: H2a1n [G4659A]
+ To simplify downstream scripts the ANONYMOUS precursor mutation sets are given a hybrid label comprised of their parent and first chile with a "@" delimitor inserted, e.g. 
+   H2a1 to H2a1n precursor set will be labelled "H2a1@n" in the CSV and JSON output files.
+
+ - To make the JSON more readable there are numerous beautifiers, like:
+    python -m json.tool mtDNA-tree-Build-*.json
 
 Usage:   mtDNA-tree-to-csv.sh [<mtDNA-tree-Build-##.htm>]
 
@@ -420,6 +504,100 @@ defaults:
   output-Haplogroup-Names-file = mtDNA-tree-Build-17_Haplogroups.txt
   output-Haplogroup-Mutiaions  = mtDNA-tree-Build-17_mutations.csv
   output-mtDNA-Haplogroup-JSON = mtDNA-tree-Build-17.json
+
+**Usage**: refer to comments in the scrip, and see example output in the output folder
+
+## get_YDNA_trees.sh
+
+Purpose: Attempt to download and combine and convert the ISOGG YDNAi tree files from https://isogg.org/tree/index.html
+
+    - Outputs: 
+      - YDNA_ISOGG_Haplogrp_Tree.A.csv through YDNA_ISOGG_Haplogrp_Tree.T.csv and YDNA_ISOGG_Haplogrp_Tree.TRUK.csv  
+        -- downloaded Google sheets
+        -- with notes, comments and severl inconsistencies removed.
+      - YDNA_ISOGG_Haplogrp_Tree.haplogrps.txt       - list of YDNA haplogroup names use, e.g.d
+       Y
+       A0000
+       A000-T
+       A000
+       A000a
+       A000b
+       A000b1
+       A00-T
+       A00-T~
+       A00
+       ...
+      - YDNA_ISOGG_Haplogrp_Tree.TRUNK.csv           - haplogroup names and mutations indented to reflect tree structure, e.g.
+        Y,Root (Y-Adam),,,,,,,,,,,,,,,,,,,,,,
+        ,A0000,A8864,,,,,,,,,,,,,,,,,,,,,
+        ,A000-T,A8835,,,,,,,,,,,,,,,,,,,,,
+        ,,A000,A10805,,,,,,,,,,,,,,,,,,,,
+        ,,A00-T,PR2921,,,,,,,,,,,,,,,,,,,,
+        ,,,A00,AF6/L1284,,,,,,,,,,,,,,,,,,,
+        ,,,A0-T,L1085,,,,,,,,,,,,,,,,,,,
+        ,,,,A0,CTS2809.1/L991.1,,,,,,,,,,,,,,,,,,
+        ,,,,A1,P305,,,,,,,,,,,,,,,,,,
+        ,,,,,A1b,P108,,,,,,,,,,,,,,,,,
+        ...
+      - YDNA_ISOGG_Haplogrp_Tree.merged.csv          - haplogroup names indented to reflect tree structure, e.g.
+        Y
+        ,A0000
+        ,A000-T
+        ,,A000
+        ,,,A000a
+        ,,,A000b
+        ,,,,A000b1
+        ,,A00-T
+        ,,A00-T~
+        ,,,A00
+        ,,,,A00a
+        ,,,,A00b
+        ,,,,A00c
+        ,,,A0-T
+   - AncestryDNA v2 + 23AndMe v5 appear to use the Build 37 positions
+   - TAKES and age - as made up as I ran into each inconsistency in the file, and processed in a manner the issue could be coded around (Needs a rewrite in Perl / Python)
+
+ Notes:
+   - Source Google sheets have a growing collection of comments / annotations, along with some unhelpful / incosistent foratting, that needs to be removed, 
+     as will blow the script
+   - requires the outut of 'get_YDNA_rsid.sh'
+   - Output JSON mutation type:
+    type 0     - transitions    - upper case (e.g., G->A)
+    type 3     - deletions      - “del”
+    type 4     - insertions     - "ins"
+   - the 'YDNA-tree-to-all.sh' script will attempt to convert the output from this script and the 'get_YDNA_rsid.sh' script into a single JSON file
+
+**Usage**: refer to comments in the scrip, and see example output in the output folder
+
+## YDNA-tree-to-all.sh
+
+ Purpose: Attempt to combine and convert the ISOGG YDNA files from https://isogg.org/tree/index.html
+
+Note:
+   - Source Google sheets have a growing collection of comments / annotations, along with some unhelpful / incosistent foratting, that needs to be removed,
+      as will blow the script
+   - the 'get_YDNA_trees.sh' and 'get_YDNA_rsid.sh' scrpts will attempt to download, strip and merge the ISOGG sheets into something usable by this script.
+   - AncestryDNA v2 + 23AndMe v5 appear to use the Build 37 positions
+   - TAKES and age - as made up as I ran into each inconsistency in the file, and processed in a manner the issue could be coded around (Needs a rewrite in Perl / Python)
+
+   - Output 
+     -- Y-Haplogroup tree, build 37, in JSON format, e.g.
+     {"ISOGG-YDNA-BUILD-37":[
+       {"haplogroup":"Y","children":[
+         {"haplogroup":"A0000","mutations":[
+           {"posStart":"10016359","ancestral":"G","descendant":"A","type":"0","display":"G10016359A","label":"A8897","alias":"Y19091"},
+           {"posStart":"10042663","ancestral":"G","descendant":"C","type":"0","display":"G10042663C","label":"A8898","alias":"Y19091"},
+     ..
+         }]
+       }]
+     }
+
+Notes:
+   - requires the outut of 'get_YDNA_rsid.sh'
+   - Output JSON mutation types:
+    type 0     - transitions    - upper case (e.g., G->A)
+    type 3     - deletions      - “del”
+    type 4     - insertions     - "ins"
 
 **Usage**: refer to comments in the scrip, and see example output in the output folder
 

@@ -2,7 +2,7 @@
 # Extract the mtDNA Haplogroup names as a text file, the unique mutations from the Revised Cambridge / Sapien sequence, and reformat the Webpage to both a CSV and JSON file
 # Source page: https://www.phylotree.org/builds/mtDNA_tree_Build_17.zip
 #
-# Requires: perl +  GNU sed + GNE egrep
+# Requires: perl + GNU sed + GNE egrep
 #
 # Notes: 
 # - Partially hacked together on MacOS 10.13.6 using the bundeled POSIX (BSD), rather than GNU utilites, but hit issues with the mixed ASCII, UTF-8 and HTML escape chars in the source HTML file, now tweaked so use the GNU variants of sed and egrep.
@@ -11,12 +11,12 @@
 # -- Parent Haplogroup: H2a1 [ G951A  C16354T] 
 #    -- Precursor: [T146C!]   
 #       -- Child: H2a1n [G4659A]
-# To simplify downstream scripts the ANONYMOUS precursor mutation sets are given a hybrid label comprised of their parent and first chile with a "@" delimitor inserted, eg.  
-# H2a1 to H2a1n precursor set will be labelled "H2a1@n" in the CSV and JSON output files.
+# To simplify downstream scripts the ANONYMOUS precursor mutation sets are given a hybrid label comprised of their parent and first chile with a "@" delimitor inserted, e.g.
+#   H2a1 to H2a1n precursor set will be labelled "H2a1@n" in the CSV and JSON output files.
 #
-# - To make the JSON more rearable there are numerous beautifiers, like:
+# - To make the JSON more readable there are numerous beautifiers, like:
 #    python -m json.tool mtDNA-tree-Build-*.json
-# -
+#  
 # Author:  A.Robers 2023-07-05
 # License: GPLv3. See accompanying LICENSE file.
 # No warranty. You are responsible for your use of this program.

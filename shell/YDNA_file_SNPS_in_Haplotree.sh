@@ -8,7 +8,7 @@
 
 start=`date +%s`
 INFILE1="DNA1.txt"
-INFILE2="YDNA-tree-Build-XX.SNP_Positions_used.txt"
+INFILE2="YDNA_HAPGRP-Build37.SNP_Positions_used.txt"
 DELIM=""
 #----------------------------------------
 
@@ -82,6 +82,9 @@ then
   echo "  rawfile-YDNA-snps = <rawfile1>_YDNA           - YDNA data as it appeared in the rawfile"
   echo "  rawfile-YDNA-snps = <rawfile1>_YDNA.SNPS.txt  - YDNA SNP list from the rawfile"
   echo "  rawfile-YDNA-snps = <rawfile1>_YDNA.SNPS.csv  - YDNA SNP calls from the rawfile"
+  echo
+  echo "See: get_YDNA_rsid.sh for obtaining the SNP position list"
+  echo
 
   if [ $# -gt 0 -a ! -f "$1" ]
   then

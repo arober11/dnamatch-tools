@@ -25,7 +25,8 @@ then
   echo "Opions - [M|Missing]  - List SNPS in one file but not the other"
   echo
   echo "defaults: "
-  echo "  rawfile = $INFILE"
+  echo "  rawfile = $INFILE1"
+  echo "          = $INFILE2"
   echo
 
   if [ $# -gt 0 -a ! -f "$1" ]

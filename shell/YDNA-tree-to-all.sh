@@ -3,15 +3,30 @@
 # Purpose: Attempt to combine and convert the ISOGG YDNA files from https://isogg.org/tree/index.html
 # 
 # Note: 
-#   - Source Google sheets have a growing collection of comments / annotations, along with some unhelpful / incosistent foratting, that needs to be removed, as will blow the script
+#   - Source Google sheets have a growing collection of comments / annotations, along with some unhelpful / incosistent foratting, that needs to be removed,
+#      as will blow the script
 #   - the 'get_YDNA_trees.sh' and 'get_YDNA_rsid.sh' scrpts will attempt to download, strip and merge the ISOGG sheets into something usable by this script.
 #   - AncestryDNA v2 + 23AndMe v5 appear to use the Build 37 positions
 #   - TAKES and age - as made up as I ran into each inconsistency in the file, and processed in a manner the issue could be coded around (Needs a rewrite in Perl / Python)
 #
+#   - Output:
+#    --  Y-Haplogroup tree, build 37, in JSON format, e.g.
+#     {"ISOGG-YDNA-BUILD-37":[
+#       {"haplogroup":"Y","children":[
+#         {"haplogroup":"A0000","mutations":[
+#           {"posStart":"10016359","ancestral":"G","descendant":"A","type":"0","display":"G10016359A","label":"A8897","alias":"Y19091"},
+#           {"posStart":"10042663","ancestral":"G","descendant":"C","type":"0","display":"G10042663C","label":"A8898","alias":"Y19091"},
+#     ..
+#         }]
+#       }]
+#     }
+#
+# Notes:
+#   - requires the outut of 'get_YDNA_rsid.sh'
 #   - Output JSON mutation type:
-# type 0     - transitions    - upper case (e.g., G->A)
-# type 3     - deletions      - “del” 
-# type 4     - insertions     - "ins"
+#    type 0     - transitions    - upper case (e.g., G->A)
+#    type 3     - deletions      - “del” 
+#    type 4     - insertions     - "ins"
 #
 # Author:  A.Robers 2023-07-24
 # License: GPLv3. See accompanying LICENSE file.
@@ -164,7 +179,7 @@ then
     then
       # Stop Bash's array logic blowin up on encountering a SPACE
       cp $YDNA_TRUNK_MERGED  $YDNA_TRUNK_MERGED_TMP
-      $SED -i -e 's/[ ]+/§/g' $YDNA_TRUNK_MERGED 
+      $SED -i -e 's/ or /-/g' -e 's/[ ]+/_/g' -e 's/[[]([A-Za-z0-9_ ]*)[]]/#\1#/' $YDNA_TRUNK_MERGED 
       # Produce JSON file
       echo "{\"ISOGG-YDNA-BUILD-$BUILD\":[" > "$HAPLOS_JSON"
       to_JSON_array "START" "END" "0" "$HAPLOGRPS" "$MAX_DEPTH" "$YDNA_TRUNK_MERGED" "$HAPLOS_JSON" "$HAPLO_PAT" "$PROC_HAPLO_CNT"
@@ -172,7 +187,7 @@ then
       echo "Written: $PROC_HAPLO_CNT"
 
       #Tidy - remove blank lines, empty "children" arrays, and add some other new lines
-      $SED -i -e 's/§/ /g' -e '/^$/d' -e 's/\n//g' -e 's/,{2,}/,/g' -e 's/"children":[][]{2,}//g' -e 's/[[:space:],]+([]}])/\1/g' -e 's/]/]\n/g' -e 's/\{/\n{/g'  "$HAPLOS_JSON" 
+      $SED -i -e '/^$/d' -e 's/\n//g' -e 's/,{2,}/,/g' -e 's/"children":[][]{2,}//g' -e 's/[[:space:],]+([]}])/\1/g' -e 's/]/]\n/g' -e 's/\{/\n{/g'  "$HAPLOS_JSON" 
       echo "SED retrun code $?"
       echo "checking JSON with a: python -m json.tool YDNA_ISOGG_Haplogrp_Tree.json > /dev/null"
       python -m json.tool YDNA_ISOGG_Haplogrp_Tree.json > /dev/null

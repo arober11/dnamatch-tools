@@ -44,7 +44,8 @@ def script_usage():
   print('4: {} --help'.format(scrpt_name))
   print('')
   print('e.g.')
-  print('python ~/{} -s mtDNA_SNPS_combined.csv  -t mtDNA-tree-Build-17.json -n mt-MRCA(RSRS)'.format(scrpt_name))
+  print('python ~/{} -s mtDNA_SNPS_combined.csv  -t mtDNA-tree-Build-17.json -n "mt-MRCA(RSRS)"'.format(scrpt_name))
+  print('python ~/{} -snpfl some_YDNA.csv -treefl output/YDNA_ISOGG_Haplogrp_Tree.json -n "ISOGG-YDNA-BUILD-37"'.format(scrpt_name))
   print('')
 
 

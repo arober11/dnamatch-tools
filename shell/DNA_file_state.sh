@@ -30,7 +30,7 @@ function guess_deliminator {
 
 echo
 
-if [ $# -gt 2 ]
+if [ $# -eq 0 -o $# -eq 2 ]
 then
   echo "Usage:   `basename $0` <rawfile[.txt|.csv]> [,]"
   echo
