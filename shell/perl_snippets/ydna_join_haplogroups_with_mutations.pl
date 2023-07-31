@@ -55,7 +55,7 @@ foreach my $line (@lines) {
     }
   }
   if ( $missing == 0 ) {
-    $ln=~s/^(,*[^,]).*$/\1/;
+    $ln=~s/^(,*[^,]+).*$/\1/;
     $ln=~s/\n/,/;
     $line=$ln.$mutsLn;
     $updCnt++;
