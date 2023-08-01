@@ -45,7 +45,8 @@ def script_usage():
   print('')
   print('e.g.')
   print('python ~/{} -s mtDNA_SNPS_combined.csv  -t mtDNA-tree-Build-17.json -n "mt-MRCA(RSRS)"'.format(scrpt_name))
-  print('python ~/{} -snpfl some_YDNA.csv -treefl output/YDNA_ISOGG_Haplogrp_Tree.json -n "ISOGG-YDNA-BUILD-37"'.format(scrpt_name))
+  print('python3 ~/{} -snpfl some_YDNA.csv -treefl output/YDNA_ISOGG_Haplogrp_Tree.json -n "ISOGG-YDNA-BUILD-37"'.format(scrpt_name))
+  print('python3 ~/{} -p -s some_YDNA.SNPS.csv -t YDNA_MINI_Haplogrp_Tree.json -n MINI-YDNA-BUILD-37'.format(scrpt_name))
   print('')
 
 
@@ -67,24 +68,26 @@ def walk_tree(children, parent, mutOverrideDict):
       if 'children' in haplogroup:
         walk_tree(haplogroup['children'], haplogroup['haplogroup'], mutOverrideDict)
       haplo_status=0
-      for mutation in haplogroup["mutations"]:
-        call_status=0
-        if mutation['descendant']:
-          if mutation['posStart']:
-            if not (snpDict.get(mutation['posStart']) is None):
-              #print(mutation['posStart'],":",snpDict.get(mutation['posStart']),":",mutation['descendant'])
-              if snpDict.get(mutation['posStart']) != mutation['descendant']:
-                if (mutOverrideDict.get(mutation['posStart']) is None):
-                  call_status=3
+      if 'mutations' not in haplogroup:
+        haplo_status=2
+      else:
+        for mutation in haplogroup["mutations"]:
+          call_status=0
+          if mutation['descendant']:
+            if mutation['posStart']:
+              if not (snpDict.get(mutation['posStart']) is None):
+                if snpDict.get(mutation['posStart']) != mutation['descendant']:
+                  if (mutOverrideDict.get(mutation['posStart']) is None):
+                    call_status=3
+                  else:
+                    call_status=2
                 else:
-                  call_status=2
+                  # Store the match in the Override set
+                  mutOverrideDict.update({mutation['posStart']:mutation['descendant']})
               else:
-                # Store the match in the Override set
-                mutOverrideDict.update({mutation['posStart']:mutation['descendant']})
-            else:
-              call_status=1
-        if call_status > haplo_status:
-          haplo_status=call_status
+                call_status=1
+          if call_status > haplo_status:
+            haplo_status=call_status
       hapDict[haplogroup["haplogroup"]]=haplo_status
   return 
 
@@ -130,20 +133,21 @@ def main(argv):
    global also_possible
 
    try:
-      opts, args = getopt.getopt(argv,"hpt:s:n:",["treefl=","snpfl=","name=","help","possibles"])
+      opts, args = getopt.getopt(argv,"hpt:s:n:",["treefl","treefl=","snpfl","snpfl=","name","name=","help","possibles"])
    except getopt.GetoptError:
       script_usage()
       sys.exit(2)
    for opt, arg in opts:
-      if opt in ("-h","--help:"):
+      if opt in ("-h","--help"):
          script_usage()
          sys.exit()
-      elif opt in ("-t", "--treefl"):
+      elif opt in ("-t", "--treefl", "--treefl="):
          json_tree_filename = arg
-      elif opt in ("-s", "--snpfl"):
+      elif opt in ("-s", "--snpfl", "--snpfl="):
          snps_filename = arg
-      elif opt in ("-n", "--name"):
+      elif opt in ("-n", "--name", "--name="):
          tree_name = arg
+         print("ttttttt "+tree_name)
       elif opt in ("-p", "--possibles"):
          also_possible = 1
 
@@ -181,66 +185,66 @@ with open(snps_filename, 'r') as snps_file:
 
 # Opening JSON haplogroup tree file
 with open(json_tree_filename, 'r') as haplogroup_tree_file:
-  # Reading from json file
-  json_object = json.load(haplogroup_tree_file)
-  try:
-    walk_tree(json_object[tree_name], tree_name, {})
-  except: 
-    script_usage()
-    print('Error: Lookup failed')
-    quit(1)
+    # Reading from json file
+    json_object = json.load(haplogroup_tree_file)
+    try:
+      walk_tree(json_object[tree_name], tree_name, {})
+    except: 
+      #script_usage()
+      print('Error: Lookup failed')
+      quit(1)
 
-  print('')
-  print('Haplogroups the SNP set Satisfy, along with those that the are Possible, though the SNP file is lacking all the necessary calls.') 
-  print('')
-  print('Haplogroup = State')
-  good=0       # Status 0
-  uncertain=0  # Status 1
-  overridden=0 # Status 2
-  bad=0        # Stasus 3
-  total=0
-  resultsDict={}
-  for haplogroup in hapDict:
-    total+=1
-    status=hapDict[haplogroup]
-    if status < 3:
-      leafStatus=status
-      status=check_parents(haplogroup, status)
-      if status > 2:
-        bad+=1
-      else:
-        status=leafStatus
-        if status == 0:
-          good+=1
-          seartchStr=search_tree(haplogroup, json_object[tree_name]) + tree_name + ' - Satisfied'
-          store_longest_string(haplogroup, seartchStr)
-        elif status == 1:
-          uncertain+=1
-          if also_possible:
-            seartchStr=search_tree(haplogroup, json_object[tree_name]) + tree_name + ' - Possible'
-            store_longest_string(haplogroup, seartchStr)
-        elif status == 2:
-          overridden+=1
-    else:
+print('')
+print('Haplogroups the SNP set Satisfy, along with those that the are Possible, though the SNP file is lacking all the necessary calls.') 
+print('')
+print('Haplogroup = State')
+good=0       # Status 0
+uncertain=0  # Status 1
+overridden=0 # Status 2
+bad=0        # Stasus 3
+total=0
+resultsDict={}
+for haplogroup in hapDict:
+  total+=1
+  status=hapDict[haplogroup]
+  if status < 3:
+    leafStatus=status
+    status=check_parents(haplogroup, status)
+    if status > 2:
       bad+=1
+    else:
+      status=leafStatus
+      if status == 0:
+        good+=1
+        seartchStr=search_tree(haplogroup, json_object[tree_name]) + tree_name + ' - Satisfied'
+        store_longest_string(haplogroup, seartchStr)
+      elif status == 1:
+        uncertain+=1
+        if also_possible:
+          seartchStr=search_tree(haplogroup, json_object[tree_name]) + tree_name + ' - Possible'
+          store_longest_string(haplogroup, seartchStr)
+      elif status == 2:
+        overridden+=1
+  else:
+    bad+=1
 
-  if good > 0 or uncertain > 0:
-      print('======================================================')
-      print('Satisfied:')
-      for haplogroup in resultsDict:
-        if 'Satisfied' in resultsDict[haplogroup]:
-          print('')
-          print(resultsDict[haplogroup])
+if good > 0 or uncertain > 0:
+  print('======================================================')
+  print('Satisfied:')
+  for haplogroup in resultsDict:
+    if 'Satisfied' in resultsDict[haplogroup]:
       print('')
-      if also_possible:
-        print('------------------------------------------------------')
-        print('Possible:')
-        for haplogroup in resultsDict:
-          if 'Possible' in resultsDict[haplogroup]:
-            print('')
-            print(resultsDict[haplogroup])
-      print('======================================================')
-      print('')
+      print(resultsDict[haplogroup])
+  print('')
+  if also_possible:
+    print('------------------------------------------------------')
+    print('Possible:')
+    for haplogroup in resultsDict:
+      if 'Possible' in resultsDict[haplogroup]:
+        print('')
+        print(resultsDict[haplogroup])
+  print('======================================================')
+  print('')
 
-  print('Possibly Satisfied: {}  Missing Calls: {}  Overridden downstream: {}  Bad: {}  Total: {}'.format(good, uncertain, overridden, bad, total)) 
+print('Possibly Satisfied: {}  Missing Calls: {}  Overridden downstream: {}  Bad: {}  Total: {}'.format(good, uncertain, overridden, bad, total)) 
 quit()
