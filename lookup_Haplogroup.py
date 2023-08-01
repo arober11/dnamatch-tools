@@ -147,7 +147,6 @@ def main(argv):
          snps_filename = arg
       elif opt in ("-n", "--name", "--name="):
          tree_name = arg
-         print("ttttttt "+tree_name)
       elif opt in ("-p", "--possibles"):
          also_possible = 1
 
