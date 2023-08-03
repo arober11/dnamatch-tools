@@ -1,4 +1,7 @@
 # Convert a Haplogroup CSV file to JSON format
+#function to_JSON_array() {
+# perl $thisDir/perl_snippets/ydna_csv_to_json.pl "$1" "$2" "$3" "$4" "$5" "$6" "$7" "$8" "$9" 
+#}
 function to_JSON_array () {
   local LOC_FROM="$1"
   local LOC_TO="$2"
@@ -82,7 +85,13 @@ function to_JSON_array () {
     then
       LOC_P4="${LOC_toFromArray[$LOC_NEXT_POS]}"
     fi
+#if [ $TST_DEPTH -gt $THIS_DEPTH ]
+#then
+#((THIS_DEPTH+=1))
+#echo "$TST_DEPTH -gt $THIS_DEPTH"
     to_JSON_array "${LOC_toFromArray[$LOC_i]}" "$LOC_P4" "$LOC_COL2" "$HAPLOGRPS" "$MAX_DEPTH" "$FILE_CSV" "$HAPLOS_JSON" "$HAPLO_PAT" "$PROC_HAPLO_CNT"
+#fi
+#echo "Backup:  $TST_DEPTH -gt $THIS_DEPTH"
     echo -n "}," >> "$HAPLOS_JSON"
     ((LOC_i+=1))
   done

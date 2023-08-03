@@ -75,17 +75,18 @@ def walk_tree(children, parent, mutOverrideDict):
           call_status=0
           if mutation['descendant']:
             if mutation['posStart']:
-              if not (snpDict.get(mutation['posStart']) is None):
-                if snpDict.get(mutation['posStart']) != mutation['descendant']:
-                  if (mutOverrideDict.get(mutation['posStart']) is None):
-                    call_status=3
+              if not (snpDict.get(mutation['posStart']) is None):                       # IF mutation in the SNPs dictionary
+                #print (haplogroup['haplogroup'],mutation['label'],":",mutation['posStart'], "SNPs:",snpDict.get(mutation['posStart'],"\n\n\n")," Haplo:",mutation['descendant'])
+                if ((snpDict.get(mutation['posStart']) != mutation['descendant']) and (snpDict.get(mutation['posStart']) != "0" )):
+                                                                                        #  IF mutation does NOT match SNPs dictionary value and not 0
+                  if (mutOverrideDict.get(mutation['posStart']) is None):               #    IF NOT overridden downstream 
+                    call_status=3                                                       #    THEN  3 = ERROR
                   else:
-                    call_status=2
+                    call_status=2                                                       #    ELSE  2 = Overridden downstream
                 else:
-                  # Store the match in the Override set
-                  mutOverrideDict.update({mutation['posStart']:mutation['descendant']})
+                  mutOverrideDict.update({mutation['posStart']:mutation['descendant']}) #    ELSE 0 = Store the match in the Override set
               else:
-                call_status=1
+                call_status=1                                                           #  ELSE 1 = MISSING
           if call_status > haplo_status:
             haplo_status=call_status
       hapDict[haplogroup["haplogroup"]]=haplo_status
