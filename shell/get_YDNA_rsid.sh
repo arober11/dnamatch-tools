@@ -122,7 +122,7 @@ else
 fi
 
 # Merge the mutations for a haplogroup into a single line
-perl -e 'my @lines = `cat $ENV{YDNA_HAPGRP_MUTS}`; my $haploGrp="*"; my $thisHaploGrp; my $cnt=0; foreach my $ln (@lines) { $cnt++; $thisHaploGrp=$ln; $thisHaploGrp=~s/^([^,]+),.*/\1/; chop $thisHaploGrp; chop $ln; chop $ln; $ln=~s/.$/,\"optional\":\"/; if ($haploGrp eq "*"){ print "$ln"."N\"\}"; } else { if ($thisHaploGrp ne $haploGrp) { print "]\n"."$ln"."N\"\}"; } else { $ln =~ s/^[^{]*({.*)/\1Y"}/; print ",$ln"; } } $haploGrp=$thisHaploGrp; } print "]\n";' > $YDNA_HAPGRP_MUTS_TMP
+perl -e 'my @lines = `cat $ENV{YDNA_HAPGRP_MUTS}`; my $haploGrp="*"; my $thisHaploGrp; my $opt; my $cnt=0; foreach my $ln (@lines) { $cnt++; $thisHaploGrp=$ln; $thisHaploGrp=~s/^([^,]+),.*/\1/; if ($thisHaploGrp =~ m/~$/) { $opt="Y"; } else { $opt="N"; } chop $thisHaploGrp; chop $ln; chop $ln; $ln=~s/.$/,\"optional\":\"/; if ($haploGrp eq "*"){ print "$ln$opt\"\}"; } else { if ($thisHaploGrp ne $haploGrp) { print "]\n"."$ln$opt\"\}"; } else { $ln =~ s/^[^{]*({.*)/\1Y"}/; print ",$ln"; } } $haploGrp=$thisHaploGrp; } print "]\n";' > $YDNA_HAPGRP_MUTS_TMP
 
 mv $YDNA_HAPGRP_MUTS_TMP $YDNA_HAPGRP_MUTS
 echo "Written: $YDNA_HAPGRP_MUTS"
