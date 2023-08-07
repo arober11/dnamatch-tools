@@ -1,0 +1,1140 @@
+{"PLAY-YDNA-FILE":[
+{"haplogroup":"HomoErectus","mutations":[{"posStart":"23454455","ancestral":"T","descendant":"G","type":"0","display":"T23454455G","label":"HomoErectus","alias":"A0000; A000-T; hg38:21292569-T-G","optional":"N"}]
+,"children":[{"haplogroup":"Heidelbergensis","mutations":[{"posStart":"7628234","ancestral":"A","descendant":"G","type":"0","display":"A7628234G","label":"Heidelbergensis","alias":"A8835","optional":"N"}]
+,"children":[{"haplogroup":"YAdam","mutations":[{"posStart":"2712462","ancestral":"A","descendant":"G","type":"0","display":"A2712462G","label":"YAdam","alias":"hg38:2844421-A-G","optional":"N"}]
+,"children":[{"haplogroup":"A-L1085","mutations":[{"posStart":"2790726","ancestral":"T","descendant":"C","type":"0","display":"T2790726C","label":"A-L1085","alias":"A0-T hg38:2922685-T-C","optional":"N"}]
+,"children":[{"haplogroup":"A-M31","mutations":[{"posStart":"21739754","ancestral":"G","descendant":"C","type":"0","display":"G21739754C","label":"A-M31","alias":"A1a","rsid":"rs369315948","optional":"N"}]
+,"children":[{"haplogroup":"A-Z10338","mutations":[{"posStart":"8804264","ancestral":"T","descendant":"C","type":"0","display":"T8804264C","label":"A-Z10338","alias":"Z10338","rsid":"rs777107595","optional":"N"}]
+,"children":[{"haplogroup":"A-Y32411","mutations":[{"posStart":"17064741","ancestral":"G","descendant":"A","type":"0","display":"G17064741A","label":"A-Y32411","alias":"Y32411","rsid":"rs772849256","optional":"N"}]
+}
+,{"haplogroup":"A-BY813","mutations":[{"posStart":"8505455","ancestral":"G","descendant":"A","type":"0","display":"G8505455A","label":"A-BY813","alias":"BY813; V2159; Z38530","rsid":"rs560597127","optional":"N"}]
+}
+]}
+]}
+,{"haplogroup":"A-P305","mutations":[{"posStart":"2710154","ancestral":"A","descendant":"G","type":"0","display":"A2710154G","label":"A-P305","alias":"hg38:2842113-A-G A1rs72625368","rsid":"rs72625368","optional":"N"}]
+,"children":[{"haplogroup":"A-P108","mutations":[{"posStart":"15426248","ancestral":"C","descendant":"T","type":"0","display":"C15426248T","label":"A-P108","alias":"A1b; P108","rsid":"rs761539052","optional":"N"}]
+,"children":[{"haplogroup":"BT-L413","mutations":[{"posStart":"6932831","ancestral":"G","descendant":"A","type":"0","display":"G6932831A","label":"BT-L413","alias":"PF1409; V31; BT; L413","rsid":"rs192939307","optional":"N"}]
+,"children":[{"haplogroup":"CT-M168","mutations":[{"posStart":"14813991","ancestral":"C","descendant":"T","type":"0","display":"C14813991T","label":"CT-M168","alias":"CF; PF1416; M168; CT; CF","rsid":"rs2032595","optional":"N"}]
+,"children":[{"haplogroup":"CF-P143","mutations":[{"posStart":"14197867","ancestral":"G","descendant":"A","type":"0","display":"G14197867A","label":"CF-P143","alias":"CF; P143; PF2587","rsid":"rs4141886","optional":"N"}]
+,"children":[{"haplogroup":"GHIJK-F1329","mutations":[{"posStart":"8589031","ancestral":"C","descendant":"T","type":"0","display":"C8589031T","label":"GHIJK-F1329","alias":"G; GHIJK; M3658; PF2622; YSC0001299; F1329; V2308; F-F1329","rsid":"rs9786482","optional":"N"}]
+,"children":[{"haplogroup":"HIJK-M578","mutations":[{"posStart":"7202703","ancestral":"C","descendant":"T","type":"0","display":"C7202703T","label":"HIJK-M578","alias":"HIJ; H; H~; M578; PF3494; S6378","rsid":"rs73614810","optional":"N"}]
+,"children":[{"haplogroup":"IJK-M523","mutations":[{"posStart":"6753519","ancestral":"A","descendant":"G","type":"0","display":"A6753519G","label":"IJK-M523","alias":"IJ; K; L15; PF3492; S137","rsid":"rs9786139","optional":"N"}]
+,"children":[{"haplogroup":"K-M9","mutations":[{"posStart":"21730257","ancestral":"C","descendant":"G","type":"0","display":"C21730257G","label":"K-M9","alias":"LT ; K1; K; K2; PF5506","rsid":"rs3900","optional":"N"}]
+,"children":[{"haplogroup":"K-M526","mutations":[{"posStart":"23550924","ancestral":"A","descendant":"C","type":"0","display":"A23550924C","label":"K-M526","alias":"NO; K2a; K2b; K2c; K2d; PF5979","rsid":"rs2033003","optional":"N"}]
+,"children":[{"haplogroup":"K-M1221","mutations":[{"posStart":"16222561","ancestral":"C","descendant":"T","type":"0","display":"C16222561T","label":"K-M1221","alias":"K2b1; P331; PF5911","rsid":"rs9785994","optional":"N"}]
+,"children":[{"haplogroup":"P-PF5850","mutations":[{"posStart":"4721971","ancestral":"T","descendant":"A","type":"0","display":"T4721971A","label":"P-PF5850","alias":"P; K2b2","rsid":"rs74550416","optional":"N"}]
+,"children":[{"haplogroup":"P-P295","mutations":[{"posStart":"7963031","ancestral":"T","descendant":"G","type":"0","display":"T7963031G","label":"P-P295","alias":"P1; K2b2a; PF5866; S8; P295","rsid":"rs895530","optional":"N"}]
+,"children":[{"haplogroup":"P-M1254","mutations":[{"posStart":"21121986","ancestral":"A","descendant":"T","type":"0","display":"A21121986T","label":"P-M1254","alias":"P1~; K2b2a~; PF6062","rsid":"rs66540167","optional":"N"}]
+,"children":[{"haplogroup":"P-P337","mutations":[{"posStart":"14898094","ancestral":"A","descendant":"G","type":"0","display":"A14898094G","label":"P-P337","alias":"P1~; K2b2a~; F1857; Page83; PF5901; P337","rsid":"rs13305774","optional":"N"}]
+,"children":[{"haplogroup":"P-P284","mutations":[{"posStart":"22072340","ancestral":"C","descendant":"G","type":"0","display":"C22072340G","label":"P-P284","alias":"P1~; K2b2a~","rsid":"rs4116821","optional":"N"}]
+,"children":[{"haplogroup":"P-P226","mutations":[{"posStart":"8845380","ancestral":"C","descendant":"T","type":"0","display":"C8845380T","label":"P-P226","alias":"Q; PF5879","rsid":"rs17250992","optional":"N"}]
+,"children":[{"haplogroup":"R-M207","mutations":[{"posStart":"15581983","ancestral":"A","descendant":"G","type":"0","display":"A15581983G","label":"R-M207","alias":"R; Page37; UTY2","rsid":"rs2032658","optional":"N"}]
+,"children":[{"haplogroup":"R-Y482","mutations":[{"posStart":"18017528","ancestral":"G","descendant":"T","type":"0","display":"G18017528T","label":"R-Y482","alias":"Y482; F459; FGC197; SK2005; V7034; PF6056","rsid":"rs9786821","optional":"N"}]
+,"children":[{"haplogroup":"R-M173","mutations":[{"posStart":"15026424","ancestral":"A","descendant":"C","type":"0","display":"A15026424C","label":"R-M173","alias":"R1a; R1b; P241; Page29","rsid":"rs2032624","optional":"N"}]
+,"children":[{"haplogroup":"R-M420","mutations":[{"posStart":"23473201","ancestral":"T","descendant":"A","type":"0","display":"T23473201A","label":"R-M420","alias":"R1a1; R1a2~; L146","rsid":"rs17250535","optional":"N"}]
+,"children":[{"haplogroup":"R-M459","mutations":[{"posStart":"6906074","ancestral":"A","descendant":"G","type":"0","display":"A6906074G","label":"R-M459","alias":"R1a1b~; PF6235","rsid":"rs17316227","optional":"N"}]
+,"children":[{"haplogroup":"R-CTS8636","mutations":[{"posStart":"18121269","ancestral":"G","descendant":"A","type":"0","display":"G18121269A","label":"R-CTS8636","alias":"R1a1a; R1a1b~; CTS8636; M735","rsid":"rs552140509","optional":"N"}]
+,"children":[{"haplogroup":"R-M198","mutations":[{"posStart":"15030752","ancestral":"C","descendant":"T","type":"0","display":"C15030752T","label":"R-M198","alias":"R1a1a1; PF6238","rsid":"rs2020857","optional":"N"}]
+,"children":[{"haplogroup":"R-M417","mutations":[{"posStart":"8533735","ancestral":"G","descendant":"A","type":"0","display":"G8533735A","label":"R-M417","alias":"","rsid":"rs17316771","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-YP1306","mutations":[{"posStart":"21593629","ancestral":"T","descendant":"C","type":"0","display":"T21593629C","label":"R-YP1306","alias":"","rsid":"rs974386287","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-YP1301","mutations":[{"posStart":"18807196","ancestral":"T","descendant":"C","type":"0","display":"T18807196C","label":"R-YP1301","alias":"","rsid":"rs994728357","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-YP4141","mutations":[{"posStart":"7272798","ancestral":"C","descendant":"T","type":"0","display":"C7272798T","label":"R-YP4141","alias":"Z35499.1; Z35499.2; YP4141.1; YP4141.2","rsid":"rs900664007","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-M343","mutations":[{"posStart":"2887824","ancestral":"C","descendant":"A","type":"0","display":"C2887824A","label":"R-M343","alias":"R1b1; PF6242","rsid":"rs9786184","optional":"N"}]
+,"children":[{"haplogroup":"R-L754","mutations":[{"posStart":"22889018","ancestral":"G","descendant":"A","type":"0","display":"G22889018A","label":"R-L754","alias":"R1b; PF6269; YSC0000022; L754","rsid":"rs7893073","optional":"N"}]
+,"children":[{"haplogroup":"R-L389","mutations":[{"posStart":"28733101","ancestral":"C","descendant":"G","type":"0","display":"C28733101G","label":"R-L389","alias":"R1b1a1; PF6531","rsid":"rs1358368","optional":"N"}]
+,"children":[{"haplogroup":"R-P297","mutations":[{"posStart":"18656508","ancestral":"G","descendant":"C","type":"0","display":"G18656508C","label":"R-P297","alias":"R1b1a1a; R1b1a1b; PF6398","rsid":"rs9785702","optional":"N"}]
+,"children":[{"haplogroup":"R-M269","mutations":[{"posStart":"22739367","ancestral":"T","descendant":"C","type":"0","display":"T22739367C","label":"R-M269","alias":"R1b1a1a2; R1b1a1b1; R1b1a1b2a; R1b1a1b2b; PF6517; MF53029","rsid":"rs9786153","optional":"N"}]
+,"children":[{"haplogroup":"R-L23","mutations":[{"posStart":"6753511","ancestral":"G","descendant":"A","type":"0","display":"G6753511A","label":"R-L23","alias":"R1b1a1b1a; PF6534; S141; L23","rsid":"rs9785971","optional":"N"}]
+,"children":[{"haplogroup":"R-L51","mutations":[{"posStart":"8502236","ancestral":"G","descendant":"A","type":"0","display":"G8502236A","label":"R-L51","alias":"M412; PF6536; S167","rsid":"rs9786140","optional":"N"}]
+,"children":[{"haplogroup":"R-P310","mutations":[{"posStart":"18907236","ancestral":"A","descendant":"C","type":"0","display":"A18907236C","label":"R-P310","alias":"PF6546; S129; P310","rsid":"rs9786283","optional":"N"}]
+,"children":[{"haplogroup":"R-PF6538","mutations":[{"posStart":"17697807","ancestral":"T","descendant":"C","type":"0","display":"T17697807C","label":"R-PF6538","alias":"R1b1a1b1a1a","rsid":"rs55975037","optional":"N"}]
+,"children":[{"haplogroup":"R-Y215377","mutations":[{"posStart":"22755622","ancestral":"G","descendant":"A","type":"0","display":"G22755622A","label":"R-Y215377","alias":"Y215377","rsid":"rs1259192814","optional":"N"}]
+}
+,{"haplogroup":"R-L151","mutations":[{"posStart":"16492547","ancestral":"C","descendant":"T","type":"0","display":"C16492547T","label":"R-L151","alias":"PF6542; R1b1a1b1a1a2; R1b1a1b1a1a1","rsid":"rs2082033","optional":"N"}]
+,"children":[{"haplogroup":"R-A8053","mutations":[{"posStart":"22849550","ancestral":"G","descendant":"T","type":"0","display":"G22849550T","label":"R-A8053","alias":"A8053","optional":"N"}]
+,"children":[{"haplogroup":"R-FGC37100","mutations":[{"posStart":"17340220","ancestral":"C","descendant":"G","type":"0","display":"C17340220G","label":"R-FGC37100","alias":"FGC37100","rsid":"rs34104961","optional":"N"}]
+,"children":[{"haplogroup":"R-FT91873","mutations":[{"posStart":"","ancestral":"C","descendant":"G","type":"0","display":"CG","label":"R-FT91873","alias":"FT91873","rsid":"rs937142816","optional":"N"}]
+}
+,{"haplogroup":"R-FGC37083","mutations":[{"posStart":"6764156","ancestral":"T","descendant":"C","type":"0","display":"T6764156C","label":"R-FGC37083","alias":"FGC37083","rsid":"rs80018729","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-BY148526","mutations":[{"posStart":"23863547","ancestral":"G","descendant":"A","type":"0","display":"G23863547A","label":"R-BY148526","alias":"BY148526","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-S1194","mutations":[{"posStart":"14668524","ancestral":"A","descendant":"G","type":"0","display":"A14668524G","label":"R-S1194","alias":"S1194; S6870; AM01876; B310","rsid":"rs761780609","optional":"N"}]
+}
+,{"haplogroup":"R-P312","mutations":[{"posStart":"22157311","ancestral":"C","descendant":"A","type":"0","display":"C22157311A","label":"R-P312","alias":"R1b1a1b1a1a2c; R1b1a1b1a1a2e; S116; P312; PF6547; MF52579","rsid":"rs34276300","optional":"N"}]
+,"children":[{"haplogroup":"R-Z290","mutations":[{"posStart":"28632468","ancestral":"G","descendant":"C","type":"0","display":"G28632468C","label":"R-Z290","alias":"R1b1a1b1a1a2c1; S461; Z290","rsid":"rs146019383","optional":"N"}]
+,"children":[{"haplogroup":"R-L21","mutations":[{"posStart":"15654428","ancestral":"C","descendant":"G","type":"0","display":"C15654428G","label":"R-L21","alias":"R1b1a1b1a1a2c1c; M529; S145; L21","rsid":"rs11799226","optional":"N"}]
+,"children":[{"haplogroup":"R-S552","mutations":[{"posStart":"4619767","ancestral":"C","descendant":"A","type":"0","display":"C4619767A","label":"R-S552","alias":"R1b1a1b1a1a2c1d; R1b1a1b1a1a2c1b; S552; FGC3218; Y2598","rsid":"rs150868296","optional":"N"}]
+,"children":[{"haplogroup":"R-DF13","mutations":[{"posStart":"2836431","ancestral":"A","descendant":"C","type":"0","display":"A2836431C","label":"R-DF13","alias":"R1b1a1b1a1a2c1a2; R1b1a1b1a1a2c1a3; R1b1a1b1a1a2c1a4; R1b1a1b1a1a2c1a6; N1a1a1a1a1a1a2a1~; CTS241; S521; DF13","rsid":"rs373989227","optional":"N"}]
+,"children":[{"haplogroup":"R-ZZ10_2","mutations":[{"posStart":"20388112","ancestral":"G","descendant":"C","type":"0","display":"G20388112C","label":"R-ZZ10_2","alias":"Z110_2","optional":"N"}]
+}
+,{"haplogroup":"R-ZZ10","mutations":[{"posStart":"19791668","ancestral":"C","descendant":"G","type":"0","display":"C19791668G","label":"R-ZZ10","alias":"R1b1a1b1a1a2c1a4e~; ZZ10^^; ZZ10_1; ZZ10","rsid":"rs1161022336","optional":"N"}]
+,"children":[{"haplogroup":"R-Z253","mutations":[{"posStart":"7193034","ancestral":"G","descendant":"A","type":"0","display":"G7193034A","label":"R-Z253","alias":"R1b1a1b1a1a2c1a4b2; R1b1a1b1a1a2c1a4b3~; R1b1a1b1a1a2c1a4b4; R1b1a1b1a1a2c1a6; S218","rsid":"rs768946531","optional":"N"}]
+,"children":[{"haplogroup":"R-Z2534","mutations":[{"posStart":"19033817","ancestral":"T","descendant":"C","type":"0","display":"T19033817C","label":"R-Z2534","alias":"R1b1a1b1a1a2c1a4b2a; Z2534; S868","rsid":"rs771470152","optional":"N"}]
+,"children":[{"haplogroup":"R-ZZ5.2","mutations":[{"posStart":"18468246","ancestral":"A","descendant":"G","type":"0","display":"A18468246G","label":"R-ZZ5.2","alias":"ZZ5_2","optional":"N"}]
+}
+,{"haplogroup":"R-ZZ5","mutations":[{"posStart":"18340852","ancestral":"T","descendant":"C","type":"0","display":"T18340852C","label":"R-ZZ5","alias":"R1b1a1b1a1a2c1a4b2c; ZZ5; ZZ5_1","rsid":"rs1433063178","optional":"N"}]
+,"children":[{"haplogroup":"R-Z2195","mutations":[{"posStart":"18167186","ancestral":"G","descendant":"C","type":"0","display":"G18167186C","label":"R-Z2195","alias":"R1b1a1b1a1a2c1a4b2d; S934","rsid":"rs987415190","optional":"N"}]
+,"children":[{"haplogroup":"R-Z2189","mutations":[{"posStart":"8548391","ancestral":"C","descendant":"T","type":"0","display":"C8548391T","label":"R-Z2189","alias":"R1b1a1b1a1a2c1a4b2d1; R1b1a1b1a1a2c1a4b2d2; V2227; Z2189","rsid":"rs544978520","optional":"N"}]
+,"children":[{"haplogroup":"R-BY279","mutations":[{"posStart":"6960552","ancestral":"T","descendant":"C","type":"0","display":"T6960552C","label":"R-BY279","alias":"R1b1a1b1a1a2c1a4b2d; E1b1a1a1a2a1a3b1a12; BY279","rsid":"rs912085836","optional":"N"}]
+,"children":[{"haplogroup":"R-Z21893","mutations":[{"posStart":"23997294","ancestral":"C","descendant":"T","type":"0","display":"C23997294T","label":"R-Z21893","alias":"Z21893.2","optional":"N"}]
+,"children":[{"haplogroup":"R-BY177985","mutations":[{"posStart":"6780371","ancestral":"C","descendant":"T","type":"0","display":"C6780371T","label":"R-BY177985","alias":"BY177985.1; BY177985","rsid":"rs996724158","optional":"N"}]
+}
+,{"haplogroup":"R-BY19647","mutations":[{"posStart":"19564451","ancestral":"C","descendant":"T","type":"0","display":"C19564451T","label":"R-BY19647","alias":"BY19647","rsid":"rs1053035572","optional":"N"}]
+,"children":[{"haplogroup":"R-BY410","mutations":[{"posStart":"8320669","ancestral":"T","descendant":"A","type":"0","display":"T8320669A","label":"R-BY410","alias":"BY410","rsid":"rs992189335","optional":"N"}]
+,"children":[{"haplogroup":"R-BY19650","mutations":[{"posStart":"17274795","ancestral":"A","descendant":"G","type":"0","display":"A17274795G","label":"R-BY19650","alias":"BY19650","optional":"N"}]
+}
+,{"haplogroup":"R-BY33456","mutations":[{"posStart":"14369078","ancestral":"G","descendant":"A","type":"0","display":"G14369078A","label":"R-BY33456","alias":"BY33456.1; BY33456","optional":"N"}]
+,"children":[{"haplogroup":"R-BY24708","mutations":[{"posStart":"22911593","ancestral":"G","descendant":"T","type":"0","display":"G22911593T","label":"R-BY24708","alias":"BY24708","optional":"N"}]
+,"children":[{"haplogroup":"R-BY110455","mutations":[{"posStart":"16831563","ancestral":"C","descendant":"T","type":"0","display":"C16831563T","label":"R-BY110455","alias":"BY110455","optional":"N"}]
+,"children":[{"haplogroup":"R-BY131735","mutations":[{"posStart":"21290652","ancestral":"A","descendant":"G","type":"0","display":"A21290652G","label":"R-BY131735","alias":"BY131735","optional":"N"}]
+}
+,{"haplogroup":"R-FTA17462","mutations":[{"posStart":"7193380","ancestral":"G","descendant":"A","type":"0","display":"G7193380A","label":"R-FTA17462","alias":"FTA17462","optional":"N"}]
+,"children":[{"haplogroup":"R-FTA20131","mutations":[{"posStart":"21187242","ancestral":"A","descendant":"G","type":"0","display":"A21187242G","label":"R-FTA20131","alias":"FTA20131","optional":"N"}]
+}
+]}
+]}
+]}
+]}
+]}
+,{"haplogroup":"R-V4098","mutations":[{"posStart":"19414213","ancestral":"G","descendant":"A","type":"0","display":"G19414213A","label":"R-V4098","alias":"V4098","rsid":"rs541222607","optional":"N"}]
+,"children":[{"haplogroup":"R-FT192221","mutations":[{"posStart":"6845220","ancestral":"T","descendant":"A","type":"0","display":"T6845220A","label":"R-FT192221","alias":"FT192221","optional":"N"}]
+}
+,{"haplogroup":"R-FT281817","mutations":[{"posStart":"15059885","ancestral":"G","descendant":"Y","type":"0","display":"G15059885Y","label":"R-FT281817","alias":"FT281817","optional":"N"}]
+}
+]}
+]}
+]}
+,{"haplogroup":"R-BY106925","mutations":[{"posStart":"16326262","ancestral":"A","descendant":"G","type":"0","display":"A16326262G","label":"R-BY106925","alias":"BY106925","rsid":"rs992055744","optional":"N"}]
+,"children":[{"haplogroup":"R-BY72007","mutations":[{"posStart":"8363147","ancestral":"A","descendant":"T","type":"0","display":"A8363147T","label":"R-BY72007","alias":"BY72007","rsid":"rs945619750","optional":"N"}]
+,"children":[{"haplogroup":"R-BY76093","mutations":[{"posStart":"8818019","ancestral":"T","descendant":"A","type":"0","display":"T8818019A","label":"R-BY76093","alias":"BY76093","optional":"N"}]
+}
+]}
+]}
+]}
+,{"haplogroup":"R-DF73","mutations":[{"posStart":"7205902","ancestral":"C","descendant":"A","type":"0","display":"C7205902A","label":"R-DF73","alias":"S923","rsid":"rs759593444","optional":"N"}]
+,"children":[{"haplogroup":"R-S933","mutations":[{"posStart":"17529419","ancestral":"G","descendant":"A","type":"0","display":"G17529419A","label":"R-S933","alias":"S933","rsid":"rs778023338","optional":"N"}]
+,"children":[{"haplogroup":"R-Z17259","mutations":[{"posStart":"8102892","ancestral":"A","descendant":"G","type":"0","display":"A8102892G","label":"R-Z17259","alias":"Z17259.2","rsid":"rs756718526","optional":"N"}]
+,"children":[{"haplogroup":"R-FT235917","mutations":[{"posStart":"7037172","ancestral":"C","descendant":"T","type":"0","display":"C7037172T","label":"R-FT235917","alias":"FT235917","rsid":"rs769406265","optional":"N"}]
+}
+,{"haplogroup":"R-Z29749","mutations":[{"posStart":"6404562","ancestral":"G","descendant":"T","type":"0","display":"G6404562T","label":"R-Z29749","alias":"Z29749","optional":"N"}]
+,"children":[{"haplogroup":"R-BY81253","mutations":[{"posStart":"9827354","ancestral":"G","descendant":"A","type":"0","display":"G9827354A","label":"R-BY81253","alias":"BY81253","rsid":"rs1015522261","optional":"N"}]
+,"children":[{"haplogroup":"R-BY129715","mutations":[{"posStart":"19513980","ancestral":"A","descendant":"G","type":"0","display":"A19513980G","label":"R-BY129715","alias":"BY129715","rsid":"rs907700706","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-Z29748","mutations":[{"posStart":"24439813","ancestral":"T","descendant":"C","type":"0","display":"T24439813C","label":"R-Z29748","alias":"Z29748","rsid":"rs748782985","optional":"N"}]
+,"children":[{"haplogroup":"R-FT22072","mutations":[{"posStart":"15484955","ancestral":"C","descendant":"T","type":"0","display":"C15484955T","label":"R-FT22072","alias":"FT22072","optional":"N"}]
+}
+,{"haplogroup":"R-PH4912","mutations":[{"posStart":"21728583","ancestral":"A","descendant":"G","type":"0","display":"A21728583G","label":"R-PH4912","alias":"PH4912","rsid":"rs772760778","optional":"N"}]
+,"children":[{"haplogroup":"R-FT301280","mutations":[{"posStart":"15907283","ancestral":"A","descendant":"G","type":"0","display":"A15907283G","label":"R-FT301280","alias":"FT301280","optional":"N"}]
+,"children":[{"haplogroup":"R-FT300239","mutations":[{"posStart":"7747224","ancestral":"T","descendant":"C","type":"0","display":"T7747224C","label":"R-FT300239","alias":"FT300239","optional":"N"}]
+}
+]}
+]}
+]}
+]}
+]}
+,{"haplogroup":"R-Z2204","mutations":[{"posStart":"23096936","ancestral":"C","descendant":"A","type":"0","display":"C23096936A","label":"R-Z2204","alias":"Z2204; S945","rsid":"rs751488860","optional":"N"}]
+,"children":[{"haplogroup":"R-Z29757","mutations":[{"posStart":"28650732","ancestral":"C","descendant":"A","type":"0","display":"C28650732A","label":"R-Z29757","alias":"Z29757","rsid":"rs751236850","optional":"N"}]
+}
+]}
+]}
+,{"haplogroup":"R-FT274264","mutations":[{"posStart":"16038353","ancestral":"A","descendant":"G","type":"0","display":"A16038353G","label":"R-FT274264","alias":"FT274264","optional":"N"}]
+}
+,{"haplogroup":"R-FTA61163","mutations":[{"posStart":"18049454","ancestral":"T","descendant":"C","type":"0","display":"T18049454C","label":"R-FTA61163","alias":"FTA61163","optional":"N"}]
+}
+]}
+]}
+,{"haplogroup":"R-BY61036","mutations":[{"posStart":"6743767","ancestral":"C","descendant":"T","type":"0","display":"C6743767T","label":"R-BY61036","alias":"R1b1a1b2a2b1; BY61036","rsid":"rs911484518","optional":"N"}]
+,"children":[{"haplogroup":"R-BY69181","mutations":[{"posStart":"7979825","ancestral":"C","descendant":"T","type":"0","display":"C7979825T","label":"R-BY69181","alias":"BY69181","optional":"N"}]
+,"children":[{"haplogroup":"R-FT409987","mutations":[{"posStart":"7088790","ancestral":"T","descendant":"C","type":"0","display":"T7088790C","label":"R-FT409987","alias":"FT409987","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-V3286","mutations":[{"posStart":"18572303","ancestral":"G","descendant":"A","type":"0","display":"G18572303A","label":"R-V3286","alias":"Z29774","rsid":"rs566548222","optional":"N"}]
+,"children":[{"haplogroup":"R-FT26577","mutations":[{"posStart":"23323743","ancestral":"G","descendant":"A","type":"0","display":"G23323743A","label":"R-FT26577","alias":"FT26577","optional":"N"}]
+,"children":[{"haplogroup":"R-FT167504","mutations":[{"posStart":"7755707","ancestral":"G","descendant":"C","type":"0","display":"G7755707C","label":"R-FT167504","alias":"FT167504","optional":"N"}]
+}
+,{"haplogroup":"R-FT26442","mutations":[{"posStart":"23143034","ancestral":"G","descendant":"C","type":"0","display":"G23143034C","label":"R-FT26442","alias":"FT26442","optional":"N"}]
+}
+]}
+]}
+]}
+]}
+,{"haplogroup":"R-A16","mutations":[{"posStart":"14049507","ancestral":"T","descendant":"G","type":"0","display":"T14049507G","label":"R-A16","alias":"R1b1a1b1a1a2c1a4b2b","rsid":"rs759217391","optional":"N"}]
+,"children":[{"haplogroup":"R-BY10","mutations":[{"posStart":"6103210","ancestral":"A","descendant":"T","type":"0","display":"A6103210T","label":"R-BY10","alias":"R1b1a1b1a1a2c1a4b2b1; BY10; A276","optional":"N"}]
+,"children":[{"haplogroup":"R-A14","mutations":[{"posStart":"7654538","ancestral":"C","descendant":"T","type":"0","display":"C7654538T","label":"R-A14","alias":"A14","rsid":"rs1024870406","optional":"N"}]
+,"children":[{"haplogroup":"R-A277","mutations":[{"posStart":"9101775","ancestral":"A","descendant":"G","type":"0","display":"A9101775G","label":"R-A277","alias":"A277","optional":"N"}]
+,"children":[{"haplogroup":"R-BY4080","mutations":[{"posStart":"15124405","ancestral":"T","descendant":"del","type":"3","display":"T15124405del","label":"R-BY4080","alias":"BY4080","optional":"N"}]
+,"children":[{"haplogroup":"R-BY13089","mutations":[{"posStart":"8479985","ancestral":"C","descendant":"A","type":"0","display":"C8479985A","label":"R-BY13089","alias":"BY13089","rsid":"rs1038549281","optional":"N"}]
+,"children":[{"haplogroup":"R-BY13111","mutations":[{"posStart":"3876320","ancestral":"C","descendant":"T","type":"0","display":"C3876320T","label":"R-BY13111","alias":"BY13111","optional":"N"}]
+,"children":[{"haplogroup":"R-BY13124","mutations":[{"posStart":"23591666","ancestral":"A","descendant":"G","type":"0","display":"A23591666G","label":"R-BY13124","alias":"BY13124","optional":"N"}]
+,"children":[{"haplogroup":"R-BY40173","mutations":[{"posStart":"28463749","ancestral":"A","descendant":"G","type":"0","display":"A28463749G","label":"R-BY40173","alias":"BY40173","optional":"N"}]
+}
+]}
+]}
+,{"haplogroup":"R-FT55474","mutations":[{"posStart":"4233118","ancestral":"A","descendant":"G","type":"0","display":"A4233118G","label":"R-FT55474","alias":"FT55474","optional":"N"}]
+,"children":[{"haplogroup":"R-BY43275","mutations":[{"posStart":"13848956","ancestral":"G","descendant":"T","type":"0","display":"G13848956T","label":"R-BY43275","alias":"G2a2b1b1b~; BY43275","optional":"N"}]
+,"children":[{"haplogroup":"R-FT71945","mutations":[{"posStart":"8665046","ancestral":"C","descendant":"T","type":"0","display":"C8665046T","label":"R-FT71945","alias":"FT71945.1; FT71945","optional":"N"}]
+}
+,{"haplogroup":"R-Y100802","mutations":[{"posStart":"17963360","ancestral":"G","descendant":"A","type":"0","display":"G17963360A","label":"R-Y100802","alias":"Y100802.1; Y100802","rsid":"rs966443341","optional":"N"}]
+,"children":[{"haplogroup":"R-BY136633","mutations":[{"posStart":"21950781","ancestral":"A","descendant":"G","type":"0","display":"A21950781G","label":"R-BY136633","alias":"BY136633","optional":"N"}]
+,"children":[{"haplogroup":"R-BY112408","mutations":[{"posStart":"17115450","ancestral":"A","descendant":"G","type":"0","display":"A17115450G","label":"R-BY112408","alias":"BY112408","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-BY49931","mutations":[{"posStart":"13355382","ancestral":"C","descendant":"A","type":"0","display":"C13355382A","label":"R-BY49931","alias":"BY49931","optional":"N"}]
+,"children":[{"haplogroup":"R-Y96072","mutations":[{"posStart":"16359230","ancestral":"G","descendant":"A","type":"0","display":"G16359230A","label":"R-Y96072","alias":"Y96072","rsid":"rs1012711807","optional":"N"}]
+,"children":[{"haplogroup":"R-BY186234","mutations":[{"posStart":"4951265","ancestral":"T","descendant":"C","type":"0","display":"T4951265C","label":"R-BY186234","alias":"BY186234","optional":"N"}]
+,"children":[{"haplogroup":"R-BY187114","mutations":[{"posStart":"14553555","ancestral":"T","descendant":"C","type":"0","display":"T14553555C","label":"R-BY187114","alias":"BY187114; Y160277","optional":"N"}]
+,"children":[{"haplogroup":"R-BY188176","mutations":[{"posStart":"21435768","ancestral":"T","descendant":"G","type":"0","display":"T21435768G","label":"R-BY188176","alias":"BY188176","rsid":"rs1010978826","optional":"N"}]
+,"children":[{"haplogroup":"R-BY188721","mutations":[{"posStart":"24476151","ancestral":"G","descendant":"T","type":"0","display":"G24476151T","label":"R-BY188721","alias":"BY188721; Y160203","optional":"N"}]
+}
+,{"haplogroup":"R-BZ14","mutations":[{"posStart":"18644417","ancestral":"T","descendant":"C","type":"0","display":"T18644417C","label":"R-BZ14","alias":"BZ14.2","optional":"N"}]
+}
+]}
+]}
+]}
+,{"haplogroup":"R-BY187422","mutations":[{"posStart":"16362106","ancestral":"T","descendant":"A","type":"0","display":"T16362106A","label":"R-BY187422","alias":"BY187422; Y160208","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-FTD25355","mutations":[{"posStart":"7792818","ancestral":"G","descendant":"C","type":"0","display":"G7792818C","label":"R-FTD25355","alias":"FTD25355","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-FTC13113","mutations":[{"posStart":"16462625","ancestral":"A","descendant":"T","type":"0","display":"A16462625T","label":"R-FTC13113","alias":"FTC13113","optional":"N"}]
+}
+]}
+]}
+,{"haplogroup":"R-FT185390","mutations":[{"posStart":"7852023","ancestral":"G","descendant":"A","type":"0","display":"G7852023A","label":"R-FT185390","alias":"FT185390","optional":"N"}]
+}
+]}
+]}
+,{"haplogroup":"R-FT85283","mutations":[{"posStart":"28467820","ancestral":"C","descendant":"T","type":"0","display":"C28467820T","label":"R-FT85283","alias":"FT85283","optional":"N"}]
+,"children":[{"haplogroup":"R-BY13097","mutations":[{"posStart":"1636677","ancestral":"T","descendant":"A","type":"0","display":"T1636677A","label":"R-BY13097","alias":"BY13097; Y28853","rsid":"rs908021787","optional":"N"}]
+,"children":[{"haplogroup":"R-BY4071","mutations":[{"posStart":"8482874","ancestral":"G","descendant":"C","type":"0","display":"G8482874C","label":"R-BY4071","alias":"R1b1a1b1a1a2c1a4b2b1a; BY4071.1; BY4071","rsid":"rs913144464","optional":"N"}]
+,"children":[{"haplogroup":"R-L643","mutations":[{"posStart":"21896078","ancestral":"C","descendant":"T","type":"0","display":"C21896078T","label":"R-L643","alias":"L643","rsid":"rs1050918275","optional":"N"}]
+,"children":[{"haplogroup":"R-BY13095","mutations":[{"posStart":"16402805","ancestral":"G","descendant":"A","type":"0","display":"G16402805A","label":"R-BY13095","alias":"BY13095.1; BY13095; Y28579","optional":"N"}]
+,"children":[{"haplogroup":"R-BY4077","mutations":[{"posStart":"9141725","ancestral":"C","descendant":"T","type":"0","display":"C9141725T","label":"R-BY4077","alias":"Q1b1a2a2a3~; BY4077","optional":"N"}]
+,"children":[{"haplogroup":"R-BY13107","mutations":[{"posStart":"21568551","ancestral":"G","descendant":"T","type":"0","display":"G21568551T","label":"R-BY13107","alias":"BY13107.1 BY13107 Y28854.1 Y28854","optional":"N"}]
+,"children":[{"haplogroup":"R-BY23894","mutations":[{"posStart":"15375516","ancestral":"A","descendant":"C","type":"0","display":"A15375516C","label":"R-BY23894","alias":"BY23894","optional":"N"}]
+}
+]}
+]}
+,{"haplogroup":"R-BY186469","mutations":[{"posStart":"7689054","ancestral":"T","descendant":"C","type":"0","display":"T7689054C","label":"R-BY186469","alias":"BY186469","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-BY24186","mutations":[{"posStart":"19068711","ancestral":"G","descendant":"A","type":"0","display":"G19068711A","label":"R-BY24186","alias":"BY24186.1; BY24186","rsid":"rs943271800","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-BY194106","mutations":[{"posStart":"14079116","ancestral":"T","descendant":"G","type":"0","display":"T14079116G","label":"R-BY194106","alias":"BY194106","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-BY70195","mutations":[{"posStart":"8131331","ancestral":"A","descendant":"T","type":"0","display":"A8131331T","label":"R-BY70195","alias":"BY70195","optional":"N"}]
+}
+]}
+]}
+]}
+]}
+,{"haplogroup":"R-FT221759","mutations":[{"posStart":"8798254","ancestral":"G","descendant":"C","type":"0","display":"G8798254C","label":"R-FT221759","alias":"FT221759","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-BY35036","mutations":[{"posStart":"2829170","ancestral":"A","descendant":"G","type":"0","display":"A2829170G","label":"R-BY35036","alias":"BY35036","rsid":"rs374077230","optional":"N"}]
+,"children":[{"haplogroup":"R-BY35021","mutations":[{"posStart":"7835578","ancestral":"A","descendant":"G","type":"0","display":"A7835578G","label":"R-BY35021","alias":"BY35021","optional":"N"}]
+}
+,{"haplogroup":"R-BY66878","mutations":[{"posStart":"7684794","ancestral":"C","descendant":"A","type":"0","display":"C7684794A","label":"R-BY66878","alias":"BY66878","rsid":"rs913284443","optional":"N"}]
+,"children":[{"haplogroup":"R-BY177824","mutations":[{"posStart":"22438719","ancestral":"T","descendant":"C","type":"0","display":"T22438719C","label":"R-BY177824","alias":"BY177824","optional":"N"}]
+,"children":[{"haplogroup":"R-BY66143","mutations":[{"posStart":"7595912","ancestral":"C","descendant":"T","type":"0","display":"C7595912T","label":"R-BY66143","alias":"BY66143","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-FT345040","mutations":[{"posStart":"6735978","ancestral":"C","descendant":"T","type":"0","display":"C6735978T","label":"R-FT345040","alias":"FT345040","optional":"N"}]
+}
+]}
+]}
+,{"haplogroup":"R-FGC53827","mutations":[{"posStart":"2663177","ancestral":"C","descendant":"T","type":"0","display":"C2663177T","label":"R-FGC53827","alias":"FGC53827","optional":"N"}]
+,"children":[{"haplogroup":"R-FGC53861","mutations":[{"posStart":"22880781","ancestral":"C","descendant":"T","type":"0","display":"C22880781T","label":"R-FGC53861","alias":"FGC53861","optional":"N"}]
+}
+,{"haplogroup":"R-FTD31082","mutations":[{"posStart":"2669554","ancestral":"A","descendant":"G","type":"0","display":"A2669554G","label":"R-FTD31082","alias":"FTD31082","optional":"N"}]
+,"children":[{"haplogroup":"R-FGC53828","mutations":[{"posStart":"2829727","ancestral":"A","descendant":"C","type":"0","display":"A2829727C","label":"R-FGC53828","alias":"FGC53828","rsid":"rs1376338069","optional":"N"}]
+,"children":[{"haplogroup":"R-FGC53829","mutations":[{"posStart":"3158319","ancestral":"A","descendant":"G","type":"0","display":"A3158319G","label":"R-FGC53829","alias":"FGC53829","optional":"N"}]
+,"children":[{"haplogroup":"R-BY35022","mutations":[{"posStart":"13679503","ancestral":"G","descendant":"A","type":"0","display":"G13679503A","label":"R-BY35022","alias":"BY35022","optional":"N"}]
+,"children":[{"haplogroup":"R-BY35020","mutations":[{"posStart":"6703068","ancestral":"G","descendant":"A","type":"0","display":"G6703068A","label":"R-BY35020","alias":"BY35020","optional":"N"}]
+,"children":[{"haplogroup":"R-BY35026","mutations":[{"posStart":"18615217","ancestral":"G","descendant":"A","type":"0","display":"G18615217A","label":"R-BY35026","alias":"BY35026","optional":"N"}]
+,"children":[{"haplogroup":"R-BY120132","mutations":[{"posStart":"18111253","ancestral":"G","descendant":"G","type":"0","display":"G18111253G","label":"R-BY120132","alias":"BY120132","optional":"N"}]
+}
+,{"haplogroup":"R-FT354742","mutations":[{"posStart":"4661549","ancestral":"G","descendant":"A","type":"0","display":"G4661549A","label":"R-FT354742","alias":"FT354742","optional":"N"}]
+}
+]}
+]}
+]}
+,{"haplogroup":"R-FGC53859","mutations":[{"posStart":"21838728","ancestral":"C","descendant":"T","type":"0","display":"C21838728T","label":"R-FGC53859","alias":"FGC53859","optional":"N"}]
+,"children":[{"haplogroup":"R-FTA4709","mutations":[{"posStart":"9396301","ancestral":"A","descendant":"G","type":"0","display":"A9396301G","label":"R-FTA4709","alias":"FTA4709","optional":"N"}]
+}
+]}
+]}
+]}
+]}
+]}
+,{"haplogroup":"R-FT93451","mutations":[{"posStart":"24459390","ancestral":"C","descendant":"T","type":"0","display":"C24459390T","label":"R-FT93451","alias":"FT93451","optional":"N"}]
+,"children":[{"haplogroup":"R-Y45670","mutations":[{"posStart":"7127192","ancestral":"G","descendant":"A","type":"0","display":"G7127192A","label":"R-Y45670","alias":"Y45670","optional":"N"}]
+,"children":[{"haplogroup":"R-BY112620","mutations":[{"posStart":"17142840","ancestral":"A","descendant":"T","type":"0","display":"A17142840T","label":"R-BY112620","alias":"BY112620","optional":"N"}]
+}
+,{"haplogroup":"R-FTC52061","mutations":[{"posStart":"18956132","ancestral":"C","descendant":"T","type":"0","display":"C18956132T","label":"R-FTC52061","alias":"FTC52061","optional":"N"}]
+}
+]}
+]}
+]}
+,{"haplogroup":"R-BY20037","mutations":[{"posStart":"18027093","ancestral":"T","descendant":"C","type":"0","display":"T18027093C","label":"R-BY20037","alias":"BY20037","rsid":"rs929085605","optional":"N"}]
+,"children":[{"haplogroup":"R-BY20023","mutations":[{"posStart":"7884088","ancestral":"G","descendant":"A","type":"0","display":"G7884088A","label":"R-BY20023","alias":"BY20023.1; BY20023","rsid":"rs976569393","optional":"N"}]
+,"children":[{"haplogroup":"R-BY20018","mutations":[{"posStart":"6883654","ancestral":"G","descendant":"T","type":"0","display":"G6883654T","label":"R-BY20018","alias":"BY20018","optional":"N"}]
+,"children":[{"haplogroup":"R-Y152903","mutations":[{"posStart":"6957561","ancestral":"G","descendant":"A","type":"0","display":"G6957561A","label":"R-Y152903","alias":"Y152903","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-BY38570","mutations":[{"posStart":"14904516","ancestral":"G","descendant":"T","type":"0","display":"G14904516T","label":"R-BY38570","alias":"BY38570","optional":"N"}]
+,"children":[{"haplogroup":"R-BY56803","mutations":[{"posStart":"2845424","ancestral":"A","descendant":"G","type":"0","display":"A2845424G","label":"R-BY56803","alias":"BY56803","optional":"N"}]
+}
+]}
+]}
+,{"haplogroup":"R-BY67484","mutations":[{"posStart":"7767944","ancestral":"T","descendant":"G","type":"0","display":"T7767944G","label":"R-BY67484","alias":"BY67484","optional":"N"}]
+}
+]}
+]}
+,{"haplogroup":"R-BY25447","mutations":[{"posStart":"2651841","ancestral":"T","descendant":"G","type":"0","display":"T2651841G","label":"R-BY25447","alias":"BY25447","rsid":"rs751642093","optional":"N"}]
+,"children":[{"haplogroup":"R-BY13693","mutations":[{"posStart":"16849364","ancestral":"G","descendant":"T","type":"0","display":"G16849364T","label":"R-BY13693","alias":"BY13693.1; BY13693","rsid":"rs757540299","optional":"N"}]
+,"children":[{"haplogroup":"R-BY13686","mutations":[{"posStart":"6849204","ancestral":"G","descendant":"A","type":"0","display":"G6849204A","label":"R-BY13686","alias":"BY13686","optional":"N"}]
+,"children":[{"haplogroup":"R-BY13692","mutations":[{"posStart":"15997643","ancestral":"T","descendant":"C","type":"0","display":"T15997643C","label":"R-BY13692","alias":"BY13692","optional":"N"}]
+,"children":[{"haplogroup":"R-BY109515","mutations":[{"posStart":"16697868","ancestral":"T","descendant":"A","type":"0","display":"T16697868A","label":"R-BY109515","alias":"BY109515","optional":"N"}]
+,"children":[{"haplogroup":"R-FT242249","mutations":[{"posStart":"8438699","ancestral":"C","descendant":"T","type":"0","display":"C8438699T","label":"R-FT242249","alias":"FT242249","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-BY19674","mutations":[{"posStart":"8299325","ancestral":"C","descendant":"Y","type":"0","display":"C8299325Y","label":"R-BY19674","alias":"BY19674.1; BY19674; Z39433","optional":"N"}]
+,"children":[{"haplogroup":"R-BY92495","mutations":[{"posStart":"14036320","ancestral":"G","descendant":"A","type":"0","display":"G14036320A","label":"R-BY92495","alias":"BY92495","optional":"N"}]
+}
+]}
+]}
+]}
+,{"haplogroup":"R-BY182633  ","mutations":[{"posStart":"7305830","ancestral":"G","descendant":"A","type":"0","display":"G7305830A","label":"R-BY182633  ","alias":"BY182633; Y159081","optional":"N"}]
+}
+,{"haplogroup":"R-Y134019","mutations":[{"posStart":"15138390","ancestral":"C","descendant":"G","type":"0","display":"C15138390G","label":"R-Y134019","alias":"Y134019","rsid":"rs915631465","optional":"N"}]
+,"children":[{"haplogroup":"R-Y247080","mutations":[{"posStart":"17004781","ancestral":"T","descendant":"C","type":"0","display":"T17004781C","label":"R-Y247080","alias":"Y247080","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-Y134022","mutations":[{"posStart":"3346038","ancestral":"A","descendant":"G","type":"0","display":"A3346038G","label":"R-Y134022","alias":"Y134022","optional":"N"}]
+,"children":[{"haplogroup":"R-BY38478","mutations":[{"posStart":"8109694","ancestral":"G","descendant":"A","type":"0","display":"G8109694A","label":"R-BY38478","alias":"BY38478","optional":"N"}]
+}
+,{"haplogroup":"R-Y134034","mutations":[{"posStart":"14072744","ancestral":"C","descendant":"G","type":"0","display":"C14072744G","label":"R-Y134034","alias":"Y134034","optional":"N"}]
+,"children":[{"haplogroup":"R-Y134031","mutations":[{"posStart":"6846201","ancestral":"T","descendant":"G","type":"0","display":"T6846201G","label":"R-Y134031","alias":"Y134031","optional":"N"}]
+}
+,{"haplogroup":"R-Y279634","mutations":[{"posStart":"17108735","ancestral":"G","descendant":"T","type":"0","display":"G17108735T","label":"R-Y279634","alias":"Y279634","optional":"N"}]
+}
+]}
+]}
+]}
+]}
+,{"haplogroup":"R-BY4087","mutations":[{"posStart":"22297851","ancestral":"G","descendant":"T","type":"0","display":"G22297851T","label":"R-BY4087","alias":"BY4087","optional":"N"}]
+,"children":[{"haplogroup":"R-BY4064","mutations":[{"posStart":"2733922","ancestral":"A","descendant":"T","type":"0","display":"A2733922T","label":"R-BY4064","alias":"BY4064","optional":"N"}]
+,"children":[{"haplogroup":"R-BY4070","mutations":[{"posStart":"8450584","ancestral":"A","descendant":"G","type":"0","display":"A8450584G","label":"R-BY4070","alias":"BY4070","optional":"N"}]
+,"children":[{"haplogroup":"R-FT102527","mutations":[{"posStart":"18237201","ancestral":"G","descendant":"T","type":"0","display":"G18237201T","label":"R-FT102527","alias":"FT102527","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-BY56421","mutations":[{"posStart":"2793716","ancestral":"G","descendant":"A","type":"0","display":"G2793716A","label":"R-BY56421","alias":"BY56421","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-BY67200","mutations":[{"posStart":"7734414","ancestral":"T","descendant":"G","type":"0","display":"T7734414G","label":"R-BY67200","alias":"BY67200","optional":"N"}]
+,"children":[{"haplogroup":"R-Y46415","mutations":[{"posStart":"7788677","ancestral":"C","descendant":"T","type":"0","display":"C7788677T","label":"R-Y46415","alias":"Y46415","optional":"N"}]
+,"children":[{"haplogroup":"R-Y57435","mutations":[{"posStart":"21961384","ancestral":"A","descendant":"G","type":"0","display":"A21961384G","label":"R-Y57435","alias":"Y57435","optional":"N"}]
+}
+]}
+]}
+,{"haplogroup":"R-FGC8259","mutations":[{"posStart":"8309797","ancestral":"T","descendant":"A","type":"0","display":"T8309797A","label":"R-FGC8259","alias":"FGC8259","optional":"N"}]
+,"children":[{"haplogroup":"R-BY167056","mutations":[{"posStart":"15363565","ancestral":"A","descendant":"T","type":"0","display":"A15363565T","label":"R-BY167056","alias":"BY167056","optional":"N"}]
+}
+,{"haplogroup":"R-FGC8264","mutations":[{"posStart":"14253567","ancestral":"T","descendant":"C","type":"0","display":"T14253567C","label":"R-FGC8264","alias":"FGC8264","optional":"N"}]
+,"children":[{"haplogroup":"R-FGC8244","mutations":[{"posStart":"17111749","ancestral":"C","descendant":"T","type":"0","display":"C17111749T","label":"R-FGC8244","alias":"FGC8244.1; FGC8244","rsid":"rs752448086","optional":"N"}]
+}
+]}
+]}
+]}
+,{"haplogroup":"R-BY65646","mutations":[{"posStart":"7526184","ancestral":"T","descendant":"A","type":"0","display":"T7526184A","label":"R-BY65646","alias":"BY65646","optional":"N"}]
+}
+,{"haplogroup":"R-CTS9975","mutations":[{"posStart":"19180465","ancestral":"A","descendant":"T","type":"0","display":"A19180465T","label":"R-CTS9975","alias":"CTS9975.1; Z2185; CTS9975; S893; V3869","optional":"N"}]
+,"children":[{"haplogroup":"R-BY44331","mutations":[{"posStart":"28812976","ancestral":"G","descendant":"T","type":"0","display":"G28812976T","label":"R-BY44331","alias":"BY44331; A21962","optional":"N"}]
+}
+,{"haplogroup":"R-A7037","mutations":[{"posStart":"17365540","ancestral":"A","descendant":"Y","type":"0","display":"A17365540Y","label":"R-A7037","alias":"A7037; FGC49689","optional":"N"}]
+}
+,{"haplogroup":"R-A7031","mutations":[{"posStart":"9381605","ancestral":"G","descendant":"A","type":"0","display":"G9381605A","label":"R-A7031","alias":"A7031","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-BY66976","mutations":[{"posStart":"7694252","ancestral":"A","descendant":"G","type":"0","display":"A7694252G","label":"R-BY66976","alias":"BY66976","optional":"N"}]
+}
+,{"haplogroup":"R-FT271169","mutations":[{"posStart":"8313154","ancestral":"A","descendant":"T","type":"0","display":"A8313154T","label":"R-FT271169","alias":"FT271169","optional":"N"}]
+}
+,{"haplogroup":"R-FT271241","mutations":[{"posStart":"15872911","ancestral":"T","descendant":"G","type":"0","display":"T15872911G","label":"R-FT271241","alias":"FT271241","optional":"N"}]
+}
+,{"haplogroup":"R-FTC15055","mutations":[{"posStart":"8195970","ancestral":"T","descendant":"C","type":"0","display":"T8195970C","label":"R-FTC15055","alias":"FTC15055","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-M8944.3","mutations":[{"posStart":"2663708","ancestral":"A","descendant":"T","type":"0","display":"A2663708T","label":"R-M8944.3","alias":"M8944.3; R-M8944","rsid":"rs9785985","optional":"N"}]
+}
+,{"haplogroup":"R-BY23537","mutations":[{"posStart":"8029026","ancestral":"G","descendant":"C","type":"0","display":"G8029026C","label":"R-BY23537","alias":"BY23537","optional":"N"}]
+,"children":[{"haplogroup":"R-FTA48576","mutations":[{"posStart":"8772449","ancestral":"T","descendant":"G","type":"0","display":"T8772449G","label":"R-FTA48576","alias":"FTA48576","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-BY25450","mutations":[{"posStart":"22280136","ancestral":"C","descendant":"G","type":"0","display":"C22280136G","label":"R-BY25450","alias":"BY25450","optional":"N"}]
+}
+,{"haplogroup":"R-FT372801","mutations":[{"posStart":"23631597","ancestral":"G","descendant":"C","type":"0","display":"G23631597C","label":"R-FT372801","alias":"FT372801","optional":"N"}]
+,"children":[{"haplogroup":"R-FTC18800","mutations":[{"posStart":"7646075","ancestral":"G","descendant":"C","type":"0","display":"G7646075C","label":"R-FTC18800","alias":"FTC18800","optional":"N"}]
+}
+,{"haplogroup":"R-FT371767","mutations":[{"posStart":"6916898","ancestral":"C","descendant":"T","type":"0","display":"C6916898T","label":"R-FT371767","alias":"FT371767","optional":"N"}]
+,"children":[{"haplogroup":"R-FT371974","mutations":[{"posStart":"9885479","ancestral":"A","descendant":"C","type":"0","display":"A9885479C","label":"R-FT371974","alias":"FT371974","optional":"N"}]
+}
+]}
+]}
+,{"haplogroup":"R-Y134042","mutations":[{"posStart":"8083232","ancestral":"A","descendant":"G","type":"0","display":"A8083232G","label":"R-Y134042","alias":"Y134042","rsid":"rs1040803098","optional":"N"}]
+}
+,{"haplogroup":"R-FGC5618","mutations":[{"posStart":"2813045","ancestral":"C","descendant":"A","type":"0","display":"C2813045A","label":"R-FGC5618","alias":"R1b1a1b1a1a2c1a4b2a; Y3127; FGC5618","optional":"N"}]
+,"children":[{"haplogroup":"R-BY56070","mutations":[{"posStart":"2729490","ancestral":"G","descendant":"T","type":"0","display":"G2729490T","label":"R-BY56070","alias":"BY56070","optional":"N"}]
+,"children":[{"haplogroup":"R-BY126401","mutations":[{"posStart":"19115687","ancestral":"T","descendant":"C","type":"0","display":"T19115687C","label":"R-BY126401","alias":"BY126401","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-FGC5626","mutations":[{"posStart":"7289101","ancestral":"A","descendant":"T","type":"0","display":"A7289101T","label":"R-FGC5626","alias":"R1b1a1b1a1a2c1a4b2a; Y3128; FGC5626","rsid":"rs756433771","optional":"N"}]
+,"children":[{"haplogroup":"R-L226","mutations":[{"posStart":"19048724","ancestral":"C","descendant":"T","type":"0","display":"C19048724T","label":"R-L226","alias":"L226.1; L226; S168","rsid":"rs1364486564","optional":"N"}]
+,"children":[{"haplogroup":"DC70","mutations":[{"posStart":"2651665","ancestral":"T","descendant":"C","type":"0","display":"T2651665C","label":"DC70","alias":"DC70","optional":"N"}]
+}
+,{"haplogroup":"FGC5660","mutations":[{"posStart":"21837786","ancestral":"ins","descendant":"T","type":"0","display":"ins21837786T","label":"FGC5660","alias":"FGC5660","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-BY152765","mutations":[{"posStart":"7964254","ancestral":"C","descendant":"T","type":"0","display":"C7964254T","label":"R-BY152765","alias":"BY152765","optional":"N"}]
+}
+]}
+]}
+,{"haplogroup":"R-FGC48207","mutations":[{"posStart":"19184307","ancestral":"G","descendant":"A","type":"0","display":"G19184307A","label":"R-FGC48207","alias":"FGC48207.1; FGC48207","rsid":"rs1168385864","optional":"N"}]
+,"children":[{"haplogroup":"R-FGC41891","mutations":[{"posStart":"6696255","ancestral":"G","descendant":"C","type":"0","display":"G6696255C","label":"R-FGC41891","alias":"FGC41891","optional":"N"}]
+,"children":[{"haplogroup":"R-FGC41899","mutations":[{"posStart":"9115634","ancestral":"C","descendant":"G","type":"0","display":"C9115634G","label":"R-FGC41899","alias":"FGC41899","optional":"N"}]
+,"children":[{"haplogroup":"R-BY166974","mutations":[{"posStart":"14929295","ancestral":"A","descendant":"C","type":"0","display":"A14929295C","label":"R-BY166974","alias":"BY166974","optional":"N"}]
+}
+,{"haplogroup":"R-FGC41892","mutations":[{"posStart":"6708044","ancestral":"T","descendant":"C","type":"0","display":"T6708044C","label":"R-FGC41892","alias":"FGC41892","optional":"N"}]
+,"children":[{"haplogroup":"R-BY50659","mutations":[{"posStart":"23145061","ancestral":"G","descendant":"C","type":"0","display":"G23145061C","label":"R-BY50659","alias":"BY50659","optional":"N"}]
+}
+,{"haplogroup":"R-FGC41890","mutations":[{"posStart":"8309593","ancestral":"G","descendant":"A","type":"0","display":"G8309593A","label":"R-FGC41890","alias":"FGC41890.1; FGC41890","optional":"N"}]
+}
+]}
+]}
+]}
+,{"haplogroup":"R-FTC36393","mutations":[{"posStart":"7698948","ancestral":"T","descendant":"G","type":"0","display":"T7698948G","label":"R-FTC36393","alias":"FTC36393","optional":"N"}]
+}
+]}
+]}
+,{"haplogroup":"R-A11001","mutations":[{"posStart":"21835370","ancestral":"G","descendant":"C","type":"0","display":"G21835370C","label":"R-A11001","alias":"A11001","optional":"N"}]
+}
+,{"haplogroup":"R-BY19652","mutations":[{"posStart":"4113362","ancestral":"A","descendant":"G","type":"0","display":"A4113362G","label":"R-BY19652","alias":"BY19652","optional":"N"}]
+}
+,{"haplogroup":"R-BY39773","mutations":[{"posStart":"8190129","ancestral":"C","descendant":"G","type":"0","display":"C8190129G","label":"R-BY39773","alias":"BY39773","optional":"N"}]
+}
+,{"haplogroup":"R-BY4086","mutations":[{"posStart":"22287561","ancestral":"C","descendant":"T","type":"0","display":"C22287561T","label":"R-BY4086","alias":"BY4086","rsid":"rs1016694636","optional":"N"}]
+}
+,{"haplogroup":"R-CTS111","mutations":[{"posStart":"2736407","ancestral":"C","descendant":"T","type":"0","display":"C2736407T","label":"R-CTS111","alias":"CTS111; S3530","rsid":"rs771370111","optional":"N"}]
+}
+,{"haplogroup":"R-FGC3268","mutations":[{"posStart":"28513202","ancestral":"T","descendant":"A","type":"0","display":"T28513202A","label":"R-FGC3268","alias":"FGC3268","rsid":"rs1472810638","optional":"N"}]
+}
+,{"haplogroup":"R-FT40213","mutations":[{"posStart":"6740615","ancestral":"C","descendant":"G","type":"0","display":"C6740615G","label":"R-FT40213","alias":"FT40213","rsid":"rs749047585","optional":"N"}]
+}
+,{"haplogroup":"R-FT57998","mutations":[{"posStart":"15753733","ancestral":"C","descendant":"T","type":"0","display":"C15753733T","label":"R-FT57998","alias":"FT57998","optional":"N"}]
+}
+,{"haplogroup":"R-FT97996","mutations":[{"posStart":"9811965","ancestral":"A","descendant":"G","type":"0","display":"A9811965G","label":"R-FT97996","alias":"FT97996","optional":"N"}]
+}
+,{"haplogroup":"R-FTC22880","mutations":[{"posStart":"7690958","ancestral":"T","descendant":"C","type":"0","display":"T7690958C","label":"R-FTC22880","alias":"FTC22880","optional":"N"}]
+}
+,{"haplogroup":"R-PH3052.1","mutations":[{"posStart":"17415839","ancestral":"G","descendant":"A","type":"0","display":"G17415839A","label":"R-PH3052.1","alias":"PH3052.1; PH3052","rsid":"rs368945804","optional":"N"}]
+}
+,{"haplogroup":"R-S841","mutations":[{"posStart":"2838619","ancestral":"T","descendant":"G","type":"0","display":"T2838619G","label":"R-S841","alias":"S841; AMM337","rsid":"rs754033819","optional":"N"}]
+}
+,{"haplogroup":"R-S844","mutations":[{"posStart":"6972701","ancestral":"C","descendant":"T","type":"0","display":"C6972701T","label":"R-S844","alias":"S844; AMM340","rsid":"rs942821383","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-Z16423","mutations":[{"posStart":"21703877","ancestral":"C","descendant":"A","type":"0","display":"C21703877A","label":"R-Z16423","alias":"Z16423; Y4858","rsid":"rs745392503","optional":"N"}]
+}
+,{"haplogroup":"R-BY4047","mutations":[{"posStart":"14312808","ancestral":"C","descendant":"T","type":"0","display":"C14312808T","label":"R-BY4047","alias":"","optional":"N"}]
+}
+,{"haplogroup":"R-CTS10201","mutations":[{"posStart":"19325002","ancestral":"G","descendant":"A","type":"0","display":"G19325002A","label":"R-CTS10201","alias":"CTS10201","rsid":"rs750656936","optional":"N"}]
+,"children":[{"haplogroup":"R-CTS3386","mutations":[{"posStart":"14885174","ancestral":"A","descendant":"G","type":"0","display":"A14885174G","label":"R-CTS3386","alias":"CTS3386; S3658","rsid":"rs768663364","optional":"N"}]
+,"children":[{"haplogroup":"R-S19268","mutations":[{"posStart":"17134815","ancestral":"G","descendant":"A","type":"0","display":"G17134815A","label":"R-S19268","alias":"S19268","optional":"N"}]
+}
+,{"haplogroup":"R-BY160557","mutations":[{"posStart":"7325874","ancestral":"T","descendant":"G","type":"0","display":"T7325874G","label":"R-BY160557","alias":"BY160557","optional":"N"}]
+}
+,{"haplogroup":"R-CTS10334.1","mutations":[{"posStart":"19405261","ancestral":"A","descendant":"G","type":"0","display":"A19405261G","label":"R-CTS10334.1","alias":"CTS10334.1; CTS10334; F4379","rsid":"rs765016599","optional":"N"}]
+}
+,{"haplogroup":"R-FT14391","mutations":[{"posStart":"4031665","ancestral":"C","descendant":"T","type":"0","display":"C4031665T","label":"R-FT14391","alias":"FT14391","optional":"N"}]
+,"children":[{"haplogroup":"R-A9001   ","mutations":[{"posStart":"14771054","ancestral":"T","descendant":"C","type":"0","display":"T14771054C","label":"R-A9001   ","alias":"A9001","optional":"N"}]
+}
+,{"haplogroup":"R-FT44417","mutations":[{"posStart":"23954314","ancestral":"C","descendant":"G","type":"0","display":"C23954314G","label":"R-FT44417","alias":"FT44417","optional":"N"}]
+}
+,{"haplogroup":"R-Y67137","mutations":[{"posStart":"14723218","ancestral":"T","descendant":"C","type":"0","display":"T14723218C","label":"R-Y67137","alias":"Y67137","optional":"N"}]
+}
+,{"haplogroup":"R-Z17971","mutations":[{"posStart":"6906304","ancestral":"T","descendant":"G","type":"0","display":"T6906304G","label":"R-Z17971","alias":"Z17971","rsid":"rs1047528261","optional":"N"}]
+,"children":[{"haplogroup":"R-A7297","mutations":[{"posStart":"21561725","ancestral":"G","descendant":"T","type":"0","display":"G21561725T","label":"R-A7297","alias":"A7297","rsid":"rs1033138622","optional":"N"}]
+}
+,{"haplogroup":"R-BY39760","mutations":[{"posStart":"14062323","ancestral":"G","descendant":"T","type":"0","display":"G14062323T","label":"R-BY39760","alias":"BY39760","optional":"N"}]
+}
+]}
+]}
+,{"haplogroup":"R-FT155105","mutations":[{"posStart":"22056703","ancestral":"T","descendant":"C","type":"0","display":"T22056703C","label":"R-FT155105","alias":"FT155105","optional":"N"}]
+,"children":[{"haplogroup":"R-FT410198","mutations":[{"posStart":"8693291","ancestral":"T","descendant":"G","type":"0","display":"T8693291G","label":"R-FT410198","alias":"FT410198","optional":"N"}]
+,"children":[{"haplogroup":"R-FT410929","mutations":[{"posStart":"18604886","ancestral":"T","descendant":"C","type":"0","display":"T18604886C","label":"R-FT410929","alias":"FT410929","optional":"N"}]
+}
+]}
+]}
+]}
+,{"haplogroup":"R-BY12521","mutations":[{"posStart":"19243730","ancestral":"G","descendant":"T","type":"0","display":"G19243730T","label":"R-BY12521","alias":"BY12521","optional":"N"}]
+,"children":[{"haplogroup":"R-BY12512","mutations":[{"posStart":"14287364","ancestral":"A","descendant":"T","type":"0","display":"A14287364T","label":"R-BY12512","alias":"BY12512","optional":"N"}]
+,"children":[{"haplogroup":"R-BY38474","mutations":[{"posStart":"18589705","ancestral":"T","descendant":"A","type":"0","display":"T18589705A","label":"R-BY38474","alias":"BY38474","optional":"N"}]
+}
+,{"haplogroup":"R-Y50038","mutations":[{"posStart":"14901619","ancestral":"G","descendant":"A","type":"0","display":"G14901619A","label":"R-Y50038","alias":"Y50038","optional":"N"}]
+,"children":[{"haplogroup":"R-Y59844","mutations":[{"posStart":"24459225","ancestral":"T","descendant":"C","type":"0","display":"T24459225C","label":"R-Y59844","alias":"Y59844","optional":"N"}]
+}
+]}
+]}
+,{"haplogroup":"R-FT220187","mutations":[{"posStart":"5508198","ancestral":"G","descendant":"A","type":"0","display":"G5508198A","label":"R-FT220187","alias":"FT220187","rsid":"rs77610155","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-PH4760","mutations":[{"posStart":"21313701","ancestral":"C","descendant":"T","type":"0","display":"C21313701T","label":"R-PH4760","alias":"PH4760","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-FGC42672","mutations":[{"posStart":"5440013","ancestral":"G","descendant":"C","type":"0","display":"G5440013C","label":"R-FGC42672","alias":"FGC42672","optional":"N"}]
+,"children":[{"haplogroup":"R-MC14","mutations":[{"posStart":"21724919","ancestral":"A","descendant":"G","type":"0","display":"A21724919G","label":"R-MC14","alias":"MC14","rsid":"rs922615507","optional":"N"}]
+,"children":[{"haplogroup":"R-FT27336","mutations":[{"posStart":"9939502","ancestral":"C","descendant":"A","type":"0","display":"C9939502A","label":"R-FT27336","alias":"FT27336","optional":"N"}]
+,"children":[{"haplogroup":"R-BY246","mutations":[{"posStart":"6837357","ancestral":"C","descendant":"A","type":"0","display":"C6837357A","label":"R-BY246","alias":"BY246","optional":"N"}]
+,"children":[{"haplogroup":"R-BY249 ","mutations":[{"posStart":"9123060","ancestral":"C","descendant":"A","type":"0","display":"C9123060A","label":"R-BY249 ","alias":"BY249","optional":"N"}]
+}
+,{"haplogroup":"R-FT360788","mutations":[{"posStart":"16851424","ancestral":"T","descendant":"A","type":"0","display":"T16851424A","label":"R-FT360788","alias":"FT360788","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-FT4323","mutations":[{"posStart":"5541699","ancestral":"G","descendant":"A","type":"0","display":"G5541699A","label":"R-FT4323","alias":"FT4323","optional":"N"}]
+,"children":[{"haplogroup":"R-BY57004","mutations":[{"posStart":"2876843","ancestral":"T","descendant":"G","type":"0","display":"T2876843G","label":"R-BY57004","alias":"R-BY57004","optional":"N"}]
+}
+,{"haplogroup":"R-FT5388","mutations":[{"posStart":"15431994","ancestral":"A","descendant":"T","type":"0","display":"A15431994T","label":"R-FT5388","alias":"FT5388","rsid":"rs1040718671","optional":"N"}]
+,"children":[{"haplogroup":"R-FT137301","mutations":[{"posStart":"7286919","ancestral":"G","descendant":"T","type":"0","display":"G7286919T","label":"R-FT137301","alias":"FT137301","optional":"N"}]
+}
+,{"haplogroup":"R-Y16762","mutations":[{"posStart":"18763116","ancestral":"C","descendant":"T","type":"0","display":"C18763116T","label":"R-Y16762","alias":"Y16762","rsid":"rs995429372","optional":"N"}]
+,"children":[{"haplogroup":"R-Z19670","mutations":[{"posStart":"24482209","ancestral":"G","descendant":"A","type":"0","display":"G24482209A","label":"R-Z19670","alias":"Z19670","optional":"N"}]
+,"children":[{"haplogroup":"R-FT5737","mutations":[{"posStart":"17621792","ancestral":"T","descendant":"C","type":"0","display":"T17621792C","label":"R-FT5737","alias":"FT5737","rsid":"FT5737","optional":"N"}]
+,"children":[{"haplogroup":"R-FT27339","mutations":[{"posStart":"10075883","ancestral":"C","descendant":"T","type":"0","display":"C10075883T","label":"R-FT27339","alias":"FT27339","optional":"N"}]
+,"children":[{"haplogroup":"R-A7298","mutations":[{"posStart":"7421536","ancestral":"T","descendant":"G","type":"0","display":"T7421536G","label":"R-A7298","alias":"A7298","optional":"N"}]
+,"children":[{"haplogroup":"R-A7300","mutations":[{"posStart":"17516531","ancestral":"G","descendant":"T","type":"0","display":"G17516531T","label":"R-A7300","alias":"A7300","optional":"N"}]
+,"children":[{"haplogroup":"R-A6138","mutations":[{"posStart":"16960758","ancestral":"ATG","descendant":"del","type":"3","display":"ATG16960758del","label":"R-A6138","alias":"A6138.1; A6138","optional":"N"}]
+,"children":[{"haplogroup":"R-BY178256","mutations":[{"posStart":"8244978","ancestral":"T","descendant":"A","type":"0","display":"T8244978A","label":"R-BY178256","alias":"BY178256","optional":"N"}]
+}
+,{"haplogroup":"R-BY50904","mutations":[{"posStart":"7725087","ancestral":"A","descendant":"Y","type":"0","display":"A7725087Y","label":"R-BY50904","alias":"BY50904.1; BY50904","optional":"N"}]
+}
+,{"haplogroup":"R-BY62864 ","mutations":[{"posStart":"7018470","ancestral":"T","descendant":"G","type":"0","display":"T7018470G","label":"R-BY62864 ","alias":"BY62864","optional":"N"}]
+}
+,{"haplogroup":"R-BY92870","mutations":[{"posStart":"14083261","ancestral":"G","descendant":"T","type":"0","display":"G14083261T","label":"R-BY92870","alias":"BY92870","optional":"N"}]
+}
+,{"haplogroup":"R-FT25194","mutations":[{"posStart":"21245648","ancestral":"A","descendant":"G","type":"0","display":"A21245648G","label":"R-FT25194","alias":"FT25194","optional":"N"}]
+}
+,{"haplogroup":"R-M64.3","mutations":[{"posStart":"21903383","ancestral":"A","descendant":"G","type":"0","display":"A21903383G","label":"R-M64.3","alias":"M64.3","rsid":"rs2032626","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-FT32638","mutations":[{"posStart":"18097783","ancestral":"G","descendant":"A","type":"0","display":"G18097783A","label":"R-FT32638","alias":"FT32638","optional":"N"}]
+,"children":[{"haplogroup":"R-A6607","mutations":[{"posStart":"8398002","ancestral":"T","descendant":"C","type":"0","display":"T8398002C","label":"R-A6607","alias":"A6607","optional":"N"}]
+}
+,{"haplogroup":"R-BY34406","mutations":[{"posStart":"15106350","ancestral":"C","descendant":"G","type":"0","display":"C15106350G","label":"R-BY34406","alias":"BY34406.2","optional":"N"}]
+,"children":[{"haplogroup":"R-BY86810","mutations":[{"posStart":"13639645","ancestral":"G","descendant":"A","type":"0","display":"G13639645A","label":"R-BY86810","alias":"BY86810","rsid":"rs1351617006","optional":"N"}]
+,"children":[{"haplogroup":"R-FT32559","mutations":[{"posStart":"16568555","ancestral":"T","descendant":"C","type":"0","display":"T16568555C","label":"R-FT32559","alias":"FT32559","optional":"N"}]
+}
+,{"haplogroup":"R-Y205757","mutations":[{"posStart":"10023783","ancestral":"G","descendant":"A","type":"0","display":"G10023783A","label":"R-Y205757","alias":"Y205757.2","optional":"N"}]
+,"children":[{"haplogroup":"R-BY96746 ","mutations":[{"posStart":"14602428","ancestral":"C","descendant":"A","type":"0","display":"C14602428A","label":"R-BY96746 ","alias":"BY96746","optional":"N"}]
+}
+,{"haplogroup":"R-FTC61694","mutations":[{"posStart":"18108247","ancestral":"C","descendant":"T","type":"0","display":"C18108247T","label":"R-FTC61694","alias":"FTC61694","optional":"N"}]
+}
+]}
+]}
+]}
+]}
+]}
+,{"haplogroup":"R-BY121571","mutations":[{"posStart":"18388506","ancestral":"T","descendant":"A","type":"0","display":"T18388506A","label":"R-BY121571","alias":"BY121571","optional":"N"}]
+,"children":[{"haplogroup":"R-BY162402 ","mutations":[{"posStart":"17653580","ancestral":"A","descendant":"C","type":"0","display":"A17653580C","label":"R-BY162402 ","alias":"BY162402","optional":"N"}]
+}
+,{"haplogroup":"R-BY97146","mutations":[{"posStart":"14699457","ancestral":"C","descendant":"G","type":"0","display":"C14699457G","label":"R-BY97146","alias":"BY97146","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-BY35676","mutations":[{"posStart":"21656758","ancestral":"C","descendant":"A","type":"0","display":"C21656758A","label":"R-BY35676","alias":"BY35676","optional":"N"}]
+,"children":[{"haplogroup":"BY31279","mutations":[{"posStart":"18943387","ancestral":"A","descendant":"T","type":"0","display":"A18943387T","label":"BY31279","alias":"BY31279; Y131108","optional":"N"}]
+,"children":[{"haplogroup":"R-BY120210","mutations":[{"posStart":"18117436","ancestral":"G","descendant":"T","type":"0","display":"G18117436T","label":"R-BY120210","alias":"BY120210","optional":"N"}]
+}
+,{"haplogroup":"R-BY35679","mutations":[{"posStart":"22475912","ancestral":"G","descendant":"A","type":"0","display":"G22475912A","label":"R-BY35679","alias":"BY35679","optional":"N"}]
+}
+]}
+]}
+]}
+,{"haplogroup":"R-FTA10861","mutations":[{"posStart":"14706246","ancestral":"G","descendant":"T","type":"0","display":"G14706246T","label":"R-FTA10861","alias":"FTA10861","optional":"N"}]
+}
+]}
+]}
+]}
+]}
+]}
+]}
+]}
+]}
+]}
+,{"haplogroup":"R-FT60000","mutations":[{"posStart":"8298558","ancestral":"G","descendant":"A","type":"0","display":"G8298558A","label":"R-FT60000","alias":"FT60000","optional":"N"}]
+,"children":[{"haplogroup":"R-FTA27590","mutations":[{"posStart":"8348799","ancestral":"G","descendant":"C","type":"0","display":"G8348799C","label":"R-FTA27590","alias":"FTA27590","optional":"N"}]
+,"children":[{"haplogroup":"R-FTA29281","mutations":[{"posStart":"21826581","ancestral":"C","descendant":"A","type":"0","display":"C21826581A","label":"R-FTA29281","alias":"FTA29281","optional":"N"}]
+,"children":[{"haplogroup":"R-FTA28558","mutations":[{"posStart":"17283303","ancestral":"T","descendant":"A","type":"0","display":"T17283303A","label":"R-FTA28558","alias":"FTA28558","optional":"N"}]
+}
+]}
+]}
+]}
+]}
+,{"haplogroup":"R-Z39589","mutations":[{"posStart":"4439912","ancestral":"GCAGCTTCACTCCTGAGG","descendant":"del","type":"3","display":"GCAGCTTCACTCCTGAGG4439912del","label":"R-Z39589","alias":"Z39589.1; Z39589 Z39589_2","optional":"N"}]
+,"children":[{"haplogroup":"R-FGC43861","mutations":[{"posStart":"5760177","ancestral":"C","descendant":"T","type":"0","display":"C5760177T","label":"R-FGC43861","alias":"FGC43861","optional":"N"}]
+,"children":[{"haplogroup":"R-BY174832","mutations":[{"posStart":"6996149","ancestral":"C","descendant":"T","type":"0","display":"C6996149T","label":"R-BY174832","alias":"BY174832","rsid":"rs930287115","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-BY19425","mutations":[{"posStart":"16551518","ancestral":"G","descendant":"Y","type":"0","display":"G16551518Y","label":"R-BY19425","alias":"BY19425","optional":"N"}]
+,"children":[{"haplogroup":"R-BY19419","mutations":[{"posStart":"3160286","ancestral":"A","descendant":"G","type":"0","display":"A3160286G","label":"R-BY19419","alias":"BY19419","optional":"N"}]
+}
+]}
+]}
+,{"haplogroup":"R-L513","mutations":[{"posStart":"7340450","ancestral":"C","descendant":"T","type":"0","display":"C7340450T","label":"R-L513","alias":"DF1; S215","optional":"N"}]
+}
+,{"haplogroup":"R-FGC11134","mutations":[{"posStart":"21383466","ancestral":"T","descendant":"A","type":"0","display":"T21383466A","label":"R-FGC11134","alias":"Y3550","optional":"N"}]
+}
+,{"haplogroup":"R-DF21","mutations":[{"posStart":"9878915","ancestral":"C","descendant":"T","type":"0","display":"C9878915T","label":"R-DF21","alias":"R1b1a1b1a1a2c1a5a; R1b1a1b1a1a2c1a5b1; R1b1a1b1a1a2c1a5c; R1b1a1b1a1a2c1a5d; S192","rsid":"rs138322855","optional":"N"}]
+,"children":[{"haplogroup":"R-FGC3213","mutations":[{"posStart":"26722140","ancestral":"A","descendant":"C","type":"0","display":"A26722140C","label":"R-FGC3213","alias":"FGC3213","optional":"N"}]
+,"children":[{"haplogroup":"R-ZZ1","mutations":[{"posStart":"24899333","ancestral":"C","descendant":"T","type":"0","display":"C24899333T","label":"R-ZZ1","alias":"ZZ1 ZZ1_1","optional":"N"}]
+,"children":[{"haplogroup":"R-S7174","mutations":[{"posStart":"8463972","ancestral":"C","descendant":"G","type":"0","display":"C8463972G","label":"R-S7174","alias":"S7174","optional":"N"}]
+,"children":[{"haplogroup":"R-S7172","mutations":[{"posStart":"23635091","ancestral":"T","descendant":"C","type":"0","display":"T23635091C","label":"R-S7172","alias":"S7172","optional":"N"}]
+,"children":[{"haplogroup":"R-Y15984","mutations":[{"posStart":"7270594","ancestral":"G","descendant":"A","type":"0","display":"G7270594A","label":"R-Y15984","alias":"Y15984.1; Y15984; Y15984.2","optional":"N"}]
+}
+,{"haplogroup":"R-FTD88637","mutations":[{"posStart":"15401992","ancestral":"T","descendant":"C","type":"0","display":"T15401992C","label":"R-FTD88637","alias":"FTD88637","optional":"N"}]
+}
+,{"haplogroup":"R-BY160432","mutations":[{"posStart":"8122236","ancestral":"A","descendant":"C","type":"0","display":"A8122236C","label":"R-BY160432","alias":"BY160432","optional":"N"}]
+}
+]}
+]}
+,{"haplogroup":"R-S5459","mutations":[{"posStart":"21228687","ancestral":"A","descendant":"G","type":"0","display":"A21228687G","label":"R-S5459","alias":"S5459","rsid":"rs774475739","optional":"N"}]
+,"children":[{"haplogroup":"R-Y11789","mutations":[{"posStart":"7087450","ancestral":"C","descendant":"A","type":"0","display":"C7087450A","label":"R-Y11789","alias":"R-S5470; Y11789.1; Y11789; S5470.1; S5470; FGC11927","rsid":"rs760174469","optional":"N"}]
+}
+,{"haplogroup":"R-S5456","mutations":[{"posStart":"2708920","ancestral":"T","descendant":"C","type":"0","display":"T2708920C","label":"R-S5456","alias":"S5456","rsid":"rs964618695","optional":"N"}]
+,"children":[{"haplogroup":"R-BY24711","mutations":[{"posStart":"22947162","ancestral":"C","descendant":"G","type":"0","display":"C22947162G","label":"R-BY24711","alias":"BY24711","rsid":"rs915499482","optional":"N"}]
+}
+,{"haplogroup":"R-BY3300","mutations":[{"posStart":"7072835","ancestral":"C","descendant":"T","type":"0","display":"C7072835T","label":"R-BY3300","alias":"BY3300","optional":"N"}]
+,"children":[{"haplogroup":"R-BY24194","mutations":[{"posStart":"19094930","ancestral":"T","descendant":"C","type":"0","display":"T19094930C","label":"R-BY24194","alias":"BY24194","optional":"N"}]
+,"children":[{"haplogroup":"R-FT221262","mutations":[{"posStart":"5246365","ancestral":"G","descendant":"A","type":"0","display":"G5246365A","label":"R-FT221262","alias":"FT221262","optional":"N"}]
+}
+]}
+]}
+,{"haplogroup":"R-Z2955","mutations":[{"posStart":"18904419","ancestral":"A","descendant":"C","type":"0","display":"A18904419C","label":"R-Z2955","alias":"Z29558; Y12521","optional":"N"}]
+}
+]}
+]}
+,{"haplogroup":"R-S3058","mutations":[{"posStart":"15683936","ancestral":"T","descendant":"C","type":"0","display":"T15683936C","label":"R-S3058","alias":"S3058; FGC3188","rsid":"rs921462652","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-ZZ1_2","mutations":[{"posStart":"27429338","ancestral":"G","descendant":"A","type":"0","display":"G27429338A","label":"R-ZZ1_2","alias":"ZZ1_2","optional":"N"}]
+}
+,{"haplogroup":"R-BY43863","mutations":[{"posStart":"22445975","ancestral":"A","descendant":"T","type":"0","display":"A22445975T","label":"R-BY43863","alias":"BY43863","optional":"N"}]
+,"children":[{"haplogroup":"R-BY56929","mutations":[{"posStart":"2869121","ancestral":"A","descendant":"G","type":"0","display":"A2869121G","label":"R-BY56929","alias":"BY56929","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-BY99030","mutations":[{"posStart":"15005455","ancestral":"C","descendant":"T","type":"0","display":"C15005455T","label":"R-BY99030","alias":"BY99030","optional":"N"}]
+,"children":[{"haplogroup":"R-FT258227","mutations":[{"posStart":"2742405","ancestral":"A","descendant":"G","type":"0","display":"A2742405G","label":"R-FT258227","alias":"FT258227","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-Z16532","mutations":[{"posStart":"17833609","ancestral":"A","descendant":"T","type":"0","display":"A17833609T","label":"R-Z16532","alias":"R-Z16532","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-S5488","mutations":[{"posStart":"19088630","ancestral":"C","descendant":"T","type":"0","display":"C19088630T","label":"R-S5488","alias":"S5488; Y11277","rsid":"rs928913967","optional":"N"}]
+,"children":[{"haplogroup":"R-BY518","mutations":[{"posStart":"24109682","ancestral":"T","descendant":"C","type":"0","display":"T24109682C","label":"R-BY518","alias":"BY518","optional":"N"}]
+}
+,{"haplogroup":"R-Z16294","mutations":[{"posStart":"21649408","ancestral":"G","descendant":"A","type":"0","display":"G21649408A","label":"R-Z16294","alias":"Z16294","rsid":"rs962837871","optional":"N"}]
+}
+,{"haplogroup":"R-A6487","mutations":[{"posStart":"7147451","ancestral":"A","descendant":"T","type":"0","display":"A7147451T","label":"R-A6487","alias":"A6487","optional":"N"}]
+}
+,{"haplogroup":"R-BY12129","mutations":[{"posStart":"7213634","ancestral":"A","descendant":"G","type":"0","display":"A7213634G","label":"R-BY12129","alias":"BY12129","optional":"N"}]
+}
+,{"haplogroup":"R-FGC11358","mutations":[{"posStart":"22464264","ancestral":"G","descendant":"T","type":"0","display":"G22464264T","label":"R-FGC11358","alias":"FGC11358","optional":"N"}]
+,"children":[{"haplogroup":"R-S27573","mutations":[{"posStart":"7109122","ancestral":"C","descendant":"T","type":"0","display":"C7109122T","label":"R-S27573","alias":"S27573","rsid":"rs3097047","optional":"N"}]
+,"children":[{"haplogroup":"R-BY64262","mutations":[{"posStart":"7267096","ancestral":"G","descendant":"A","type":"0","display":"G7267096A","label":"R-BY64262","alias":"BY64262","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-Z17568","mutations":[{"posStart":"18396048","ancestral":"G","descendant":"del","type":"3","display":"G18396048del","label":"R-Z17568","alias":"Z17568; FGC11364","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-FGC33056","mutations":[{"posStart":"19430004","ancestral":"A","descendant":"G","type":"0","display":"A19430004G","label":"R-FGC33056","alias":"FGC33056; BY11117","rsid":"rs1017250993","optional":"N"}]
+}
+,{"haplogroup":"R-FT35590","mutations":[{"posStart":"2663375","ancestral":"C","descendant":"T","type":"0","display":"C2663375T","label":"R-FT35590","alias":"FT35590","optional":"N"}]
+,"children":[{"haplogroup":"R-BY108211","mutations":[{"posStart":"16496166","ancestral":"C","descendant":"T","type":"0","display":"C16496166T","label":"R-BY108211","alias":"BY108211","optional":"N"}]
+,"children":[{"haplogroup":"R-FT159000","mutations":[{"posStart":"4776513","ancestral":"C","descendant":"T","type":"0","display":"C4776513T","label":"R-FT159000","alias":"FT159000","optional":"N"}]
+,"children":[{"haplogroup":"R-FT161732","mutations":[{"posStart":"23494881","ancestral":"G","descendant":"A","type":"0","display":"G23494881A","label":"R-FT161732","alias":"FT161732","optional":"N"}]
+}
+]}
+]}
+]}
+]}
+,{"haplogroup":"R-BY13823","mutations":[{"posStart":"14192319","ancestral":"G","descendant":"T","type":"0","display":"G14192319T","label":"R-BY13823","alias":"BY13823","optional":"N"}]
+}
+,{"haplogroup":"R-BY178021","mutations":[{"posStart":"6987099","ancestral":"T","descendant":"A","type":"0","display":"T6987099A","label":"R-BY178021","alias":"BY178021","optional":"N"}]
+}
+,{"haplogroup":"R-S5201","mutations":[{"posStart":"8381834","ancestral":"C","descendant":"G","type":"0","display":"C8381834G","label":"R-S5201","alias":"FGC3903; Y2890","optional":"N"}]
+}
+,{"haplogroup":"R-Z16267","mutations":[{"posStart":"13682882","ancestral":"G","descendant":"A","type":"0","display":"G13682882A","label":"R-Z16267","alias":"Z16267","rsid":"rs887236815","optional":"N"}]
+}
+,{"haplogroup":"R-Z30233","mutations":[{"posStart":"13370806","ancestral":"G","descendant":"A","type":"0","display":"G13370806A","label":"R-Z30233","alias":"Z30233","rsid":"rs1373054482","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-FGC5494","mutations":[{"posStart":"3445114","ancestral":"A","descendant":"G","type":"0","display":"A3445114G","label":"R-FGC5494","alias":"FGC5494","rsid":"rs1230924360","optional":"N"}]
+}
+,{"haplogroup":"R-BY145002","mutations":[{"posStart":"23391816","ancestral":"T","descendant":"C","type":"0","display":"T23391816C","label":"R-BY145002","alias":"BY145002","optional":"N"}]
+}
+,{"haplogroup":"R-BY192942","mutations":[{"posStart":"2808916","ancestral":"C","descendant":"A","type":"0","display":"C2808916A","label":"R-BY192942","alias":"BY192942","optional":"N"}]
+}
+,{"haplogroup":"R-FTT9","mutations":[{"posStart":"","ancestral":"","descendant":"","type":"0","display":"","label":"R-FTT9","alias":"FTT9","optional":"N"}]
+,"children":[{"haplogroup":"R-BY197676","mutations":[{"posStart":"21298992","ancestral":"C","descendant":"T","type":"0","display":"C21298992T","label":"R-BY197676","alias":"BY197676","optional":"N"}]
+}
+,{"haplogroup":"R-BY60223","mutations":[{"posStart":"6426246","ancestral":"G","descendant":"C","type":"0","display":"G6426246C","label":"R-BY60223","alias":"BY60223","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-BY23434","mutations":[{"posStart":"6362231","ancestral":"T","descendant":"G","type":"0","display":"T6362231G","label":"R-BY23434","alias":"BY23434","optional":"N"}]
+}
+,{"haplogroup":"R-BY39001","mutations":[{"posStart":"2750581","ancestral":"G","descendant":"A","type":"0","display":"G2750581A","label":"R-BY39001","alias":"BY39001","optional":"N"}]
+,"children":[{"haplogroup":"R-BY39007","mutations":[{"posStart":"9516037","ancestral":"T","descendant":"C","type":"0","display":"T9516037C","label":"R-BY39007","alias":"BY39007","optional":"N"}]
+}
+]}
+]}
+,{"haplogroup":"R-BY11894","mutations":[{"posStart":"7618071","ancestral":"T","descendant":"G","type":"0","display":"T7618071G","label":"R-BY11894","alias":"","optional":"N"}]
+}
+,{"haplogroup":"R-BY24776","mutations":[{"posStart":"23608405","ancestral":"T","descendant":"C","type":"0","display":"T23608405C","label":"R-BY24776","alias":"BY24776","rsid":"rs1041570315","optional":"N"}]
+}
+,{"haplogroup":"R-BY2994","mutations":[{"posStart":"16626243","ancestral":"C","descendant":"T","type":"0","display":"C16626243T","label":"R-BY2994","alias":"BY2994","rsid":"rs921172787","optional":"N"}]
+}
+,{"haplogroup":"R-DF63","mutations":[{"posStart":"2883986","ancestral":"T","descendant":"C","type":"0","display":"T2883986C","label":"R-DF63","alias":"CTS300; S522","optional":"N"}]
+}
+,{"haplogroup":"R-F4006","mutations":[{"posStart":"21251092","ancestral":"T","descendant":"C","type":"0","display":"T21251092C","label":"R-F4006","alias":"F4006.2","rsid":"rs964250412","optional":"N"}]
+}
+,{"haplogroup":"R-FT21374","mutations":[{"posStart":"14451523","ancestral":"G","descendant":"C","type":"0","display":"G14451523C","label":"R-FT21374","alias":"FT21374","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-A5846","mutations":[{"posStart":"17039527","ancestral":"G","descendant":"A","type":"0","display":"G17039527A","label":"R-A5846","alias":"R1b1a1b1a1a2c1c1","rsid":"rs954316260","optional":"N"}]
+,"children":[{"haplogroup":"R-A5845","mutations":[{"posStart":"16713731","ancestral":"G","descendant":"A","type":"0","display":"G16713731A","label":"R-A5845","alias":"A5845","rsid":"rs1006756377","optional":"N"}]
+}
+,{"haplogroup":"R-BY11863","mutations":[{"posStart":"8542803","ancestral":"G","descendant":"A","type":"0","display":"G8542803A","label":"R-BY11863","alias":"BY11863","rsid":"rs899472865","optional":"N"}]
+,"children":[{"haplogroup":"R-FTB54744","mutations":[{"posStart":"4454633","ancestral":"A","descendant":"C","type":"0","display":"A4454633C","label":"R-FTB54744","alias":"FTB54744","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-Y16251","mutations":[{"posStart":"21514753","ancestral":"T","descendant":"A","type":"0","display":"T21514753A","label":"R-Y16251","alias":"Y16251","rsid":"rs936531015","optional":"N"}]
+}
+]}
+]}
+,{"haplogroup":"R-BY22760","mutations":[{"posStart":"7534097","ancestral":"C","descendant":"Y","type":"0","display":"C7534097Y","label":"R-BY22760","alias":"BY22760","optional":"N"}]
+,"children":[{"haplogroup":"R-BY22769","mutations":[{"posStart":"15501820","ancestral":"G","descendant":"A","type":"0","display":"G15501820A","label":"R-BY22769","alias":"BY22769","optional":"N"}]
+}
+,{"haplogroup":"R-BY33056","mutations":[{"posStart":"18399604","ancestral":"T","descendant":"C","type":"0","display":"T18399604C","label":"R-BY33056","alias":"BY33056; Y101898","optional":"N"}]
+}
+,{"haplogroup":"R-FT49779","mutations":[{"posStart":"8124437","ancestral":"G","descendant":"T","type":"0","display":"G8124437T","label":"R-FT49779","alias":"FT49779","optional":"N"}]
+}
+,{"haplogroup":"R-FT75905","mutations":[{"posStart":"8585706","ancestral":"G","descendant":"A","type":"0","display":"G8585706A","label":"R-FT75905","alias":"FT75905","optional":"N"}]
+}
+]}
+]}
+,{"haplogroup":"R-DF19","mutations":[{"posStart":"14301499","ancestral":"G","descendant":"T","type":"0","display":"G14301499T","label":"R-DF19","alias":"S232","rsid":"rs753249165","optional":"N"}]
+}
+,{"haplogroup":"R-A9063","mutations":[{"posStart":"9464776","ancestral":"A","descendant":"T","type":"0","display":"A9464776T","label":"R-A9063","alias":"A9063","optional":"N"}]
+}
+,{"haplogroup":"R-BY25512","mutations":[{"posStart":"8473520","ancestral":"G","descendant":"A","type":"0","display":"G8473520A","label":"R-BY25512","alias":"BY25512; Y47377","rsid":"rs893500446","optional":"N"}]
+}
+,{"haplogroup":"R-FTA84066","mutations":[{"posStart":"21267165","ancestral":"C","descendant":"G","type":"0","display":"C21267165G","label":"R-FTA84066","alias":"FTA84066","optional":"N"}]
+}
+,{"haplogroup":"R-L238","mutations":[{"posStart":"21253443","ancestral":"A","descendant":"G","type":"0","display":"A21253443G","label":"R-L238","alias":"L238","rsid":"rs35199432","optional":"N"}]
+}
+,{"haplogroup":"R-PH2278","mutations":[{"posStart":"16441979","ancestral":"A","descendant":"G","type":"0","display":"A16441979G","label":"R-PH2278","alias":"PH2278","rsid":"rs761731851","optional":"N"}]
+}
+,{"haplogroup":"R-Y18211","mutations":[{"posStart":"7057069","ancestral":"T","descendant":"G","type":"0","display":"T7057069G","label":"R-Y18211","alias":"Y18211","rsid":"rs904288683","optional":"N"}]
+}
+,{"haplogroup":"R-Z29913","mutations":[{"posStart":"14837749","ancestral":"A","descendant":"G","type":"0","display":"A14837749G","label":"R-Z29913","alias":"Z29913","optional":"N"}]
+}
+,{"haplogroup":"R-Z29970","mutations":[{"posStart":"17306091","ancestral":"G","descendant":"C","type":"0","display":"G17306091C","label":"R-Z29970","alias":"Z29970","optional":"N"}]
+}
+,{"haplogroup":"R-Z46516","mutations":[{"posStart":"","ancestral":"C","descendant":"T","type":"0","display":"CT","label":"R-Z46516","alias":"Z46516","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-U106","mutations":[{"posStart":"8796078","ancestral":"C","descendant":"T","type":"0","display":"C8796078T","label":"R-U106","alias":"M405; S21","rsid":"rs16981293","optional":"N"}]
+}
+]}
+]}
+,{"haplogroup":"R-FT123498","mutations":[{"posStart":"5164365","ancestral":"T","descendant":"G","type":"0","display":"T5164365G","label":"R-FT123498","alias":"FT123498","optional":"N"}]
+,"children":[{"haplogroup":"R-BY44535","mutations":[{"posStart":"14248434","ancestral":"C","descendant":"T","type":"0","display":"C14248434T","label":"R-BY44535","alias":"BY44535; Y144905","optional":"N"}]
+,"children":[{"haplogroup":"R-FTB60015","mutations":[{"posStart":"14225034","ancestral":"T","descendant":"G","type":"0","display":"T14225034G","label":"R-FTB60015","alias":"FTB60015","optional":"N"}]
+}
+,{"haplogroup":"R-FTD264","mutations":[{"posStart":"22440365","ancestral":"C","descendant":"G","type":"0","display":"C22440365G","label":"R-FTD264","alias":"FTD264","optional":"N"}]
+}
+]}
+]}
+,{"haplogroup":"R-FT186340","mutations":[{"posStart":"14139517","ancestral":"A","descendant":"G","type":"0","display":"A14139517G","label":"R-FT186340","alias":"FT186340","optional":"N"}]
+,"children":[{"haplogroup":"R-FT188849","mutations":[{"posStart":"21552390","ancestral":"A","descendant":"G","type":"0","display":"A21552390G","label":"R-FT188849","alias":"FT188849","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-FT377377","mutations":[{"posStart":"22969170","ancestral":"A","descendant":"G","type":"0","display":"A22969170G","label":"R-FT377377","alias":"FT377377","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-PF7589","mutations":[{"posStart":"8067783","ancestral":"A","descendant":"G","type":"0","display":"A8067783G","label":"R-PF7589","alias":"PF7589; Z2118","rsid":"rs780803451","optional":"N"}]
+,"children":[{"haplogroup":"R-BY11990","mutations":[{"posStart":"8173192","ancestral":"C","descendant":"T","type":"0","display":"C8173192T","label":"R-BY11990","alias":"BY11990","optional":"N"}]
+}
+,{"haplogroup":"R-BY39441","mutations":[{"posStart":"9007409","ancestral":"G","descendant":"A","type":"0","display":"G9007409A","label":"R-BY39441","alias":"BY39441","optional":"N"}]
+}
+,{"haplogroup":"R-F15462","mutations":[{"posStart":"6930969","ancestral":"C","descendant":"G","type":"0","display":"C6930969G","label":"R-F15462","alias":"F15462.2","optional":"N"}]
+}
+,{"haplogroup":"R-Z2116","mutations":[{"posStart":"19427258","ancestral":"A","descendant":"G","type":"0","display":"A19427258G","label":"R-Z2116","alias":"Z2116; CTS10379","rsid":"rs776883720","optional":"N"}]
+}
+,{"haplogroup":"R-Z4416","mutations":[{"posStart":"7288515","ancestral":"C","descendant":"T","type":"0","display":"C7288515T","label":"R-Z4416","alias":"Z4416.3; Z21084.3","rsid":"rs780438079","optional":"N"}]
+}
+]}
+]}
+,{"haplogroup":"R-Z2103","mutations":[{"posStart":"7186135","ancestral":"G","descendant":"C","type":"0","display":"G7186135C","label":"R-Z2103","alias":"R1b1a1b1b; CTS1078","rsid":"rs567703217","optional":"N"}]
+,"children":[{"haplogroup":"R-FT130482","mutations":[{"posStart":"8536238","ancestral":"A","descendant":"G","type":"0","display":"A8536238G","label":"R-FT130482","alias":"FT130482","optional":"N"}]
+}
+,{"haplogroup":"R-M12149","mutations":[{"posStart":"14629851","ancestral":"G","descendant":"A","type":"0","display":"G14629851A","label":"R-M12149","alias":"Y4371; Z8128","optional":"N"}]
+,"children":[{"haplogroup":"R-FTA29814","mutations":[{"posStart":"7744290","ancestral":"G","descendant":"T","type":"0","display":"G7744290T","label":"R-FTA29814","alias":"FTA29814; Y240285","optional":"N"}]
+}
+,{"haplogroup":"R-PF331.2","mutations":[{"posStart":"9171834","ancestral":"A","descendant":"C","type":"0","display":"A9171834C","label":"R-PF331.2","alias":"PF331.2","optional":"N"}]
+}
+,{"haplogroup":"R-Y13369","mutations":[{"posStart":"22656448","ancestral":"C","descendant":"T","type":"0","display":"C22656448T","label":"R-Y13369","alias":"Y13369; FGC14589","rsid":"rs893752464","optional":"N"}]
+}
+,{"haplogroup":"R-Y4362","mutations":[{"posStart":"16193434","ancestral":"A","descendant":"T","type":"0","display":"A16193434T","label":"R-Y4362","alias":"Y4362; A367; M12155","rsid":"rs563325838","optional":"N"}]
+}
+,{"haplogroup":"R-Z2106","mutations":[{"posStart":"14213646","ancestral":"G","descendant":"A","type":"0","display":"G14213646A","label":"R-Z2106","alias":"Z2106; B5","rsid":"rs775505119","optional":"N"}]
+}
+]}
+]}
+]}
+,{"haplogroup":"R-PF7562","mutations":[{"posStart":"7952440","ancestral":"C","descendant":"T","type":"0","display":"C7952440T","label":"R-PF7562","alias":"PF7562 ; GG439","rsid":"rs1027591822","optional":"N"}]
+,"children":[{"haplogroup":"R-PF7563","mutations":[{"posStart":"8610246","ancestral":"G","descendant":"A","type":"0","display":"G8610246A","label":"R-PF7563","alias":"GG480; V2347; PF7563","rsid":"rs543105917","optional":"N"}]
+,"children":[{"haplogroup":"R-Y31335","mutations":[{"posStart":"28741922","ancestral":"C","descendant":"G","type":"0","display":"C28741922G","label":"R-Y31335","alias":"Y31335","optional":"N"}]
+}
+,{"haplogroup":"R-Z29764","mutations":[{"posStart":"19369222","ancestral":"A","descendant":"T","type":"0","display":"A19369222T","label":"R-Z29764","alias":"Z29764; GG719","rsid":"rs1010888771","optional":"N"}]
+}
+,{"haplogroup":"R-BY17663","mutations":[{"posStart":"8607811","ancestral":"A","descendant":"G","type":"0","display":"A8607811G","label":"R-BY17663","alias":"BY17663","optional":"N"}]
+}
+,{"haplogroup":"R-BY74609","mutations":[{"posStart":"8616776","ancestral":"G","descendant":"A","type":"0","display":"G8616776A","label":"R-BY74609","alias":"BY74609","rsid":"rs997247175","optional":"N"}]
+}
+,{"haplogroup":"R-FT89035","mutations":[{"posStart":"7192315","ancestral":"C","descendant":"G","type":"0","display":"C7192315G","label":"R-FT89035","alias":"FT89035","optional":"N"}]
+}
+,{"haplogroup":"R-FTA49944","mutations":[{"posStart":"14368351","ancestral":"G","descendant":"T","type":"0","display":"G14368351T","label":"R-FTA49944","alias":"FTA49944","optional":"N"}]
+}
+,{"haplogroup":"R-Y83608","mutations":[{"posStart":"7212423","ancestral":"G","descendant":"T","type":"0","display":"G7212423T","label":"R-Y83608","alias":"Y83608","optional":"N"}]
+}
+,{"haplogroup":"R-Y83965","mutations":[{"posStart":"7350989","ancestral":"C","descendant":"T","type":"0","display":"C7350989T","label":"R-Y83965","alias":"Y83965.1; Y83965","optional":"N"}]
+}
+,{"haplogroup":"R-Y95829","mutations":[{"posStart":"16277310","ancestral":"C","descendant":"T","type":"0","display":"C16277310T","label":"R-Y95829","alias":"Y95829","rsid":"rs986630415","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-FGC31923","mutations":[{"posStart":"7189634","ancestral":"C","descendant":"T","type":"0","display":"C7189634T","label":"R-FGC31923","alias":"FGC31923","optional":"N"}]
+,"children":[{"haplogroup":"R-FGC31921","mutations":[{"posStart":"6766620","ancestral":"G","descendant":"T","type":"0","display":"G6766620T","label":"R-FGC31921","alias":"FGC31921","optional":"N"}]
+}
+,{"haplogroup":"R-FGC73148","mutations":[{"posStart":"6799796","ancestral":"T","descendant":"C","type":"0","display":"T6799796C","label":"R-FGC73148","alias":"FGC73148","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-FGC31929","mutations":[{"posStart":"8415223","ancestral":"T","descendant":"C","type":"0","display":"T8415223C","label":"R-FGC31929","alias":"FGC31929","optional":"N"}]
+}
+,{"haplogroup":"R-Y36978","mutations":[{"posStart":"14138771","ancestral":"C","descendant":"A","type":"0","display":"C14138771A","label":"R-Y36978","alias":"Y36978","optional":"N"}]
+,"children":[{"haplogroup":"R-Y90546","mutations":[{"posStart":"14186427","ancestral":"C","descendant":"T","type":"0","display":"C14186427T","label":"R-Y90546","alias":"Y90546","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-Y36992","mutations":[{"posStart":"8274782","ancestral":"T","descendant":"C","type":"0","display":"T8274782C","label":"R-Y36992","alias":"Y36992","optional":"N"}]
+,"children":[{"haplogroup":"R-Y85942","mutations":[{"posStart":"8147878","ancestral":"C","descendant":"T","type":"0","display":"C8147878T","label":"R-Y85942","alias":"Y85942","optional":"N"}]
+,"children":[{"haplogroup":"R-Y81357","mutations":[{"posStart":"2749268","ancestral":"A","descendant":"T","type":"0","display":"A2749268T","label":"R-Y81357","alias":"Y81357","optional":"N"}]
+}
+]}
+]}
+]}
+]}
+,{"haplogroup":"R-M73","mutations":[{"posStart":"21888874","ancestral":"GT","descendant":"del","type":"3","display":"GT21888874del","label":"R-M73","alias":"R1b1a1a; M73","optional":"N"}]
+,"children":[{"haplogroup":"R-Y13202","mutations":[{"posStart":"14205142","ancestral":"G","descendant":"C","type":"0","display":"G14205142C","label":"R-Y13202","alias":"Y13202","rsid":"rs975837719","optional":"N"}]
+}
+,{"haplogroup":"R-FTA35755","mutations":[{"posStart":"7520987","ancestral":"G","descendant":"T","type":"0","display":"G7520987T","label":"R-FTA35755","alias":"FTA35755; Y127514","optional":"N"}]
+}
+]}
+]}
+]}
+]}
+]}
+]}
+,{"haplogroup":"R-M479","mutations":[{"posStart":"20834667","ancestral":"C","descendant":"T","type":"0","display":"C20834667T","label":"R-M479","alias":"R2; PF6107; Harappan","rsid":"rs372157627","optional":"N"}]
+,"children":[{"haplogroup":"R-M124","mutations":[{"posStart":"21764501","ancestral":"G","descendant":"A","type":"0","display":"G21764501A","label":"R-M124","alias":"R2a2","rsid":"rs372706460","optional":"N"}]
+,"children":[{"haplogroup":"R-P267","mutations":[{"posStart":"18028669","ancestral":"C","descendant":"G","type":"0","display":"C18028669G","label":"R-P267","alias":"PF6109","rsid":"rs368057017","optional":"N"}]
+}
+]}
+,{"haplogroup":"R-FGC50368","mutations":[{"posStart":"23490112","ancestral":"A","descendant":"C","type":"0","display":"A23490112C","label":"R-FGC50368","alias":"FGC50368","optional":"N"}]
+}
+,{"haplogroup":"R-FGC50231","mutations":[{"posStart":"7089771","ancestral":"G","descendant":"C","type":"0","display":"G7089771C","label":"R-FGC50231","alias":"FGC50231","optional":"N"}]
+,"children":[{"haplogroup":"R-SK2164","mutations":[{"posStart":"15033019","ancestral":"C","descendant":"G","type":"0","display":"C15033019G","label":"R-SK2164","alias":"SK2164","optional":"N"}]
+}
+]}
+]}
+]}
+]}
+,{"haplogroup":"Q-M242","mutations":[{"posStart":"15018582","ancestral":"C","descendant":"T","type":"0","display":"C15018582T","label":"Q-M242","alias":"Q; Q1; Q2; K2b2a1","rsid":"rs8179021","optional":"N"}]
+,"children":[{"haplogroup":"Q-L472","mutations":[{"posStart":"7014317","ancestral":"G","descendant":"C","type":"0","display":"G7014317C","label":"Q-L472","alias":"Q1; Q1b; F903; L472","rsid":"rs35724598","optional":"N"}]
+,"children":[{"haplogroup":"Q-L56","mutations":[{"posStart":"8148869","ancestral":"G","descendant":"A","type":"0","display":"G8148869A","label":"Q-L56","alias":"Q1b1; S324","rsid":"rs34703625","optional":"N"}]
+,"children":[{"haplogroup":"Q-L53","mutations":[{"posStart":"21642296","ancestral":"G","descendant":"A","type":"0","display":"G21642296A","label":"Q-L53","alias":"Q1b1a; S326","rsid":"rs34724285","optional":"N"}]
+,"children":[{"haplogroup":"Q-L54","mutations":[{"posStart":"23292782","ancestral":"G","descendant":"A","type":"0","display":"G23292782A","label":"Q-L54","alias":"Q1b1a3","rsid":"rs34954951","optional":"N"}]
+,"children":[{"haplogroup":"Q-L330","mutations":[{"posStart":"17766807","ancestral":"T","descendant":"C","type":"0","display":"T17766807C","label":"Q-L330","alias":"","rsid":"rs867799140","optional":"N"}]
+}
+]}
+]}
+]}
+]}
+,{"haplogroup":"Q-L275","mutations":[{"posStart":"19136888","ancestral":"G","descendant":"A","type":"0","display":"G19136888A","label":"Q-L275","alias":"Q2; Q3; L275","rsid":"rs777076210","optional":"N"}]
+}
+]}
+]}
+,{"haplogroup":"P-FT344715","mutations":[{"posStart":"21310878","ancestral":"C","descendant":"G","type":"0","display":"C21310878G","label":"P-FT344715","alias":"FT344715","optional":"N"}]
+}
+]}
+,{"haplogroup":"P-FT344716","mutations":[{"posStart":"14236237","ancestral":"A","descendant":"G","type":"0","display":"A14236237G","label":"P-FT344716","alias":"FT344716","optional":"N"}]
+}
+]}
+,{"haplogroup":"P-F20149","mutations":[{"posStart":"15782517","ancestral":"A","descendant":"G","type":"0","display":"A15782517G","label":"P-F20149","alias":"F20149","rsid":"rs374179651","optional":"N"}]
+}
+,{"haplogroup":"P-FT292000","mutations":[{"posStart":"21560500","ancestral":"G","descendant":"T","type":"0","display":"G21560500T","label":"P-FT292000","alias":"FT292000","rsid":"rs900098102","optional":"N"}]
+}
+,{"haplogroup":"P-Y453240","mutations":[{"posStart":"18132028","ancestral":"T","descendant":"A","type":"0","display":"T18132028A","label":"P-Y453240","alias":"Y453240","optional":"N"}]
+}
+]}
+]}
+,{"haplogroup":"P-FTC1","mutations":[{"posStart":"2867037","ancestral":"C","descendant":"T","type":"0","display":"C2867037T","label":"P-FTC1","alias":"FTC1; A22984","optional":"N"}]
+}
+]}
+,{"haplogroup":"K-P399","mutations":[{"posStart":"13563083","ancestral":"C","descendant":"T","type":"0","display":"C13563083T","label":"K-P399","alias":"","rsid":"rs866700638","optional":"N"}]
+}
+]}
+,{"haplogroup":"K-M2308","mutations":[{"posStart":"7690182","ancestral":"A","descendant":"T","type":"0","display":"A7690182T","label":"K-M2308","alias":"V1371; Z4842","optional":"N"}]
+}
+,{"haplogroup":"K-P261","mutations":[{"posStart":"13992279","ancestral":"G","descendant":"A","type":"0","display":"G13992279A","label":"K-P261","alias":"","optional":"N"}]
+}
+,{"haplogroup":"K-P402","mutations":[{"posStart":"19279781","ancestral":"T","descendant":"C","type":"0","display":"T19279781C","label":"K-P402","alias":"","rsid":"rs866806033","optional":"N"}]
+}
+,{"haplogroup":"K-M147","mutations":[{"posStart":"21762081","ancestral":"T","descendant":"Y","type":"0","display":"T21762081Y","label":"K-M147","alias":"M147.1; M147","optional":"N"}]
+}
+]}
+,{"haplogroup":"LT-L298","mutations":[{"posStart":"8467290","ancestral":"T","descendant":"C","type":"0","display":"T8467290C","label":"LT-L298","alias":"P326","optional":"N"}]
+,"children":[{"haplogroup":"L-M20","mutations":[{"posStart":"21733454","ancestral":"A","descendant":"G","type":"0","display":"A21733454G","label":"L-M20","alias":"M20; PF5570","rsid":"rs3911","optional":"N"}]
+,"children":[{"haplogroup":"L-M22","mutations":[{"posStart":"14790163","ancestral":"A","descendant":"G","type":"0","display":"A14790163G","label":"L-M22","alias":"M22","rsid":"rs3913","optional":"N"}]
+}
+,{"haplogroup":"L-L595","mutations":[{"posStart":"21739651","ancestral":"C","descendant":"T","type":"0","display":"C21739651T","label":"L-L595","alias":"L595","rsid":"rs866516420","optional":"N"}]
+}
+]}
+,{"haplogroup":"T-M184","mutations":[{"posStart":"14898163","ancestral":"G","descendant":"A","type":"0","display":"G14898163A","label":"T-M184","alias":"M184; Page34; PAGES00034; USP9Y+3178","rsid":"rs20320","optional":"N"}]
+}
+]}
+]}
+,{"haplogroup":"IJ-M429","mutations":[{"posStart":"14031334","ancestral":"T","descendant":"A","type":"0","display":"T14031334A","label":"IJ-M429","alias":"IJ; M429; P125; PF3535","rsid":"rs17306671","optional":"N"}]
+,"children":[{"haplogroup":"I-L758","mutations":[{"posStart":"8536868","ancestral":"C","descendant":"G","type":"0","display":"C8536868G","label":"I-L758","alias":"I; PF3663; V2199; YSC0000285","rsid":"rs17316778","optional":"N"}]
+,"children":[{"haplogroup":"I-M170","mutations":[{"posStart":"14847792","ancestral":"A","descendant":"C","type":"0","display":"A14847792C","label":"I-M170","alias":"I1; I2; PF3715; M170","rsid":"rs2032597","optional":"N"}]
+,"children":[{"haplogroup":"I-Z2699","mutations":[{"posStart":"6681979","ancestral":"A","descendant":"C","type":"0","display":"A6681979C","label":"I-Z2699","alias":"I1; FGC2430; Z2699","rsid":"rs112938890","optional":"N"}]
+,"children":[{"haplogroup":"I-L840","mutations":[{"posStart":"20834703","ancestral":"C","descendant":"G","type":"0","display":"C20834703G","label":"I-L840","alias":"L840","rsid":"rs17250114","optional":"N"}]
+,"children":[{"haplogroup":"I-M253","mutations":[{"posStart":"15022707","ancestral":"C","descendant":"T","type":"0","display":"C15022707T","label":"I-M253","alias":"I1; I1a; M253","rsid":"rs9341296","optional":"N"}]
+,"children":[{"haplogroup":"I-DF29","mutations":[{"posStart":"3626279","ancestral":"A","descendant":"G","type":"0","display":"A3626279G","label":"I-DF29","alias":"DF29^^; S438^^","rsid":"rs755912631","optional":"N"}]
+,"children":[{"haplogroup":"I-Z2893","mutations":[{"posStart":"22544398","ancestral":"G","descendant":"A","type":"0","display":"G22544398A","label":"I-Z2893","alias":"Z2893","rsid":"rs772225735","optional":"N"}]
+}
+,{"haplogroup":"I-PH790","mutations":[{"posStart":"14003437","ancestral":"T","descendant":"C","type":"0","display":"T14003437C","label":"I-PH790","alias":"PH790","rsid":"rs762131183","optional":"N"}]
+}
+,{"haplogroup":"I-PH525","mutations":[{"posStart":"7207509","ancestral":"C","descendant":"T","type":"0","display":"C7207509T","label":"I-PH525","alias":"PH525","rsid":"rs750549112","optional":"N"}]
+}
+,{"haplogroup":"I-BY183623","mutations":[{"posStart":"22071882","ancestral":"G","descendant":"A","type":"0","display":"G22071882A","label":"I-BY183623","alias":"BY183623; A23547","rsid":"rs949211761","optional":"N"}]
+}
+,{"haplogroup":"I-BY169148","mutations":[{"posStart":"6846231","ancestral":"A","descendant":"C","type":"0","display":"A6846231C","label":"I-BY169148","alias":"BY169148","rsid":"rs1479984042","optional":"N"}]
+}
+,{"haplogroup":"I-BY13858","mutations":[{"posStart":"22423357","ancestral":"T","descendant":"A","type":"0","display":"T22423357A","label":"I-BY13858","alias":"BY13858","rsid":"rs1327755719","optional":"N"}]
+}
+,{"haplogroup":"I-FGC15560","mutations":[{"posStart":"23328964","ancestral":"G","descendant":"A","type":"0","display":"G23328964A","label":"I-FGC15560","alias":"FGC15560","optional":"N"}]
+}
+,{"haplogroup":"I-A5716","mutations":[{"posStart":"2863817","ancestral":"A","descendant":"C","type":"0","display":"A2863817C","label":"I-A5716","alias":"A5716","rsid":"rs956070627","optional":"N"}]
+}
+]}
+,{"haplogroup":"I-CTS12768","mutations":[{"posStart":"28698519","ancestral":"C","descendant":"T","type":"0","display":"C28698519T","label":"I-CTS12768","alias":"CTS12768.2","rsid":"rs545693955","optional":"N"}]
+}
+,{"haplogroup":"I-Z17954","mutations":[{"posStart":"3894582","ancestral":"G","descendant":"A","type":"0","display":"G3894582A","label":"I-Z17954","alias":"Z17954","rsid":"rs1158622084","optional":"N"}]
+}
+,{"haplogroup":"I-FT2037","mutations":[{"posStart":"17787182","ancestral":"A","descendant":"G","type":"0","display":"A17787182G","label":"I-FT2037","alias":"FT2037","optional":"N"}]
+}
+]}
+]}
+]}
+,{"haplogroup":"I-P215","mutations":[{"posStart":"16638804","ancestral":"A","descendant":"G","type":"0","display":"A16638804G","label":"I-P215","alias":"I2; I2a; P215; I-M438; M438; PF3853; S31","rsid":"rs17307294","optional":"N"}]
+,"children":[{"haplogroup":"I-CTS2257","mutations":[{"posStart":"14238700","ancestral":"G","descendant":"T","type":"0","display":"G14238700T","label":"I-CTS2257","alias":"I2a1; PF3704; Z2647; CTS2257","rsid":"rs753852546","optional":"N"}]
+,"children":[{"haplogroup":"I-L460","mutations":[{"posStart":"7879415","ancestral":"A","descendant":"C","type":"0","display":"A7879415C","label":"I-L460","alias":"I2a1b; PF3647; S238","rsid":"rs7892855","optional":"N"}]
+,"children":[{"haplogroup":"I-M436","mutations":[{"posStart":"18747493","ancestral":"G","descendant":"C","type":"0","display":"G18747493C","label":"I-M436","alias":"I2a1b1; P214; PF3856; S33; M436","rsid":"rs17315680","optional":"N"}]
+,"children":[{"haplogroup":"I-M223","mutations":[{"posStart":"21717307","ancestral":"G","descendant":"A","type":"0","display":"G21717307A","label":"I-M223","alias":"I2a1b1~","rsid":"rs367573274","optional":"N"}]
+,"children":[{"haplogroup":"I-Y3259","mutations":[{"posStart":"7681034","ancestral":"G","descendant":"A","type":"0","display":"G7681034A","label":"I-Y3259","alias":"I2a1b1a; Y3259","rsid":"rs758826454","optional":"N"}]
+,"children":[{"haplogroup":"I-CTS616","mutations":[{"posStart":"6906332","ancestral":"G","descendant":"C","type":"0","display":"G6906332C","label":"I-CTS616","alias":"I2a1b1a2; CTS616","rsid":"rs751166844","optional":"N"}]
+,"children":[{"haplogroup":"I-CTS10057","mutations":[{"posStart":"19232160","ancestral":"C","descendant":"T","type":"0","display":"C19232160T","label":"I-CTS10057","alias":"I2a1b1a2a; CTS10057.1; CTS10057","rsid":"rs776515850","optional":"N"}]
+,"children":[{"haplogroup":"I-L702","mutations":[{"posStart":"7629205","ancestral":"C","descendant":"T","type":"0","display":"C7629205T","label":"I-L702","alias":"L702","rsid":"rs866414185","optional":"N"}]
+,"children":[{"haplogroup":"I-S12991","mutations":[{"posStart":"10025710","ancestral":"C","descendant":"A","type":"0","display":"C10025710A","label":"I-S12991","alias":"I2a1b1a2a1; S12991","rsid":"rs1176727109","optional":"N"}]
+,"children":[{"haplogroup":"I-P78","mutations":[{"posStart":"6740387","ancestral":"G","descendant":"A","type":"0","display":"G6740387A","label":"I-P78","alias":"I2a1b1a2a1a; P78.1; P78","rsid":"rs773406590","optional":"N"}]
+,"children":[{"haplogroup":"I-S9302","mutations":[{"posStart":"6661260","ancestral":"T","descendant":"C","type":"0","display":"T6661260C","label":"I-S9302","alias":"S9302","rsid":"rs760224811","optional":"N"}]
+,"children":[{"haplogroup":"I-S25733","mutations":[{"posStart":"23595728","ancestral":"C","descendant":"T","type":"0","display":"C23595728T","label":"I-S25733","alias":"I2a1b1a2a1a1; S25733","rsid":"rs997632109","optional":"N"}]
+,"children":[{"haplogroup":"I-A427","mutations":[{"posStart":"23281929","ancestral":"G","descendant":"T","type":"0","display":"G23281929T","label":"I-A427","alias":"Y4889; A427","rsid":"rs866520895","optional":"N"}]
+,"children":[{"haplogroup":"I-FT210662","mutations":[{"posStart":"22058446","ancestral":"C","descendant":"T","type":"0","display":"C22058446T","label":"I-FT210662","alias":"FT210662","rsid":"rs1057030572","optional":"N"}]
+,"children":[{"haplogroup":"I-FT211042","mutations":[{"posStart":"28739385","ancestral":"T","descendant":"G","type":"0","display":"T28739385G","label":"I-FT211042","alias":"FT211042","optional":"N"}]
+,"children":[{"haplogroup":"I-BY71206","mutations":[{"posStart":"8257127","ancestral":"C","descendant":"G","type":"0","display":"C8257127G","label":"I-BY71206","alias":"BY71206","optional":"N"}]
+}
+]}
+,{"haplogroup":"I-FTA23560","mutations":[{"posStart":"14872677","ancestral":"C","descendant":"A","type":"0","display":"C14872677A","label":"I-FTA23560","alias":"FTA23560","optional":"N"}]
+,"children":[{"haplogroup":"I-FTA25194","mutations":[{"posStart":"23026095","ancestral":"C","descendant":"A","type":"0","display":"C23026095A","label":"I-FTA25194","alias":"FTA25194.2","optional":"N"}]
+}
+]}
+]}
+,{"haplogroup":"I-S17511","mutations":[{"posStart":"15738398","ancestral":"C","descendant":"A","type":"0","display":"C15738398A","label":"I-S17511","alias":"","rsid":"rs891429115","optional":"N"}]
+,"children":[{"haplogroup":"I-Y41633","mutations":[{"posStart":"16740290","ancestral":"T","descendant":"A","type":"0","display":"T16740290A","label":"I-Y41633","alias":"Y41633","rsid":"rs966924266","optional":"N"}]
+,"children":[{"haplogroup":"I-FGC70611","mutations":[{"posStart":"23889086","ancestral":"T","descendant":"C","type":"0","display":"T23889086C","label":"I-FGC70611","alias":"FGC70611","optional":"N"}]
+}
+,{"haplogroup":"I-Y279802","mutations":[{"posStart":"18404538","ancestral":"A","descendant":"C","type":"0","display":"A18404538C","label":"I-Y279802","alias":"","optional":"N"}]
+}
+]}
+,{"haplogroup":"I-FTB95741","mutations":[{"posStart":"7634381","ancestral":"G","descendant":"A","type":"0","display":"G7634381A","label":"I-FTB95741","alias":"FTB95741","optional":"N"}]
+}
+,{"haplogroup":"I-BY37214","mutations":[{"posStart":"16740290","ancestral":"T","descendant":"C","type":"0","display":"T16740290C","label":"I-BY37214","alias":"BY37214; Y136556","rsid":"rs966924266","optional":"N"}]
+}
+]}
+,{"haplogroup":"I-FTC2104","mutations":[{"posStart":"2748110","ancestral":"A","descendant":"T","type":"0","display":"A2748110T","label":"I-FTC2104","alias":"FTC2104; Y319638","optional":"N"}]
+}
+,{"haplogroup":"I-S23897","mutations":[{"posStart":"22031371","ancestral":"C","descendant":"T","type":"0","display":"C22031371T","label":"I-S23897","alias":"S23897","rsid":"rs1030990762","optional":"N"}]
+}
+]}
+,{"haplogroup":"I-PH2670","mutations":[{"posStart":"16918827","ancestral":"C","descendant":"T","type":"0","display":"C16918827T","label":"I-PH2670","alias":"PH2670","rsid":"rs775582799","optional":"N"}]
+}
+]}
+,{"haplogroup":"I-BY173072","mutations":[{"posStart":"15011123","ancestral":"A","descendant":"C","type":"0","display":"A15011123C","label":"I-BY173072","alias":"BY173072","optional":"N"}]
+}
+,{"haplogroup":"I-Y7219","mutations":[{"posStart":"8447173","ancestral":"C","descendant":"A","type":"0","display":"C8447173A","label":"I-Y7219","alias":"Y7219","optional":"N"}]
+}
+]}
+]}
+]}
+,{"haplogroup":"I-S22311","mutations":[{"posStart":"19456075","ancestral":"A","descendant":"G","type":"0","display":"A19456075G","label":"I-S22311","alias":"S22311","rsid":"rs893229525","optional":"N"}]
+}
+]}
+,{"haplogroup":"I-Z161","mutations":[{"posStart":"2696497","ancestral":"C","descendant":"G","type":"0","display":"C2696497G","label":"I-Z161","alias":"Z161","rsid":"rs776391000","optional":"N"}]
+}
+,{"haplogroup":"I-Z189","mutations":[{"posStart":"22278483","ancestral":"T","descendant":"A","type":"0","display":"T22278483A","label":"I-Z189","alias":"Z189; S330; S5902","rsid":"rs1177893515","optional":"N"}]
+}
+]}
+]}
+,{"haplogroup":"I-S9403","mutations":[{"posStart":"6742730","ancestral":"T","descendant":"C","type":"0","display":"T6742730C","label":"I-S9403","alias":"S9403; SK1254","rsid":"rs1007485601","optional":"N"}]
+}
+]}
+,{"haplogroup":"I-FT355006","mutations":[{"posStart":"18116169","ancestral":"C","descendant":"A","type":"0","display":"C18116169A","label":"I-FT355006","alias":"FT355006","optional":"N"}]
+}
+,{"haplogroup":"I-Y344225","mutations":[{"posStart":"13202897","ancestral":"G","descendant":"A","type":"0","display":"G13202897A","label":"I-Y344225","alias":"Y344225","optional":"N"}]
+,"children":[{"haplogroup":"I-Y344262","mutations":[{"posStart":"24485322","ancestral":"G","descendant":"T","type":"0","display":"G24485322T","label":"I-Y344262","alias":"Y344262","optional":"N"}]
+,"children":[{"haplogroup":"I-Y344254","mutations":[{"posStart":"14480885","ancestral":"G","descendant":"A","type":"0","display":"G14480885A","label":"I-Y344254","alias":"Y344254","optional":"N"}]
+}
+]}
+]}
+]}
+,{"haplogroup":"I-S2555","mutations":[{"posStart":"16715106","ancestral":"T","descendant":"A","type":"0","display":"T16715106A","label":"I-S2555","alias":"S2555","rsid":"rs889887039","optional":"N"}]
+,"children":[{"haplogroup":"I-Y10720","mutations":[{"posStart":"21594118","ancestral":"G","descendant":"T","type":"0","display":"G21594118T","label":"I-Y10720","alias":"Y10720; FGC29597","rsid":"rs753692486","optional":"N"}]
+}
+]}
+]}
+,{"haplogroup":"I-P37","mutations":[{"posStart":"14491684","ancestral":"T","descendant":"C","type":"0","display":"T14491684C","label":"I-P37","alias":"P37.2; PF4004; I-P37","rsid":"rs199865681","optional":"N"}]
+}
+]}
+,{"haplogroup":"I-L596","mutations":[{"posStart":"14197631","ancestral":"G","descendant":"A","type":"0","display":"G14197631A","label":"I-L596","alias":"L596.1; L596; PF6907.1; PF6907; S292","rsid":"rs751715583","optional":"N"}]
+}
+]}
+,{"haplogroup":"I-BY32198","mutations":[{"posStart":"16956545","ancestral":"G","descendant":"T","type":"0","display":"G16956545T","label":"I-BY32198","alias":"BY32198","optional":"N"}]
+,"children":[{"haplogroup":"I-FTC48249","mutations":[{"posStart":"21654370","ancestral":"C","descendant":"T","type":"0","display":"C21654370T","label":"I-FTC48249","alias":"FTC48249","optional":"N"}]
+}
+,{"haplogroup":"I-L417","mutations":[{"posStart":"8426321","ancestral":"T","descendant":"C","type":"0","display":"T8426321C","label":"I-L417","alias":"L417; S332","rsid":"rs867108134","optional":"N"}]
+}
+]}
+]}
+]}
+]}
+]}
+]}
+,{"haplogroup":"H-L901","mutations":[{"posStart":"17844304","ancestral":"C","descendant":"T","type":"0","display":"C17844304T","label":"H-L901","alias":"L901; M2939","rsid":"rs567848586","optional":"N"}]
+,"children":[{"haplogroup":"H-Z13965","mutations":[{"posStart":"24523481","ancestral":"C","descendant":"G","type":"0","display":"C24523481G","label":"H-Z13965","alias":"Z13965; FGC23602","rsid":"rs556591187","optional":"N"}]
+}
+,{"haplogroup":"H-P96","mutations":[{"posStart":"14869743","ancestral":"C","descendant":"A","type":"0","display":"C14869743A","label":"H-P96","alias":"P96","rsid":"rs1027017284","optional":"N"}]
+}
+,{"haplogroup":"H-M2826","mutations":[{"posStart":"15006597","ancestral":"G","descendant":"A","type":"0","display":"G15006597A","label":"H-M2826","alias":"H~: M2826; Z4221","rsid":"rs545513401","optional":"N"}]
+,"children":[{"haplogroup":"H-L902","mutations":[{"posStart":"23009978","ancestral":"C","descendant":"T","type":"0","display":"C23009978T","label":"H-L902","alias":"L902; M3061","rsid":"rs549888349","optional":"N"}]
+}
+,{"haplogroup":"H-Z5857","mutations":[{"posStart":"2759285","ancestral":"C","descendant":"G","type":"0","display":"C2759285G","label":"H-Z5857","alias":"Z5857","rsid":"rs569006329","optional":"N"}]
+}
+]}
+]}
+]}
+,{"haplogroup":"G-M201","mutations":[{"posStart":"15027529","ancestral":"G","descendant":"T","type":"0","display":"G15027529T","label":"G-M201","alias":"G1; G2; J1a2a1a2d2b2b2c4d2a2a4a1~; PF2957","rsid":"rs2032636","optional":"N"}]
+,"children":[{"haplogroup":"G-M285","mutations":[{"posStart":"22741740","ancestral":"G","descendant":"C","type":"0","display":"G22741740C","label":"G-M285","alias":"","rsid":"rs13447378","optional":"N"}]
+,"children":[{"haplogroup":"G-L830","mutations":[{"posStart":"6863908","ancestral":"T","descendant":"C","type":"0","display":"T6863908C","label":"G-L830","alias":"L830","rsid":"rs868102357","optional":"N"}]
+}
+,{"haplogroup":"G-CTS11562","mutations":[{"posStart":"23161910","ancestral":"G","descendant":"A","type":"0","display":"G23161910A","label":"G-CTS11562","alias":"CTS11562","rsid":"rs927655971","optional":"N"}]
+}
+]}
+,{"haplogroup":"G-L89.1","mutations":[{"posStart":"7978725","ancestral":"C","descendant":"T","type":"0","display":"C7978725T","label":"G-L89.1","alias":"M3475; PF3138; L89; L89.1; V1548","rsid":"rs35160044","optional":"N"}]
+,"children":[{"haplogroup":"G-FTB166","mutations":[{"posStart":"7813163","ancestral":"T","descendant":"A","type":"0","display":"T7813163A","label":"G-FTB166","alias":"FTB166","optional":"N"}]
+}
+,{"haplogroup":"G-FTB92","mutations":[{"posStart":"2819571","ancestral":"A","descendant":"C","type":"0","display":"A2819571C","label":"G-FTB92","alias":"","optional":"N"}]
+}
+,{"haplogroup":"G-L156","mutations":[{"posStart":"17174741","ancestral":"A","descendant":"T","type":"0","display":"A17174741T","label":"G-L156","alias":"PF3002","rsid":"rs35190095","optional":"N"}]
+}
+]}
+]}
+]}
+,{"haplogroup":"C-M216","mutations":[{"posStart":"15437564","ancestral":"C","descendant":"T","type":"0","display":"C15437564T","label":"C-M216","alias":"M216","rsid":"rs2032666","optional":"N"}]
+}
+,{"haplogroup":"F-M89","mutations":[{"posStart":"21917313","ancestral":"C","descendant":"T","type":"0","display":"C21917313T","label":"F-M89","alias":"F; M89; PF2746","rsid":"rs2032652","optional":"N"}]
+}
+]}
+,{"haplogroup":"DE-M145","mutations":[{"posStart":"21717208","ancestral":"C","descendant":"T","type":"0","display":"C21717208T","label":"DE-M145","alias":"M145; P205; PF1444; DE-M145","rsid":"rs3848982","optional":"N"}]
+}
+]}
+,{"haplogroup":"B-M181","mutations":[{"posStart":"14851554","ancestral":"T","descendant":"C","type":"0","display":"T14851554C","label":"B-M181","alias":"M181; Page32; PAGES00032","rsid":"rs2032599","optional":"N"}]
+}
+]}
+,{"haplogroup":"A-L419","mutations":[{"posStart":"15204887","ancestral":"G","descendant":"A","type":"0","display":"G15204887A","label":"A-L419","alias":"L419; PF712","rsid":"rs111762602","optional":"N"}]
+}
+]}
+]}
+,{"haplogroup":"A-CTS2809.1","mutations":[{"posStart":"14497059","ancestral":"C","descendant":"A","type":"0","display":"C14497059A","label":"A-CTS2809.1","alias":"A0; L991.1","optional":"N"}]
+}
+]}
+,{"haplogroup":"A-AF6","mutations":[{"posStart":"6877771","ancestral":"A","descendant":"G","type":"0","display":"A6877771G","label":"A-AF6","alias":"A00; L1284; AF6","rsid":"rs1331306868","optional":"N"}]
+,"children":[{"haplogroup":"A-L1088","mutations":[{"posStart":"2887279","ancestral":"C","descendant":"G","type":"0","display":"C2887279G","label":"A-L1088","alias":"A00; L1088.1 L1088","optional":"N"}]
+,"children":[{"haplogroup":"A-FGC28278","mutations":[{"posStart":"18895378","ancestral":"C","descendant":"del","type":"3","display":"C18895378del","label":"A-FGC28278","alias":"FGC28278","optional":"N"}]
+}
+,{"haplogroup":"A-A4987","mutations":[{"posStart":"23054909","ancestral":"G","descendant":"A","type":"0","display":"G23054909A","label":"A-A4987","alias":"A00b; YP3666","optional":"N"}]
+}
+]}
+]}
+]}
+,{"haplogroup":"Neanderthal","mutations":[{"posStart":"14832610","ancestral":"A","descendant":"G","type":"0","display":"A14832610G","label":"Neanderthal","alias":"A000a","optional":"N"}]
+,"children":[{"haplogroup":"A-A21565","mutations":[{"posStart":"2847443","ancestral":"T","descendant":"C","type":"0","display":"T2847443C","label":"A-A21565","alias":"","optional":"N"}]
+,"children":[{"haplogroup":"A-A21616","mutations":[{"posStart":"14893204","ancestral":"A","descendant":"G","type":"0","display":"A14893204G","label":"A-A21616","alias":"A21616","rsid":"rs1010627695","optional":"N"}]
+}
+]}
+,{"haplogroup":"A-A10801","mutations":[{"posStart":"14089676","ancestral":"C","descendant":"T","type":"0","display":"C14089676T","label":"A-A10801","alias":"A000b1","optional":"N"}]
+,"children":[{"haplogroup":"A-A10765","mutations":[{"posStart":"2722524","ancestral":"A","descendant":"G","type":"0","display":"A2722524G","label":"A-A10765","alias":"","optional":"N"}]
+}
+]}
+]}
+]}
+,{"haplogroup":"Denisovan","mutations":[{"posStart":"2825900","ancestral":"C","descendant":"T","type":"0","display":"C2825900T","label":"Denisovan","alias":"A8864","optional":"N"}]
+,"children":[{"haplogroup":"Den10028519","mutations":[{"posStart":"10028519","ancestral":"C","descendant":"A","type":"0","display":"C10028519A","label":"Den10028519","alias":"","rsid":"rs74531508","optional":"N"}]
+}
+]}
+]}
+]}
