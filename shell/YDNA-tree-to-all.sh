@@ -14,8 +14,8 @@
 #     {"ISOGG-YDNA-BUILD-37":[
 #       {"haplogroup":"Y","children":[
 #         {"haplogroup":"A0000","mutations":[
-#           {"posStart":"10016359","ancestral":"G","descendant":"A","type":"0","display":"G10016359A","label":"A8897","alias":"Y19091"},
-#           {"posStart":"10042663","ancestral":"G","descendant":"C","type":"0","display":"G10042663C","label":"A8898","alias":"Y19091"},
+#           {"posStart":"10016359","ancestral":"G","descendant":"A","type":"0","display":"G10016359A","label":"A8897","alias":"Y19091","optional":"N"},
+#           {"posStart":"10042663","ancestral":"G","descendant":"C","type":"0","display":"G10042663C","label":"A8898","alias":"Y19091","optional":"Y"},
 #     ..
 #         }]
 #       }]

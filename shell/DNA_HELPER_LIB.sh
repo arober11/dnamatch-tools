@@ -1,7 +1,9 @@
 # Convert a Haplogroup CSV file to JSON format
-#function to_JSON_array() {
-# perl $thisDir/perl_snippets/ydna_csv_to_json.pl "$1" "$2" "$3" "$4" "$5" "$6" "$7" "$8" "$9" 
-#}
+function to_JSON_array2() {
+  thisDir=$(basename $0)
+  perl $thisDir/perl_snippets/DNA_csv_to_json.pl "$1" "$2" "$3" "$4" "$5" "$6" "$7" "$8" "$9" 
+}
+
 function to_JSON_array () {
   local LOC_FROM="$1"
   local LOC_TO="$2"

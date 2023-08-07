@@ -73,7 +73,7 @@ def walk_tree(children, parent, mutOverrideDict):
       else:
         for mutation in haplogroup["mutations"]:
           call_status=0
-          if mutation['descendant']:
+          if not ('optional' in mutation and mutation['optional'] == "Y") and mutation['descendant']:   #If not 'optional' and has a 'descendant' value
             if mutation['posStart']:
               if not (snpDict.get(mutation['posStart']) is None):                       # IF mutation in the SNPs dictionary
                 #print (haplogroup['haplogroup'],mutation['label'],":",mutation['posStart'], "SNPs:",snpDict.get(mutation['posStart'],"\n\n\n")," Haplo:",mutation['descendant'])
@@ -227,6 +227,7 @@ for haplogroup in hapDict:
         overridden+=1
   else:
     bad+=1
+  #print("total: ", total,"haplogroup: ",haplogroup," status: ", status, " good: ", good, " uncertain: ", uncertain, " overridden: ", overridden, " bad: ", bad)
 
 if good > 0 or uncertain > 0:
   print('======================================================')
