@@ -7,6 +7,7 @@ my $tweakCnt=0;
 my $missing=1;
 my $lnCnt=$#lines+1;
 my $baseHaplo;
+my $try;
 
 sub check_mutes($) {
   my $checkHaplo;
@@ -30,18 +31,19 @@ foreach my $line (@lines) {
   $missing=1;
   check_mutes $baseHaplo;
   if ( $missing == 1 ) {
-    if ( $baseHaplo =~ m/ or / ) {
-      $try1=$baseHaplo;
-      $try1=~s/ or .*$//;
-      check_mutes $try1;
+    if ( $baseHaplo =~ m/[ _]or[ _]/ ) {
+      $try=$baseHaplo;
+      $try=~s/[ _]or[ _].*$//;
+      check_mutes $try;
       if ( $missing == 1 ) {
-        $try2=$baseHaplo;
-        $try2=~s/^.* or //;
-        check_mutes $try2;
+        $try=$baseHaplo;
+        $try=~s/^.*[ _]or[ _]//;
+        check_mutes $try;
       } 
-      if ( $missing == 0 ) { $tweakCnt++; }
-    }
-    if ( $missing == 1 ) {
+    } 
+    if ( $missing == 0 ) { 
+      $tweakCnt++; 
+    } else {
       $diffCnt++;
       print STDERR "\nError - missing mutations: $line\n";
     }

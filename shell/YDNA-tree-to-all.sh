@@ -1,6 +1,10 @@
 #!/bin/bash
 #
 # Purpose: Attempt to combine and convert the ISOGG YDNA files from https://isogg.org/tree/index.html
+#
+# Usage: YDNA-tree-to-all.sh [p]
+#
+#   where: [p] = pruned output, with only required mutations
 # 
 # Note: 
 #   - Source Google sheets have a growing collection of comments / annotations, along with some unhelpful / incosistent foratting, that needs to be removed,
@@ -42,9 +46,11 @@ DEBUG_TO_JSON=1
 # ------------
 SED="gsed -E"                                              ; export SED
 
+PRUNED=0
 THIS_SCRIPT_NAME=$(basename $0)
 THIS_DIR_NAME=$(dirname $0)
 THIS_LIB_NAME="$(dirname $0)/DNA_HELPER_LIB.sh"
+TO_JSON_SCRIPT="$THIS_DIR_NAME/perl_snippets/dna_csv_to_json.pl"
 # ------------
 BUILD=37
 YDNA_SNPS="YDNA_SNPS.csv"
@@ -60,9 +66,10 @@ YDNA_TRUNK_NESTED="$YDNA_BASE.Haplos.nested.csv"           ; export YDNA_TRUNK_N
 YDNA_TRUNK_MERGED="$YDNA_BASE.merged.csv"                  ; export YDNA_TRUNK_MERGED
 YDNA_TRUNK_MERGED_TMP="$YDNA_BASE.merged.csv.tmp"
 YDNA_TRUNK_MERGED_SAVED="$YDNA_TRUNK_MERGED.bak"
+YDNA_TRUNK_PRUNED="$YDNA_BASE.merged.pruned.csv"           ; export YDNA_TRUNK_PRUNED
 
 HAPLOS_JSON="$YDNA_BASE.json"
-HAPLO_PAT="[a-zA-Z0-9~@-]+,"
+HAPLO_PAT="[a-zA-Z0-9~@_-]+,"
 PROC_HAPLO_CNT=0
 # ----------------------------------
 
@@ -73,6 +80,10 @@ source $THIS_LIB_NAME
 # MAIN
 ###################
 
+if [ "$1" = "p" ]
+then
+  PRUNED=1
+fi
 if [ $DEBUG_RESTORE_INPUT -ne 0 ]
 then
   echo "-------------------"
@@ -91,7 +102,7 @@ fi
 if [ $DEBUG_MISSING_MUTES -ne 0 ]
 then
   echo "Check if lacking mutations:"
-  perl -e 'my @lines=`cat $ENV{YDNA_HAPLOGRPS}`; my @mutes=`cat $ENV{YDNA_HAPGRP_MUTS}`; my $cnt=0; my $foundCnt=0; my $diffCnt=0; my $tweakCnt=0; my $missing=1; my $lnCnt=$#lines+1; my $baseHaplo; sub check_mutes($) { my $checkHaplo; ($checkHaplo) = @_; foreach my $mut (@mutes) { if ( $mut =~ m/^$checkHaplo,/ ) { $foundCnt++; $missing=0; last; } } } foreach my $line (@lines) { $line=~s/\n//; $cnt++; print STDERR "Checking : $cnt    of $lnCnt  -  Found: $foundCnt  -   Missing: $diffCnt\r"; $baseHaplo=$line; $baseHaplo=~s/@//g; if ( $baseHaplo ne $line ) { print STDERR "\nProcessing duplicate: $line\n";} $missing=1; check_mutes $baseHaplo; if ( $missing == 1 ) { if ( $baseHaplo =~ m/ or / ) { $try1=$baseHaplo; $try1=~s/ or .*$//; check_mutes $try1; if ( $missing == 1 ) { $try2=$baseHaplo; $try2=~s/^.* or //; check_mutes $try2; } if ( $missing == 0 ) { $tweakCnt++; } } if ( $missing == 1 ) { $diffCnt++; print STDERR "\nError - missing mutations: $line\n"; } } } print STDERR "\nFound: $foundCnt\nTweaked: $tweakCnt\nMissing: $diffCnt\n";'
+  perl -e 'my @lines=`cat $ENV{YDNA_HAPLOGRPS}`; my @mutes=`cat $ENV{YDNA_HAPGRP_MUTS}`; my $cnt=0; my $foundCnt=0; my $diffCnt=0; my $tweakCnt=0; my $missing=1; my $lnCnt=$#lines+1; my $baseHaplo; my $try; sub check_mutes($) { my $checkHaplo; ($checkHaplo) = @_; foreach my $mut (@mutes) { if ( $mut =~ m/^$checkHaplo,/ ) { $foundCnt++; $missing=0; last; } } } foreach my $line (@lines) { $line=~s/\n//; $cnt++; print STDERR "Checking : $cnt    of $lnCnt  -  Found: $foundCnt  -   Missing: $diffCnt\r"; $baseHaplo=$line; $baseHaplo=~s/@//g; if ( $baseHaplo ne $line ) { print STDERR "\nProcessing duplicate: $line\n";} $missing=1; check_mutes $baseHaplo; if ( $missing == 1 ) { if ( $baseHaplo =~ m/[ _]or[ _]/ ) { $try=$baseHaplo; $try=~s/[ _]or[ _].*$//; check_mutes $try; if ( $missing == 1 ) { $try=$baseHaplo; $try=~s/^.*[ _]or[ _]//; check_mutes $try; } } if ( $missing == 0 ) { $tweakCnt++; } else { $diffCnt++; print STDERR "\nError - missing mutations: $line\n"; } } } print STDERR "\nFound: $foundCnt\nTweaked: $tweakCnt\nMissing: $diffCnt\n";'
   echo -----------------
 fi
 
@@ -106,15 +117,15 @@ then
     rm -f "$YDNA_TRUNK_MERGED.tmp"
     cp $YDNA_TRUNK_MERGED $YDNA_TRUNK_NESTED
     echo "-------------------"
-    echo "Checking nesting dosen't increase by more than one - takes a while !!!!"
+    echo "Checking nesting dosen't increase by more than one"
 
     perl -e 'my @lines=`cat $ENV{YDNA_TRUNK_NESTED}`; my $lineLen=0; my $lastLen=0; my $lastLn=""; my $nestCnt=0; my $fillCnt=0; my $lnCnt=$#lines+1; my $ln, $newLn, $cmd; foreach my $line (@lines) { $nestCnt++; print STDERR "Checking: $nestCnt    of $lnCnt\r"; $ln=$line; $ln=~s/^([,]*)[^,].*$/\1/; $lineLen=$#ln+1; $diff=$lineLen-$lastLen; if ( $diff >  1 ) { printf "Error: line: $nestCnt - $lastLen - $lineLen\n$lastLn\n$line\n---------\n"; if ( $diff == 2 ) { $fillCnt++; $newLn=substr $line, 1, -1; print "inserting between  - $newLn\n"; $cmd = "$ENV{SED} -i -e \"/$lastLn/a $newLn\" $ENV{YDNA_TRUNK_NESTED}"; print "$cmd\n"; system($cmd); } } $lastLn=$line; $lastLen=$lineLen; } print STDERR "Checked: $nestCnt\nBack filled: $fillCnt\n";'
 
     echo "nesting checked"
     echo "-------------------"
-    echo "merging the haplogroup tree with the mutations files - takes a while"
+    echo "merging the haplogroup tree with the mutations files - takes a while !!!"
 
-    perl -e 'my @lines = `cat $ENV{YDNA_TRUNK_MERGED}`; my @mutes=`cat $ENV{YDNA_HAPGRP_MUTS}`; my $lnCnt=$#lines+1; my $cnt=0; my $dupCnt=0; my $tweakCnt=0; my $missCnt=0; my $updCnt=0; my $missing=1; my $thisHaploGrp, $baseHaplo, $mutsLn; $ln; sub check_mutes($) { my $checkHaplo; ($checkHaplo) = @_; foreach my $mut (@mutes) { if ( $mut =~ m/^$checkHaplo,/ ) { $foundCnt++; $missing=0; $mutsLn=$mut; $mutsLn=~s/^[^,]*,//; $mutsLn=~s/\n//; last; } } } foreach my $line (@lines) { $ln=$line; $cnt++; print STDERR "Joining: $cnt  of $lnCnt\r"; $thisHaploGrp=$ln; $thisHaploGrp=~s/^,*//; $thisHaploGrp=~s/,.*$//; $thisHaploGrp=~s/\n//; $baseHaplo=$thisHaploGrp; $baseHaplo=~s/@//g; if ( $thisHaploGrp ne $baseHaplo) {$dupCnt++; print STDERR "Processing duplicate: $thisHaploGrp : $baseHaplo\n";} $missing=1; check_mutes $baseHaplo; if ( $missing == 1 ) { if ( $baseHaplo =~ m/ or / ) { $try1=$baseHaplo; $try1=~s/ or .*$//; check_mutes $try1; if ( $missing == 1 ) { $try2=$baseHaplo; $try2=~s/^.* or //; check_mutes $try2; } if ( $missing == 0 ) { $tweakCnt++; } } if ( $missing == 1 ) { $diffCnt++; print STDERR "\nError - missing mutations for: $line\n"; } } if ( $missing == 0 ) { $ln=~s/^(,*[^,]+).*$/\1/; $ln=~s/\n/,/; $line=$ln.$mutsLn; $updCnt++; } else { $missCnt++; } } open(FH, ">", "$ENV{YDNA_HAPGRP_MUTS_TMP}") or die $!; foreach (@lines) { print FH "$_\n"; } close(FH); print STDERR "Joined: $cnt\nDuplicates: $dupCnt\n"; print STDERR "\nRead: $cnt\nMatched and updated: $updCnt\nHad to tweak to match: $tweakCnt\nMissing a mutation: $missCnt\nDuplicates encountered: $dupCnt\n";'
+    perl -e 'my @lines = `cat $ENV{YDNA_TRUNK_MERGED}`; my @mutes=`cat $ENV{YDNA_HAPGRP_MUTS}`; my $lnCnt=$#lines+1; my $cnt=0; my $dupCnt=0; my $tweakCnt=0; my $missCnt=0; my $updCnt=0; my $missing=1; my $thisHaploGrp, $baseHaplo, $mutsLn; $ln; sub check_mutes($) { my $checkHaplo; ($checkHaplo) = @_; foreach my $mut (@mutes) { if ( $mut =~ m/^$checkHaplo,/ ) { $foundCnt++; $missing=0; $mutsLn=$mut; $mutsLn=~s/^[^,]*,//; $mutsLn=~s/\n//; last; } } } foreach my $line (@lines) { $ln=$line; $cnt++; print STDERR "Joining: $cnt  of $lnCnt\r"; $thisHaploGrp=$ln; $thisHaploGrp=~s/^,*//; $thisHaploGrp=~s/,.*$//; $thisHaploGrp=~s/\n//; $baseHaplo=$thisHaploGrp; $baseHaplo=~s/@//g; if ( $thisHaploGrp ne $baseHaplo) {$dupCnt++; print STDERR "Processing duplicate: $thisHaploGrp : $baseHaplo\n";} $missing=1; check_mutes $baseHaplo; if ( $missing == 1 ) { if ( $baseHaplo =~ m/[ _]or[ _]/ ) { $try1=$baseHaplo; $try1=~s/[ _]or[ _].*$//; check_mutes $try1; if ( $missing == 1 ) { $try2=$baseHaplo; $try2=~s/^.*[ _]or[ _]//; check_mutes $try2; } if ( $missing == 0 ) { $tweakCnt++; } } if ( $missing == 1 ) { $diffCnt++; print STDERR "\nError - missing mutations for: $line\n"; } } if ( $missing == 0 ) { $ln=~s/^(,*[^,]+).*$/\1/; $ln=~s/\n/,/; $line=$ln.$mutsLn; $updCnt++; } else { $missCnt++; } } open(FH, ">", "$ENV{YDNA_HAPGRP_MUTS_TMP}") or die $!; foreach (@lines) { print FH "$_\n"; } close(FH); print STDERR "Joined: $cnt\nDuplicates: $dupCnt\n"; print STDERR "\nRead: $cnt\nMatched and updated: $updCnt\nHad to tweak to match: $tweakCnt\nMissing a mutation: $missCnt\nDuplicates encountered: $dupCnt\n";'
 
     $SED -i -e '/^$/d' $YDNA_HAPGRP_MUTS_TMP 
     mv $YDNA_HAPGRP_MUTS_TMP $YDNA_TRUNK_MERGED
@@ -159,7 +170,9 @@ echo "-------------------"
 echo "No defining mutations for:"
 egrep -v ']$' "$YDNA_TRUNK_MERGED"
 echo "fixing mutationless haplogroups"
+cp $YDNA_TRUNK_MERGED TMP.$YDNA_TRUNK_MERGED
 $SED -i -e '/[],]$/! s/$/,/' "$YDNA_TRUNK_MERGED"
+$SED -e 's/\{"pos[^}]*"optional":"Y"\}//g' -e 's/,+]/]/g' -e 's/,"mutations":[[][]]/,/' "$YDNA_TRUNK_MERGED" > "$YDNA_TRUNK_PRUNED"
 
 if [ $DEBUG_TO_JSON -ne 0 ]
 then
@@ -177,20 +190,27 @@ then
 
     if [ $MAX_DEPTH -ne 0 -a "$YDNA_TRUNK_MERGED" != "" ]
     then
-      # Stop Bash's array logic blowin up on encountering a SPACE
+      # Stop Bash's array logic blowing up on encountering a SPACE
       cp $YDNA_TRUNK_MERGED  $YDNA_TRUNK_MERGED_TMP
-      $SED -i -e 's/ or /-/g' -e 's/[ ]+/_/g' -e 's/[[]([A-Za-z0-9_ ]*)[]]/#\1#/' $YDNA_TRUNK_MERGED 
+      $SED -i -e 's/ or /_or_/g' -e 's/[ ]+/_/g' -e 's/[[]([A-Za-z0-9_ ]*)[]]/#\1#/' $YDNA_TRUNK_MERGED 
       # Produce JSON file
-      echo "{\"ISOGG-YDNA-BUILD-$BUILD\":[" > "$HAPLOS_JSON"
-      to_JSON_array "START" "END" "0" "$HAPLOGRPS" "$MAX_DEPTH" "$YDNA_TRUNK_MERGED" "$HAPLOS_JSON" "$HAPLO_PAT" "$PROC_HAPLO_CNT"
-      echo ']}' >> "$HAPLOS_JSON"
+      if [ ! $PRUNED ]
+      then
+        #echo "{\"ISOGG-YDNA-BUILD-$BUILD\":[" > "$HAPLOS_JSON"
+        #to_JSON_array "START" "END" "0" "$HAPLOGRPS" "$MAX_DEPTH" "$YDNA_TRUNK_MERGED" "$HAPLOS_JSON" "$HAPLO_PAT" "$PROC_HAPLO_CNT"
+        #echo ']}' >> "$HAPLOS_JSON"
+        perl $TO_JSON_SCRIPT "$YDNA_TRUNK_MERGED" "$HAPLOS_JSON" "$HAPLO_PAT" "ISOGG-YDNA-BUILD-$BUILD"
+      else
+        echo "ignoring optional mutations"
+        perl $TO_JSON_SCRIPT "$YDNA_TRUNK_PRUNED" "$HAPLOS_JSON" "$HAPLO_PAT" "ISOGG-YDNA-BUILD-$BUILD"
+      fi
       echo "Written: $PROC_HAPLO_CNT"
 
       #Tidy - remove blank lines, empty "children" arrays, and add some other new lines
       $SED -i -e '/^$/d' -e 's/\n//g' -e 's/,{2,}/,/g' -e 's/"children":[][]{2,}//g' -e 's/[[:space:],]+([]}])/\1/g' -e 's/]/]\n/g' -e 's/\{/\n{/g'  "$HAPLOS_JSON" 
       echo "SED retrun code $?"
-      echo "checking JSON with a: python -m json.tool YDNA_ISOGG_Haplogrp_Tree.json > /dev/null"
-      python -m json.tool YDNA_ISOGG_Haplogrp_Tree.json > /dev/null
+      echo "checking JSON with a: python -m json.tool $HAPLOS_JSON > /dev/null"
+      python -m json.tool $HAPLOS_JSON > /dev/null
       echo "PYTHON retrun code $?"
       mv $YDNA_TRUNK_MERGED_TMP $YDNA_TRUNK_MERGED
    fi

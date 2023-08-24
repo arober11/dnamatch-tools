@@ -205,6 +205,7 @@ function strip_tree_files () {
   $SED -i -e 's/ [ ]+/ /g'                $INFILE   # Remove douple spacing
   $SED -i -e 's/ \[[^]]* [^]]*\][ ,]*//'  $INFILE   # Remove comments in square brackets ([]) eg. [these may instead be at M8 tree level], [H2 formerly called F3], [maybe L333]
   $SED -i -e 's/[ \t]+"/"/g'              $INFILE   # Remove spaces before a double quote 
+  $SED -i -e 's/ [[]([A-Za-z0-9~]+)[]]([,~])/_or_\1\2/' -e 's/ or /_or_/' $INFILE    # Standardise ALTERNATE haplogroup names 
 
   #Tweak a few names to match those used in the TRUNK
   $SED -i -e 's/D2\*/D2/'                 $INFILE 
@@ -420,10 +421,10 @@ then
       if ! egrep "^$hap$|,$hap$" "tree.$YDNA_BASE.TRUNK.csv" 2>&1 > /dev/null
       then
          echo "Needs Fixing - $flNam - $hap"
-         tst=$(egrep "^$hap or |,$hap or " "tree.$YDNA_BASE.TRUNK.csv" | $SED -e 's/^,*//g')
+         tst=$(egrep "^${hap}_or_|,${hap}_or_" "tree.$YDNA_BASE.TRUNK.csv" | $SED -e 's/^,*//g')
          if [ "$tst" != "" ]
          then
-           echo has an alternate name - $tst : $hap : $flNam
+           echo "  - has an alternate name - $tst : $hap : $flNam"
            $SED -i -e "1,1s/$hap/$tst/g" "$flNam"
          fi
       fi

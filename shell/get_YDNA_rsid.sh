@@ -33,6 +33,12 @@
 #                                {"posStart":"21868776","ancestral":"A","descendant":"C","type":"0","display":"A21868776C","label":"M59","alias":"CTS1816","optional":"Y"},
 #                                {"posStart":"6851661","ancestral":"C","descendant":"T","type":"0","display":"C6851661T","label":"L1100","alias":"V1143","optional":"Y"}]
 #                 A0,"mutations":[{"posStart":"14001289","ancestral":"G", ...
+#                ...
+#              -- YDNA_HAPGRP_muts-Build37-prime.csv          - list of the FIRST muation for each Haplogroup, in a hybrid CSV and JSON format, eg.
+#                 A,"mutations":[{"posStart":"14814060","ancestral":"G","descendant":"C","type":"0","display":"G14814060C","label":"M171","alias":"CTS10804"}]
+#                 A0,"mutations":[{"posStart":"14001289","ancestral":"G","descendant":"A","type":"0","display":"G14001289A","label":"L990","alias":"PF1065"}]
+#                 A0-T,"mutations":[{"posStart":"13888035","ancestral":"A","descendant":"C","type":"0","display":"A13888035C","label":"L1116","alias":"V1767"}]
+#                 ...
 #              -- YDNA_HAPGRP_muts-Build37.json               - above file in just JSON format, e.g.
 #                 [{"haploGrp":"A","mutations":[{"posStart":"14814060","ancestral":"G","descendant":"C","type":"0","display":"G14814060C","label":"M171","alias":"CTS10804","optional":"N"},
 #                                               {"posStart":"21868776","ancestral":"A","descendant":"C","type":"0","display":"A21868776C","label":"M59","alias":"CTS1816","optional":"Y"},
@@ -60,21 +66,27 @@ YDNA_HAPGRP_SNPS_POS="YDNA_HAPGRP-Build$BUILD.SNP_Positions_used.txt"
 YDNA_HAPGRP_MUTS="YDNA_HAPGRP_muts-Build$BUILD.csv"     ; export YDNA_HAPGRP_MUTS
 YDNA_HAPGRP_MUTS_TMP="YDNA_HAPGRP_muts-Build$BUILD.tmp"
 YDNA_HAPGRP_MUTS_JSON="YDNA_HAPGRP_muts-Build$BUILD.json"
+YDNA_HAPGRP_MUTS_PRIME="YDNA_HAPGRP_muts-Build$BUILD-prime.csv"
 YDNA_RSID_MUTS="YDNA_rsid_muts-Build$BUILD.csv"
 SED="gsed -E"
 
 # Obtain latest Google sheet
 # COLS: Name,Subgroup Name,Alternate Names,rs numbers,Build 37 Number,Build 38 Number,Mutation Info
 wget https://docs.google.com/spreadsheets/d/1UY26FvLE3UmEmYFiXgOy0uezJi_wOut-V5TD0a_6-bE/export?format=csv#gid=193439206 -O "$YDNA_SNPS"
+if [ $? -ne 0 ] 
+then
+  echo "ERROR - download failed - $?"
+  exit 1
+fi
 echo "Downloaded: $YDNA_SNPS"
 
 if [ -f "$YDNA_SNPS" ]
 then
   dos2unix $YDNA_SNPS 
-  rm -f $YDNA_RSIDS $YDNA_MUTS $YDNA_HAPGRP_MUTS $YDNA_RSID_MUTS
+  rm -f $YDNA_RSIDS $YDNA_MUTS $YDNA_HAPGRP_MUTS $YDNA_RSID_MUTS $YDNA_HAPGRP_MUTS_PRIME
 
   #Tidy a couple of Haplogroup names
-  $SED -i -e 's/#REF!/C1a2b1b2/' -e 's/^"A9832,2"/A9832.2/' -e 's/^",//' -e 's/["]//g' -e 's/; /-/g' -e 's/[ ]*\(Notes\)//' -e 's/ ~/~/g' -e 's/Freq. Mut. SNP in //' $YDNA_SNPS
+  $SED -i -e 's/#REF!/C1a2b1b2/' -e 's/^"A9832,2"/A9832.2/' -e 's/^",//' -e 's/["]//g' -e 's/; /-/g' -e 's/[ ]*\(Notes\)//' -e 's/ ~/~/g' -e 's/Freq. Mut. SNP in //' -e 's/ [[]([A-Za-z0-9~]+)[]]([,~])/_or_\1\2/' -e 's/ or /_or_/' $YDNA_SNPS
   echo "Tidied: $YDNA_SNPS"
 
   #Remove square brackets
@@ -122,7 +134,7 @@ else
 fi
 
 # Merge the mutations for a haplogroup into a single line
-perl -e 'my @lines = `cat $ENV{YDNA_HAPGRP_MUTS}`; my $haploGrp="*"; my $thisHaploGrp; my $opt; my $cnt=0; foreach my $ln (@lines) { $cnt++; $thisHaploGrp=$ln; $thisHaploGrp=~s/^([^,]+),.*/\1/; if ($thisHaploGrp =~ m/~$/) { $opt="Y"; } else { $opt="N"; } chop $thisHaploGrp; chop $ln; chop $ln; $ln=~s/.$/,\"optional\":\"/; if ($haploGrp eq "*"){ print "$ln$opt\"\}"; } else { if ($thisHaploGrp ne $haploGrp) { print "]\n"."$ln$opt\"\}"; } else { $ln =~ s/^[^{]*({.*)/\1Y"}/; print ",$ln"; } } $haploGrp=$thisHaploGrp; } print "]\n";' > $YDNA_HAPGRP_MUTS_TMP
+perl -e 'my @lines = `cat $ENV{YDNA_HAPGRP_MUTS}`; my $haploGrp="*"; my $thisHaploGrp; my $opt; my $cnt=0; my $lp=""; foreach my $ln (@lines) { $cnt++; $thisHaploGrp=$ln; $lp=$ln; $thisHaploGrp=~s/^([^,]+),.*/\1/; if ($thisHaploGrp =~ m/~$/) { $opt="Y"; } else { $opt="N"; } chop $thisHaploGrp; chop $ln; chop $ln; $ln=~s/.$/,\"optional\":\"/; if ($haploGrp eq "*"){ print "$ln$opt\"\}"; print STDERR "$lp"; } else { if ($thisHaploGrp ne $haploGrp) { print "]\n"."$ln$opt\"\}"; if ($opt eq "N") {print STDERR "$lp";} } else { $ln =~ s/^[^{]*({.*)/\1Y"}/; print ",$ln"; } } $haploGrp=$thisHaploGrp; } print "]\n";' 2> $YDNA_HAPGRP_MUTS_PRIME 1> $YDNA_HAPGRP_MUTS_TMP
 
 mv $YDNA_HAPGRP_MUTS_TMP $YDNA_HAPGRP_MUTS
 echo "Written: $YDNA_HAPGRP_MUTS"

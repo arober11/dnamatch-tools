@@ -6,12 +6,15 @@
 # Output:  FJ - JSON file
 #          FT - nested CSV file
 #
+# Author:  A.Robers 2023-08-07
+# License: GPLv3. See accompanying LICENSE file.
+# No warranty. You are responsible for your use of this program.
 
 my $root="HomoErectus";
-my $FI="YHaplogroups-GeneticHomeland-stub.csv";
+my $inFile="YHaplogroups-GeneticHomeland-stub.csv";
 my $jsonFile="YHaplogroups-GeneticHomeland-stub.json";
 my $treeFile="YHaplogroups-GeneticHomeland-stub-nested.csv";
-my @lines=`cat $FI`;
+my @lines=`cat $inFile`;
 my $cnt=1;
 
 sub indent_kids($$$) {

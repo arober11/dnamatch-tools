@@ -3,6 +3,7 @@ my $haploGrp="*";
 my $thisHaploGrp;
 my $opt;
 my $cnt=0;
+my $lp="";
 foreach my $ln (@lines) {
   $cnt++; 
   $thisHaploGrp=$ln;
@@ -18,9 +19,13 @@ foreach my $ln (@lines) {
   $ln=~s/.$/,\"optional\":\"/; 
   if ($haploGrp eq "*"){ 
     print "$ln$opt\"\}";
+    print STDERR "$lp";
   } else { 
     if ($thisHaploGrp ne $haploGrp) { 
       print "]\n"."$ln$opt\"\}";
+      if ($opt eq "N") {
+        print STDERR "$lp";
+      }
     } else { 
       $ln =~ s/^[^{]*({.*)/\1Y"}/; 
       print ",$ln"; 

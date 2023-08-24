@@ -411,6 +411,11 @@ Download the latest ISOGG YDNA SNP list,
                                {"posStart":"21868776","ancestral":"A","descendant":"C","type":"0","display":"A21868776C","label":"M59","alias":"CTS1816"},
                                {"posStart":"6851661","ancestral":"C","descendant":"T","type":"0","display":"C6851661T","label":"L1100","alias":"V1143"}]
                   A0,"mutations":[{"posStart":"14001289","ancestral":"G", ...
+              -- YDNA_HAPGRP_muts-Build37-prime.csv          - list of the FIRST muation for each Haplogroup, in a hybrid CSV and JSON format, eg.
+                 A,"mutations":[{"posStart":"14814060","ancestral":"G","descendant":"C","type":"0","display":"G14814060C","label":"M171","alias":"CTS10804"}]
+                 A0,"mutations":[{"posStart":"14001289","ancestral":"G","descendant":"A","type":"0","display":"G14001289A","label":"L990","alias":"PF1065"}]
+                 A0-T,"mutations":[{"posStart":"13888035","ancestral":"A","descendant":"C","type":"0","display":"A13888035C","label":"L1116","alias":"V1767"}]
+                 ...
               -- YDNA_HAPGRP_muts-Build37.json               - above file in just JSON format, e.g.
                 [{"haploGrp":"A","mutations":[{"posStart":"14814060","ancestral":"G","descendant":"C","type":"0","display":"G14814060C","label":"M171","alias":"CTS10804"},
                                               {"posStart":"21868776","ancestral":"A","descendant":"C","type":"0","display":"A21868776C","label":"M59","alias":"CTS1816"},
@@ -641,3 +646,36 @@ defaults:
 
 ### YHaplogroups-GeneticHomeland-csv-to-indented.pl
 Reformat the GeneticHomeland format csv data into a nested haplotree csv and a json file, usable by lookup_Haplogroup.py
+
+## Creating Haplotree files foe lookup.py ##
+
+Example files are found in the output directory, though to recreate, run:
+
+- Windows 10+ 
+-- Virtualisation enabled in the bios, Microsofts WSL installed, a Linux distribution downloaded and installed.
+-- A Linux or BSD VM downloaded and run under VMWare, OpeBox, ...
+- macOS - some combination of the Apple's XCode command line utilities (Free from the App store), MacPorts, HomeBrew, or a Linux VM.
+- Linux - more or less good to go.
+
+Check you have, if not install via the respective package manager:
+-- wget
+-- GNU grep
+-- GNU sed
+
+COMMON:
+ - mkdir downloads
+ - cd downloads
+mtDNA: 
+ - wget https://www.phylotree.org/builds/mtDNA_tree_Build_17.zip
+ - unzip mtDNA_tree_Build_17.zip 
+ - mv mtDNA\ tree\ Build\ 17.htm mtDNA-tree-Build-17.htm
+ - ../shell/mtDNA-tree-to-all.sh mtDNA-tree-Build-17.htm
+yDNA:
+ - GeneticHomeland:
+ -- perl ../shell/YHaplogroups-GeneticHomeland-csv-to-indented.pl
+ - ISOGG:
+ -- ../shell/get_YDNA_rsid.sh
+ -- ../shell/get_YDNA_trees.sh
+ -- ../shell/YDNA-tree-to-all.sh
+ -- ../shell/YDNA-tree-to-all.sh p
+

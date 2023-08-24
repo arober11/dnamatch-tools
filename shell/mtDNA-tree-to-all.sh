@@ -23,7 +23,7 @@
 
 # ------------
 # Set to 0 to disable
-DEBUG_TO_CSV=0
+DEBUG_TO_CSV=1
 DEBUG_TO_JSON=1
 #--------------
 DEPTH=""
@@ -31,7 +31,7 @@ POS=0
 MAX_DEPTH=0
 HAPLOGRPS=0
 PROC_HAPLO_CNT=0
-HAPLO_PAT="[a-zA-Z0-9'±]+,"
+HAPLO_PAT="[a-zA-Z0-9'±@]+,"
 MUT_PAT="[^ACDTGacdtg!]"    #Last character of a MUTATION
 SED="gsed -E"
 #--------------
@@ -49,7 +49,7 @@ HAPLOS_JSON="$FILE_NAME.json"
 THIS_SCRIPT_NAME=$(basename $0)
 THIS_DIR_NAME=$(dirname $0)
 THIS_LIB_NAME="$(dirname $0)/DNA_HELPER_LIB.sh"
-
+TO_JSON_SCRIPT="$THIS_DIR_NAME/perl_snippets/dna_csv_to_json.pl"
 ####################################################################
 
 function expand_mutation () {
@@ -306,9 +306,10 @@ if [ $DEBUG_TO_JSON -ne 0 ]
 then
   if [ -f "$FILE_CSV" -a -s "$FILE_CSV" ]
   then
-    echo '{"mt-MRCA(RSRS)":[' > "$HAPLOS_JSON"
-    to_JSON_array "START" "END" "0" "$HAPLOGRPS" "$MAX_DEPTH" "$FILE_CSV" "$HAPLOS_JSON" "$HAPLO_PAT" "$PROC_HAPLO_CNT"
-    echo "]}" >> "$HAPLOS_JSON"
+    perl $TO_JSON_SCRIPT "$FILE_CSV" "$HAPLOS_JSON" "$HAPLO_PAT" "mt-MRCA(RSRS)"
+    #echo '{"mt-MRCA(RSRS)":[' > "$HAPLOS_JSON"
+    #to_JSON_array "START" "END" "0" "$HAPLOGRPS" "$MAX_DEPTH" "$FILE_CSV" "$HAPLOS_JSON" "$HAPLO_PAT" "$PROC_HAPLO_CNT"
+    #echo "]}" >> "$HAPLOS_JSON"
     echo "Written: $PROC_HAPLO_CNT"
 
     #Tidy - remove blank lines, empty "children" arrays, and add some other new lines

@@ -38,13 +38,13 @@ foreach my $line (@lines) {
   $missing=1;
   check_mutes $baseHaplo;
   if ( $missing == 1 ) {
-    if ( $baseHaplo =~ m/ or / ) {
+    if ( $baseHaplo =~ m/[ _]or[ _]/ ) {
       $try1=$baseHaplo;
-      $try1=~s/ or .*$//;
+      $try1=~s/[ _]or[ _].*$//;
       check_mutes $try1;
       if ( $missing == 1 ) {
         $try2=$baseHaplo;
-        $try2=~s/^.* or //;
+        $try2=~s/^.*[ _]or[ _]//;
         check_mutes $try2;
       } 
       if ( $missing == 0 ) { $tweakCnt++; }
