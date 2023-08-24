@@ -12,7 +12,7 @@ DELIM=""
 DELIM1=""
 DELIM2=""
 MISSING=0
-SED="sed -E" ; gsed --version  2>&1 > /dev/null && SED="gsed -E"
+SED="sed -E" ; gsed --version 2>/dev/null 1>/dev/null && SED="gsed -E"
 
 echo
 

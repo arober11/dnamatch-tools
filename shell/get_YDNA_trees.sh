@@ -66,7 +66,7 @@ DEBUG_STRIP_FILES=1
 DEBUG_TIDY_FILES=1
 DEBUG_REMOVE_DUP=1
 # ------------
-SED="sed -E" ; gsed --version  2>&1 > /dev/null && SED="gsed -E" ; export SED
+SED="sed -E" ; gsed --version 2>/dev/null 1>/dev/null && SED="gsed -E" ; export SED
 
 THIS_SCRIPT_NAME=$(basename $0)
 THIS_DIR_NAME=$(dirname $0)
@@ -178,7 +178,7 @@ function strip_tree_files () {
   local OUTFILE="tree.$1"
 
   #echo $INFILE
-  dos2unix $INFILE 2>&1 >/dev/null
+  dos2unix $INFILE 2>/dev/null 1>/dev/null
   $SED -i -e 's/[ ]+,/,/g' -e 's/,[ ]+/,/g' $INFILE # remove spaces before or after a comma
   $SED -i -e 's/,,Fami,,/,,,,/g' $INFILE            # delete the comment "Fami" next to a Haplogroup
   $SED -i -e '/^,+$/d' $INFILE                      # delete lines only containing commas 
@@ -186,15 +186,15 @@ function strip_tree_files () {
   $SED -i -e 's/[ \t\r]+$//' $INFILE                # delete tailing whitespace
 
   # Remove various comments, and notes writen on the tree  (order important!!!!)
-  grep 'A0000=Denisovan'                            $INFILE 2>&1 >/dev/null && $SED -i -e '1,/A0000=Denisovan/d' $INFILE 
-  grep 'Contact Person'                             $INFILE 2>&1 >/dev/null && $SED -i -e '1,/Contact Person/d' $INFILE 
-  grep 'Link to Haplogroup'                         $INFILE 2>&1 >/dev/null && $SED -i -e '1,/Link to Haplogroup/d' $INFILE 
-  grep 'confirmatory evidence is not yet available' $INFILE 2>&1 >/dev/null && $SED -i -e '1,/confirmatory evidence is not yet available/d' $INFILE 
-  grep 'MUTATION INFORMATION'                       $INFILE 2>&1 >/dev/null && $SED -i -e '/MUTATION INFORMATION/,$d' $INFILE 
-  grep 'NOTES'                                      $INFILE 2>&1 >/dev/null && $SED -i -e '/NOTES/,$d' $INFILE 
-  grep 'Caveats for the information'                $INFILE 2>&1 >/dev/null && $SED -i -e '/Caveats for the information/,$d' $INFILE 
-  grep 'D2 is listed as D0 in the 2019 Haber'       $INFILE 2>&1 >/dev/null && $SED -i -e '/D2 is listed as D0 in the 2019 Haber/,$d' $INFILE 
-  grep 'The listed'                                 $INFILE 2>&1 >/dev/null && $SED -i -e '/The listed/,$d' $INFILE 
+  grep 'A0000=Denisovan'                            $INFILE 2>/dev/null 1>/dev/null && $SED -i -e '1,/A0000=Denisovan/d' $INFILE 
+  grep 'Contact Person'                             $INFILE 2>/dev/null 1>/dev/null && $SED -i -e '1,/Contact Person/d' $INFILE 
+  grep 'Link to Haplogroup'                         $INFILE 2>/dev/null 1>/dev/null && $SED -i -e '1,/Link to Haplogroup/d' $INFILE 
+  grep 'confirmatory evidence is not yet available' $INFILE 2>/dev/null 1>/dev/null && $SED -i -e '1,/confirmatory evidence is not yet available/d' $INFILE 
+  grep 'MUTATION INFORMATION'                       $INFILE 2>/dev/null 1>/dev/null && $SED -i -e '/MUTATION INFORMATION/,$d' $INFILE 
+  grep 'NOTES'                                      $INFILE 2>/dev/null 1>/dev/null && $SED -i -e '/NOTES/,$d' $INFILE 
+  grep 'Caveats for the information'                $INFILE 2>/dev/null 1>/dev/null && $SED -i -e '/Caveats for the information/,$d' $INFILE 
+  grep 'D2 is listed as D0 in the 2019 Haber'       $INFILE 2>/dev/null 1>/dev/null && $SED -i -e '/D2 is listed as D0 in the 2019 Haber/,$d' $INFILE 
+  grep 'The listed'                                 $INFILE 2>/dev/null 1>/dev/null && $SED -i -e '/The listed/,$d' $INFILE 
   $SED -i -e '/K items here/d'                      $INFILE
   $SED -i -e '/used in several studies/d'           $INFILE
   $SED -i -e '/just below--click on /d'             $INFILE
@@ -211,7 +211,7 @@ function strip_tree_files () {
   $SED -i -e 's/D2\*/D2/'                 $INFILE 
 
   #Join some split lines
-  grep '^CTS6605/M2214'                   $INFILE 2>&1 >/dev/null && $SED -i -e "/^N,/N;s/\n//" $INFILE
+  grep '^CTS6605/M2214'                   $INFILE 2>/dev/null 1>/dev/null && $SED -i -e "/^N,/N;s/\n//" $INFILE
 
   # Output only the haplogroup names
   $SED -e 's/^(,*[^,]+),.*$/\1/'          $INFILE | egrep -E "[A-Za-z0-9]" > $OUTFILE
@@ -318,14 +318,14 @@ then
   while read branch
   do
     node=$(echo $branch | $SED -e 's/^,*//g')
-    if egrep ",$node$|^$node$" tree.YDNA_ISOGG_Haplogrp_Tree.?.csv 2>&1 > /dev/null
+    if egrep ",$node$|^$node$" tree.YDNA_ISOGG_Haplogrp_Tree.?.csv 2>/dev/null 1>/dev/null
     then
      tst=$(echo $node | $SED -e 's/[][]//g')
      if [ "$node" != "$tst" ]
      then
        if ! egrep -F "$node" tree.YDNA_ISOGG_Haplogrp_Tree.?.csv
        then
-         if egrep ",$tst$|^$tst$" tree.YDNA_ISOGG_Haplogrp_Tree.?.csv 2>&1 > /dev/null
+         if egrep ",$tst$|^$tst$" tree.YDNA_ISOGG_Haplogrp_Tree.?.csv 2>/dev/null 1>/dev/null
          then
            rep=$(echo $node | $SED -e 's/[][]/[][]/g')
            $SED -i -e "s/$rep$/$tst/" "tree.$YDNA_BASE.TRUNK.csv"
@@ -341,13 +341,13 @@ then
       rep=$node
       if [ "$node" != "$try1" ] 
       then
-        if ! egrep ",$try1$|^$try2$" tree.YDNA_ISOGG_Haplogrp_Tree.?.csv  2>&1 > /dev/null
+        if ! egrep ",$try1$|^$try2$" tree.YDNA_ISOGG_Haplogrp_Tree.?.csv  2>/dev/null 1>/dev/null
         then 
-          if ! egrep ",$try2$|^$try2$" tree.YDNA_ISOGG_Haplogrp_Tree.?.csv  2>&1 > /dev/null
+          if ! egrep ",$try2$|^$try2$" tree.YDNA_ISOGG_Haplogrp_Tree.?.csv  2>/dev/null 1>/dev/null
           then
-            if ! egrep ",$try3$|^$try3$" tree.YDNA_ISOGG_Haplogrp_Tree.?.csv  2>&1 > /dev/null
+            if ! egrep ",$try3$|^$try3$" tree.YDNA_ISOGG_Haplogrp_Tree.?.csv  2>/dev/null 1>/dev/null
             then
-              if ! egrep ",$try4$|^$try4$" tree.YDNA_ISOGG_Haplogrp_Tree.?.csv  2>&1 > /dev/null
+              if ! egrep ",$try4$|^$try4$" tree.YDNA_ISOGG_Haplogrp_Tree.?.csv  2>/dev/null 1>/dev/null
               then
                 if (echo $node | egrep '~$')
                 then
@@ -355,13 +355,13 @@ then
                   try6=$(echo $try2 | $SED -e 's/~$//g')
                   try7=$(echo $try3 | $SED -e 's/~$//g')
                   try8=$(echo $try4 | $SED -e 's/~$//g')
-                  if ! egrep ",$try5$|^$try5$" tree.YDNA_ISOGG_Haplogrp_Tree.?.csv  2>&1 > /dev/null
+                  if ! egrep ",$try5$|^$try5$" tree.YDNA_ISOGG_Haplogrp_Tree.?.csv  2>/dev/null 1>/dev/null
                   then
-                    if ! egrep ",$try6$|^$try6$" tree.YDNA_ISOGG_Haplogrp_Tree.?.csv  2>&1 > /dev/null
+                    if ! egrep ",$try6$|^$try6$" tree.YDNA_ISOGG_Haplogrp_Tree.?.csv  2>/dev/null 1>/dev/null
                     then
-                      if ! egrep ",$try7$|^$try7$" tree.YDNA_ISOGG_Haplogrp_Tree.?.csv  2>&1 > /dev/null
+                      if ! egrep ",$try7$|^$try7$" tree.YDNA_ISOGG_Haplogrp_Tree.?.csv  2>/dev/null 1>/dev/null
                       then
-                        if ! egrep ",$try8$|^$try3$" tree.YDNA_ISOGG_Haplogrp_Tree.?.csv  2>&1 > /dev/null
+                        if ! egrep ",$try8$|^$try3$" tree.YDNA_ISOGG_Haplogrp_Tree.?.csv  2>/dev/null 1>/dev/null
                         then
                           echo "NEITHER node or PARENT found - $node #### try1:$try1 ### try2:$try2 ### try3:$try3 ### try4:$try4 #### try5:$try5 ### try6:$try6 ### try7:$try7 ### try8:$try8 - deleting"
                           $SED -i -e "/$node$/d" "tree.$YDNA_BASE.TRUNK.csv"
@@ -418,7 +418,7 @@ then
     then
       hap="$line"
       egrep "^$hap$|,$hap$" "tree.$YDNA_BASE.TRUNK.csv"
-      if ! egrep "^$hap$|,$hap$" "tree.$YDNA_BASE.TRUNK.csv" 2>&1 > /dev/null
+      if ! egrep "^$hap$|,$hap$" "tree.$YDNA_BASE.TRUNK.csv" 2>/dev/null 1>/dev/null
       then
          echo "Needs Fixing - $flNam - $hap"
          tst=$(egrep "^${hap}_or_|,${hap}_or_" "tree.$YDNA_BASE.TRUNK.csv" | $SED -e 's/^,*//g')

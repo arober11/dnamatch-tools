@@ -5,7 +5,7 @@
 # License: GPLv3. See accompanying LICENSE file.
 # No warranty. You are responsible for your use of this program.
 
-SED="sed -E" ; gsed --version  2>&1 > /dev/null && SED="gsed -E"
+SED="sed -E" ; gsed --version 2>/dev/null 1>/dev/null && SED="gsed -E"
 location=$(dirname $0)
 fileName="YDNA_MINI_Haplogrp_Tree.json"
 perlScript="$location/perl_snippets/ydna_remove_dup_mutations.pl"

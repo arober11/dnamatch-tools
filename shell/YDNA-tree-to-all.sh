@@ -44,7 +44,7 @@ DEBUG_MERGE_FILES=1
 DEBUG_TO_ANON=1
 DEBUG_TO_JSON=1
 # ------------
-SED="sed -E" ; gsed --version  2>&1 > /dev/null && SED="gsed -E" ; export SED
+SED="sed -E" ; gsed --version 2>/dev/null 1>/dev/null && SED="gsed -E" ; export SED
 
 PRUNED=0
 THIS_SCRIPT_NAME=$(basename $0)

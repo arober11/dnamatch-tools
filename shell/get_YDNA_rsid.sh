@@ -68,7 +68,7 @@ YDNA_HAPGRP_MUTS_TMP="YDNA_HAPGRP_muts-Build$BUILD.tmp"
 YDNA_HAPGRP_MUTS_JSON="YDNA_HAPGRP_muts-Build$BUILD.json"
 YDNA_HAPGRP_MUTS_PRIME="YDNA_HAPGRP_muts-Build$BUILD-prime.csv"
 YDNA_RSID_MUTS="YDNA_rsid_muts-Build$BUILD.csv"
-SED="sed -E" ; gsed --version  2>&1 > /dev/null && SED="gsed -E"
+SED="sed -E" ; gsed --version 2>/dev/null 1>/dev/null && SED="gsed -E"
 
 # Obtain latest Google sheet
 # COLS: Name,Subgroup Name,Alternate Names,rs numbers,Build 37 Number,Build 38 Number,Mutation Info

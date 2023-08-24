@@ -11,16 +11,16 @@ INFILE1="DNA1.txt"
 INFILE2="YDNA_HAPGRP-Build37.SNP_Positions_used.txt"
 DELIM=""
 
-SED="sed -E" ; gsed --version 2>&1 1>/dev/null && SED="gsed -E"
+SED="sed -E" ; gsed --version 2>/dev/null 1>/dev/null && SED="gsed -E"
 #----------------------------------------
 
 function guess_deliminator {
   DELIM=""
 
-  head -15 "$1" | egrep "TAB-separated|TAB delimited" > /dev/null
+  head -15 "$1" | egrep "TAB-separated|TAB delimited" 1>/dev/null
   if [ $? -ne 0 ]
   then
-    head "$1" | egrep  -v "\#|\/|\*" | egrep "\," > /dev/null
+    head "$1" | egrep  -v "\#|\/|\*" | egrep "\," 1>/dev/null
     if [ $? -ne 0 ]
     then
       DELIM="-d' '"
@@ -134,7 +134,7 @@ echo -----------------
 ls -l $INFILE1 $INFILE2
 echo -----------------
 
-grep -v '^\d*$' "$INFILE2" 2>&1 >/dev/null
+grep '[^0-9]' "$INFILE2" 2>/dev/null 1>/dev/null
 if [ ! -s "$INFILE2" -o $? -eq 0 ]
 then
   usage
@@ -155,33 +155,33 @@ fi
 guess_deliminator $INFILE1
 YDNA_extract_SNPS $INFILE1_YDNA $INFILE1_SNPS 
 
-egrep -v '^\d*$' "$INFILE1_SNPS" 2>&1 >/dev/null
+grep '[^0-9]' "$INFILE1_SNPS" 2>/dev/null 1>/dev/null
 if [ ! -s "$INFILE1_SNPS" -o $? -eq 0 ]
 then
   usage
   echo "Error - $INFILE1 contains no or nonumeric SNP positions"
   echo "File - $INFILE1_SNPS"
-  grep -v '^\d*$' "$INFILE1_SNPS" | head
-  grep -v '^\d*$' "$INFILE1_SNPS" 2>&1 > /dev/null
+  grep '[^0-9]' "$INFILE1_SNPS" | head
+  grep '[^0-9]' "$INFILE1_SNPS" 2>/dev/null 1>/dev/null
   echo RC: $?
   rm -f $INFILE1_YDNA $INFILE1_SNPS
   exit 7
 fi
 
 YDNA_extract_CALLS $INFILE1_YDNA $INFILE1_CALL 
-egrep -E -v '^\d+,[actgACTGI0-dD]+$' -e '/^$/d' "$INFILE1_CALL" 2>&1 >/dev/null
+egrep -E -v '^\d+,[actgACTGI0-dD]+$' -e '/^$/d' "$INFILE1_CALL" 2>/dev/null 1>/dev/null
 if [ ! -s "$INFILE1_CALL" -o $? -eq 0 ]
 then
   usage
   echo "Error - $INFILE1 contains no or nonumeric SNP positions or valid calls"
   egrep -E -v '^\d+,[actgACTGI0-dD]+$' -e '/^$/d' "$INFILE1_CALL" | head
-  egrep -E -v '^\d+,[actgACTGI0-dD]+$' -e '/^$/d' "$INFILE1_CALL" 2>&1 > /dev/null
+  egrep -E -v '^\d+,[actgACTGI0-dD]+$' -e '/^$/d' "$INFILE1_CALL" 2>/dev/null 1>/dev/null
   echo RC: $?
   rm -f $INFILE1_YDNA $INFILE1_SNPS $INFILE1_CALL
   exit 8
 fi
 
-diff $INFILE1_SNPS $INFILE2 > /dev/null
+diff $INFILE1_SNPS $INFILE2 1>/dev/null
 if [ $? -eq 0 ]
 then
   echo "WARNING: files contain identical YDNA SNPS !!!"
