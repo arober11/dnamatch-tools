@@ -677,6 +677,7 @@ sudo port install wget grep gsed dos2unix bc
 sudo yum update
 sudo yum install wget grep sed dos2unix bc
 
+To rebuild the Haplotree Files
 COMMON commands:
  - mkdir downloads
  - cd downloads
@@ -685,12 +686,37 @@ mtDNA:
  - unzip mtDNA_tree_Build_17.zip 
  - mv mtDNA\ tree\ Build\ 17.htm mtDNA-tree-Build-17.htm
  - ../shell/mtDNA-tree-to-all.sh mtDNA-tree-Build-17.htm
+ - cp mtDNA-tree-Build-17.SNP_Positions_used.txt ../output/
+ - cp mtDNA-tree-Build-17.json ../output/
 yDNA:
  - GeneticHomeland:
  -- perl ../shell/YHaplogroups-GeneticHomeland-csv-to-indented.pl
  - ISOGG:
  -- ../shell/get_YDNA_rsid.sh
  -- ../shell/get_YDNA_trees.sh
- -- ../shell/YDNA-tree-to-all.sh
  -- ../shell/YDNA-tree-to-all.sh p
+ -- cp YDNA_HAPGRP-Build37.SNP_Positions_used.txt ../output/
+ -- cp YHaplogroups-GeneticHomeland-stub.json ../output/
+
+To Use:
+
+- mkdir test-data
+- cd test-data
+
+Copy in a couple of autosmoal files, and or the combined output of the script above, then try something like:
+
+../shell/YDNA_file_SNPS_in_Haplotree.sh AncestryDNA.txt ../output/YDNA_HAPGRP-Build37.SNP_Positions_used.txt
+../shell/mtDNA_file_SNPS_in_Haplotree.sh AncestryDNA.txt ../output/mtDNA-tree-Build-17.SNP_Positions_used.txt
+
+../shell/YDNA_file_SNPS_in_Haplotree.sh combined-output.csv ../output/YDNA_HAPGRP-Build37.SNP_Positions_used.txt
+../shell/mtDNA_file_SNPS_in_Haplotree.sh combined-output.csv ../output/mtDNA-tree-Build-17.SNP_Positions_used.txt
+
+python3 ../lookup_Haplogroup.py -s AncestryDNA.txt_mtDNA.SNPS.csv -t ../output/mtDNA-tree-Build-17.json
+python3 ../lookup_Haplogroup.py -s AncestryDNA.txt_mtDNA.SNPS.csv -t ../output/mtDNA-tree-Build-17.json -p
+python3 ../lookup_Haplogroup.py -s combined-output.csv_mtDNA.SNPS.txt -t ../output/mtDNA-tree-Build-17.json
+
+python3 ../lookup_Haplogroup.py -s AncestryDNA.txt_YDNA.SNPS.txt -t ../output/YHaplogroups-GeneticHomeland-stub.json -n PLAY-YDNA-FILE 
+python3 ../lookup_Haplogroup.py -s AncestryDNA.txt_YDNA.SNPS.txt -t ../output/YHaplogroups-GeneticHomeland-stub.json -n PLAY-YDNA-FILE -p
+python3 ../lookup_Haplogroup.py -s AncestryDNA.txt_YDNA.SNPS.txt -t ../output/YDNA_ISOGG_Haplogrp_Tree.json -n ISOGG-YDNA-BUILD-37
+python3 ../lookup_Haplogroup.py -s combined-output.csv_YDNA.SNPS.csv -t ../output/YDNA_ISOGG_Haplogrp_Tree.json -n ISOGG-YDNA-BUILD-37
 
