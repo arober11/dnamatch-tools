@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import json
 import csv
 import sys, getopt
@@ -45,7 +46,7 @@ def script_usage():
   print('')
   print('e.g.')
   print('python ~/{} -s mtDNA_SNPS_combined.csv  -t mtDNA-tree-Build-17.json -n "mt-MRCA(RSRS)"'.format(scrpt_name))
-  print('python3 ~/{} -snpfl some_YDNA.csv -treefl output/YDNA_ISOGG_Haplogrp_Tree.json -n "ISOGG-YDNA-BUILD-37"'.format(scrpt_name))
+  print('python3 ~/{} --snpfl some_YDNA.csv --treefl output/YDNA_ISOGG_Haplogrp_Tree.json -n "ISOGG-YDNA-BUILD-37"'.format(scrpt_name))
   print('python3 ~/{} -p -s some_YDNA.SNPS.csv -t YDNA_MINI_Haplogrp_Tree.json -n MINI-YDNA-BUILD-37'.format(scrpt_name))
   print('')
 

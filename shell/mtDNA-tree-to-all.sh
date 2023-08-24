@@ -313,8 +313,9 @@ then
     echo "Written: $PROC_HAPLO_CNT"
 
     #Tidy - remove blank lines, empty "children" arrays, and add some other new lines
-    cat "$HAPLOS_JSON" | tr -d "\n" | $SED -e 's/"children":\[\]//g' -e "s/,[[:space:]]+}/}/g" -e "s/,[[:space:]]*\]/]/g" -e 's/]/]\n/g' > "$HAPLOS_JSON.tmp"
+    cat "$HAPLOS_JSON" | tr -d "\n" > "$HAPLOS_JSON.tmp"
     mv "$HAPLOS_JSON.tmp" "$HAPLOS_JSON"
+    $SED -i -e 's/"children":[[][]]//g' -e 's/[, \t\s]{1,}([}]])/\1/g' -e 's/[]]/]\n/g' -e '/^$/d' -e 's/,}/}/g' "$HAPLOS_JSON"
   else
     echo "No FILE $FILE_CSV"
     echo $DEBUG_TO_JSON
