@@ -129,7 +129,7 @@ then
   INFILE2="$2"
 fi
 
-grep '[^0-9] "$INFILE2" 2>/dev/null 1>/dev/null
+grep '[^0-9]' "$INFILE2" 2>/dev/null 1>/dev/null
 if [ ! -s "$INFILE2" -o $? -eq 0 ]
 then
   usage
