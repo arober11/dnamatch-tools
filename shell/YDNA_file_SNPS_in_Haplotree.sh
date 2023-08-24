@@ -11,7 +11,7 @@ INFILE1="DNA1.txt"
 INFILE2="YDNA_HAPGRP-Build37.SNP_Positions_used.txt"
 DELIM=""
 
-SED="sed -E" ; gsed --version  2>&1 > /dev/null && SED="gsed -E"
+SED="sed -E" ; gsed --version 2>&1 1>/dev/null && SED="gsed -E"
 #----------------------------------------
 
 function guess_deliminator {

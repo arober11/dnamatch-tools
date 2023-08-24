@@ -236,7 +236,7 @@ then
   $SED -i -e 's/±/@/g' $FILE.$FL_CNT
 
   # Count unique mutations by type
-  gsed -E -e "s/^,+//" -e "s/^[^,]+,//" -e "s/^[ ]+//" -e "s/[ ]+$//" -e "/^$/d" $FILE.11 | perl -pe 's/ /\n/g' | sort -u > $FILE_MUT
+  $SED -E -e "s/^,+//" -e "s/^[^,]+,//" -e "s/^[ ]+//" -e "s/[ ]+$//" -e "/^$/d" $FILE.11 | perl -pe 's/ /\n/g' | sort -u > $FILE_MUT
   echo "Unique Mutations: $(wc -l $FILE_MUT )" 
   echo "Mutation types"
   echo "Suffixes / downstream"

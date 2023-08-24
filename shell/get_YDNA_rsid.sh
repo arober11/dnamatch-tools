@@ -140,8 +140,8 @@ mv $YDNA_HAPGRP_MUTS_TMP $YDNA_HAPGRP_MUTS
 echo "Written: $YDNA_HAPGRP_MUTS"
 
 # Convert to an anonymous JSON array  ( can validate with something like: ' python -m json.tool YDNA_HAPGRP_muts-Build37.json ' )
-gsed -E -e 's/^/,{"haploGrp":"/' -e 's/(,"mutations")/"\1/' -e 's/$/}/' $YDNA_HAPGRP_MUTS > $YDNA_HAPGRP_MUTS_JSON
-gsed -E -i -e '1,1s/^,/[/' $YDNA_HAPGRP_MUTS_JSON
+$SED -E -e 's/^/,{"haploGrp":"/' -e 's/(,"mutations")/"\1/' -e 's/$/}/' $YDNA_HAPGRP_MUTS > $YDNA_HAPGRP_MUTS_JSON
+$SED -E -i -e '1,1s/^,/[/' $YDNA_HAPGRP_MUTS_JSON
 echo ']' >> $YDNA_HAPGRP_MUTS_JSON
 echo "Written: $YDNA_HAPGRP_MUTS_JSON"
 
