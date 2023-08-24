@@ -32,7 +32,7 @@ echo "DELIM=$DELIM"
 }
 
 function YDNA_extract_and_convert_NOCALLS {
-  egrep "\t24\t|\tY\t|,24,|,Y," "$1" | sed -e "s/--/0/" -e "s/AA/A/" -e "s/CC/C/" -e "s/TT/T/" -e "s/GG/G/" > "$2"
+  egrep "\t24\t|\tY\t|,24,|,Y," "$1" | $SED -e "s/--/0/" -e "s/AA/A/" -e "s/CC/C/" -e "s/TT/T/" -e "s/GG/G/" > "$2"
 }
 
 function YDNA_extract_SNPS {
