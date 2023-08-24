@@ -33,7 +33,7 @@ HAPLOGRPS=0
 PROC_HAPLO_CNT=0
 HAPLO_PAT="[a-zA-Z0-9'±@]+,"
 MUT_PAT="[^ACDTGacdtg!]"    #Last character of a MUTATION
-SED="gsed -E"
+SED="sed -E" ; gsed --version  2>&1 > /dev/null && SED="gsed -E"
 #--------------
 #FILE="~/Downloads/mtDNA?tree?Build?17.htm"
 FILE="mtDNA-tree-Build-17.htm"

@@ -10,7 +10,7 @@ start=`date +%s`
 INFILE1="DNA1.txt"
 INFILE2="mtDNA-tree-Build-17.SNP_Positions_used.txt"
 DELIM=""
-SED="gsed -E"
+SED="sed -E" ; gsed --version  2>&1 > /dev/null && SED="gsed -E"
 #----------------------------------------
 
 function guess_deliminator {

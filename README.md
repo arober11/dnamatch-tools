@@ -661,8 +661,21 @@ Check you have, if not install via the respective package manager:
 -- wget
 -- GNU grep
 -- GNU sed
+-- GNU dos2unix
+-- GNU bc
 
-COMMON:
+e.g.
+# Debin / Ububtu
+sudo apt-get install wget grep sed dos2unix bc
+# Suse / openSuse
+sudo zypper install wget grep sed dos2unix bc
+# macOS (via MacPort)
+sudo port selfupdate
+sudo port install wget grep gsed dos2unix bc
+# RedHat / Fedora / centOS / ...
+sudo yum install wget grep sed dos2unix bc
+
+COMMON commands:
  - mkdir downloads
  - cd downloads
 mtDNA: 

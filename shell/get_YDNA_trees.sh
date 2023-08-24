@@ -66,7 +66,7 @@ DEBUG_STRIP_FILES=1
 DEBUG_TIDY_FILES=1
 DEBUG_REMOVE_DUP=1
 # ------------
-SED="gsed -E"                                       ; export SED
+SED="sed -E" ; gsed --version  2>&1 > /dev/null && SED="gsed -E" ; export SED
 
 THIS_SCRIPT_NAME=$(basename $0)
 THIS_DIR_NAME=$(dirname $0)
