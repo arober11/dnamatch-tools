@@ -647,7 +647,7 @@ defaults:
 ### YHaplogroups-GeneticHomeland-csv-to-indented.pl
 Reformat the GeneticHomeland format csv data into a nested haplotree csv and a json file, usable by lookup_Haplogroup.py
 
-## Creating Haplotree files foe lookup.py ##
+## Creating Haplotree files for lookup.py ##
 
 Example files are found in the output directory, though to recreate, run:
 
@@ -659,13 +659,14 @@ Example files are found in the output directory, though to recreate, run:
 
 Check you have, if not install via the respective package manager:
 -- wget
+-- dos2unix
+-- bc
 -- GNU grep
 -- GNU sed
--- GNU dos2unix
--- GNU bc
 
 e.g.
 # Debin / Ububtu
+sudo apt-get update
 sudo apt-get install wget grep sed dos2unix bc
 # Suse / openSuse
 sudo zypper install wget grep sed dos2unix bc
@@ -673,6 +674,7 @@ sudo zypper install wget grep sed dos2unix bc
 sudo port selfupdate
 sudo port install wget grep gsed dos2unix bc
 # RedHat / Fedora / centOS / ...
+sudo yum update
 sudo yum install wget grep sed dos2unix bc
 
 COMMON commands:

@@ -76,7 +76,7 @@ function usage {
   echo
   echo "defaults: "
   echo "  rawfile  = $INFILE1"                                   - genotyped call file, as offered by AncestryDNA, 23AndMe, FTDNA, ...
-  echo "  treefile = $INFILE2" - numeric list of the YDNA SNP positions foung in tree e.g.
+  echo "  treefile = $INFILE2" - numeric list of the YDNA SNP positions found in tree e.g.
   echo "                        10000350"
   echo "                        10000477"
   echo "                        10000888"
