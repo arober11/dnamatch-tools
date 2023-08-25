@@ -196,7 +196,7 @@ with open(json_tree_filename, 'r') as haplogroup_tree_file:
       quit(1)
 
 print('')
-print('Haplogroups the SNP set Satisfy, along with those that the are Possible, though the SNP file is lacking all the necessary calls.') 
+print('Haplogroups the SNP set Satisfy (called SNPS match ALL the KEY mutations from trunk to leaf), and if requested those that the are Possible (called SNPS match the KEY mutations of the leaf and with omissions / NOCALLS the KEY mutations from trunk to leaf).') 
 print('')
 print('Haplogroup = State')
 good=0       # Status 0
@@ -237,14 +237,18 @@ if good > 0 or uncertain > 0:
     if 'Satisfied' in resultsDict[haplogroup]:
       print('')
       print(resultsDict[haplogroup])
-  print('')
+      print('Depth: ', resultsDict[haplogroup].count('<-'))
   if also_possible:
+    print('')
     print('------------------------------------------------------')
     print('Possible:')
     for haplogroup in resultsDict:
       if 'Possible' in resultsDict[haplogroup]:
         print('')
         print(resultsDict[haplogroup])
+        print('Depth: ', resultsDict[haplogroup].count('<-'))
+  print()
+  print('Nb: The longest chain of satisfied mutations possibly indicates the Haplogroup')
   print('======================================================')
   print('')
 
