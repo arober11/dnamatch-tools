@@ -611,7 +611,7 @@ Notes:
  -- Parent Haplogroup: H2a1 [ G951A  C16354T]
     -- Precursor: [T146C!]
        -- Child: H2a1n [G4659A]
- To simplify downstream scripts the ANONYMOUS precursor mutation sets are given a hybrid label comprised of their parent and first chile with a "@" delimitor inserted, e.g. 
+ To simplify downstream scripts the ANONYMOUS precursor mutation sets are given a hybrid label comprised of their parent and first child with a "@" delimitor inserted, e.g. 
    H2a1 to H2a1n precursor set will be labelled "H2a1@n" in the CSV and JSON output files.
 
  - To make the JSON more readable there are numerous beautifiers, like:
