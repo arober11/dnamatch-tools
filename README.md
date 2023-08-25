@@ -790,6 +790,7 @@ yDNA:
  - GeneticHomeland:
 ```
 perl ../shell/YHaplogroups-GeneticHomeland-csv-to-indented.pl
+cp YHaplogroups-GeneticHomeland-stub.json ../output/
 ```
  - ISOGG:
 ```
@@ -797,11 +798,6 @@ perl ../shell/YHaplogroups-GeneticHomeland-csv-to-indented.pl
 ../shell/get_YDNA_trees.sh
 ../shell/YDNA-tree-to-all.sh p
 cp YDNA_HAPGRP-Build37.SNP_Positions_used.txt ../output/
-```
- - GeneticHomeland:
-```
-perl ../shell/YHaplogroups-GeneticHomeland-csv-to-indented.pl
-cp YHaplogroups-GeneticHomeland-stub.json ../output/
 ```
 To Use:
 ```
