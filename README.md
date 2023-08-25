@@ -420,8 +420,7 @@ Note: MacOS users will need to install a copy of GNU sed, via the like of MacPor
 
 ### DNA_file_state.sh		
 
-Indicates the SNPS per chromosome in an autosmal file from the like of Ancestry, 23AndMe, FTDNA, ... , or a combined file
-Along with counts of the CALLS and NO CALLS per chromosome
+Indicates the SNPS per chromosome in an autosmal file from the like of Ancestry, 23AndMe, FTDNA, ... , or a combined file; along with counts of the CALLS and NO CALLS per chromosome
 ```
 Usage:   DNA_file_state.sh <rawfile[.txt|.csv]> [,]
 
@@ -437,7 +436,7 @@ Nb: To use the with a FTDNA raw file, sepcify a deliminator of ',' withoug (the 
 
 ### DNA_file_mtDNA_diff.sh		
 
-Compares the mtDNA SNPS between two autosmal files, be they from Ancestry, 23AndMe, FTDNA, ... , or a combined file
+Compares the mtDNA SNPS between two autosmal files, be they from Ancestry, 23AndMe, FTDNA, ... , or a combined file.
 Indicating if the SNPS present in BOTH files match or differ
 ```
 Usage:   DNA_file_mtDNA_diff.sh <rawfile1[.txt|.csv]> <rawfile2[.txt|.csv]> [M|Missing]
@@ -454,7 +453,7 @@ defaults:
 
 ### DNA_file_YDNA_diff.sh
 
-Compares the YDNA SNPS between two autosmal files, be they from Ancestry, 23AndMe, FTDNA, ... , or a combined file
+Compares the YDNA SNPS between two autosmal files, be they from Ancestry, 23AndMe, FTDNA, ... , or a combined file.
 Indicating if the SNPS present in BOTH files match or differ
 ```
 Usage:   DNA_file_YDNA_diff.sh <rawfile1[.txt|.csv]> <rawfile2[.txt|.csv]> [M|Missing]
