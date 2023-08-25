@@ -422,9 +422,9 @@ Note: MacOS users will need to install a copy of GNU sed, via the like of MacPor
 
 Indicates the SNPS per chromosome in an autosmal file from the like of Ancestry, 23AndMe, FTDNA, ... , or a combined file
 Along with counts of the CALLS and NO CALLS per chromosome
-
-Usage:   DNA_file_state.sh <rawfile[.txt|.csv]> [,]
 ```
+Usage:   DNA_file_state.sh <rawfile[.txt|.csv]> [,]
+
 Purpose: Reports SNP counts, per chromosome, with a count of calls, and no calls.
 
 defaults: 
@@ -439,9 +439,9 @@ Nb: To use the with a FTDNA raw file, sepcify a deliminator of ',' withoug (the 
 
 Compares the mtDNA SNPS between two autosmal files, be they from Ancestry, 23AndMe, FTDNA, ... , or a combined file
 Indicating if the SNPS present in BOTH files match or differ
-
-Usage:   DNA_file_mtDNA_diff.sh <rawfile1[.txt|.csv]> <rawfile2[.txt|.csv]> [M|Missing]
 ```
+Usage:   DNA_file_mtDNA_diff.sh <rawfile1[.txt|.csv]> <rawfile2[.txt|.csv]> [M|Missing]
+
 Purpose: Diff the mtDNA calls between two DNA files.
 
 Opions - [M|Missing]  - List SNPS in one file but not the other
@@ -456,9 +456,9 @@ defaults:
 
 Compares the YDNA SNPS between two autosmal files, be they from Ancestry, 23AndMe, FTDNA, ... , or a combined file
 Indicating if the SNPS present in BOTH files match or differ
-
-Usage:   DNA_file_YDNA_diff.sh <rawfile1[.txt|.csv]> <rawfile2[.txt|.csv]> [M|Missing]
 ```
+Usage:   DNA_file_YDNA_diff.sh <rawfile1[.txt|.csv]> <rawfile2[.txt|.csv]> [M|Missing]
+
 Purpose: Diff the YDNA calls between two DNA files.
 
 Opions - [M|Missing]  - List SNPS in one file but not the other
@@ -528,9 +528,9 @@ Notes
 ### dup_RSID_names.sh		
 
 Identifies the SNPS that are reported under multiple names in an autosmal file the like of Ancestry, 23AndMe, FTDNA, ... , or a combined file
-
-Usage:   dup_RSID_names.sh <rawfile1[.txt|.csv]> 
 ```
+Usage:   dup_RSID_names.sh <rawfile1[.txt|.csv]> 
+
 Purpose: Identify the duplicate RSID names in a genotype file.
 ```
 **Usage**: refer to comments in the script
@@ -538,9 +538,9 @@ Purpose: Identify the duplicate RSID names in a genotype file.
 ### mtDNA_file_SNPS_in_Haplotree.sh
 
 Identifies the mtDNA SNPS from a Ancestry, 23AndMe, FTDNA, ... , or combined file that are common with those of a mtDNA HaploTree, and those not in the tree.
-
-Usage:   mtDNA_file_SNPS_in_Haplotree.sh <rawfile1[.txt|.csv]> [<mtDNA-tree-Build-##_SNP_Positions_used.txt>]
 ```
+Usage:   mtDNA_file_SNPS_in_Haplotree.sh <rawfile1[.txt|.csv]> [<mtDNA-tree-Build-##_SNP_Positions_used.txt>]
+
 Purpose: lookup mtDNA calls from an autosomal DNA file and a published mtDNA haplotree
 
 defaults: 
@@ -571,9 +571,9 @@ outputs:
 ### YDNA_file_SNPS_in_Haplotree.sh	
 
 Identifies the YDNA SNPS from a Ancestry, 23AndMe, FTDNA, ... , or combined file that are common with those of a YDNA HaploTree, and those not in the tree.
-
-Usage:   YDNA_file_SNPS_in_Haplotree.sh <rawfile1[.txt|.csv]> [<YDNA-tree-Build-##_SNP_Positions_used.txt>]
 ```
+Usage:   YDNA_file_SNPS_in_Haplotree.sh <rawfile1[.txt|.csv]> [<YDNA-tree-Build-##_SNP_Positions_used.txt>]
+
 Purpose: lookup YDNA calls from an autosomal DNA file and a published YDNA haplotree
 
 defaults:
@@ -773,30 +773,37 @@ sudo yum install wget grep sed dos2unix bc
 ```
 To rebuild the Haplotree Files
 COMMON commands:
- - mkdir downloads
- - cd downloads
-mtDNA: 
- - wget https://www.phylotree.org/builds/mtDNA_tree_Build_17.zip
- - unzip mtDNA_tree_Build_17.zip 
- - mv mtDNA\ tree\ Build\ 17.htm mtDNA-tree-Build-17.htm
- - ../shell/mtDNA-tree-to-all.sh mtDNA-tree-Build-17.htm
- - cp mtDNA-tree-Build-17.SNP_Positions_used.txt ../output/
- - cp mtDNA-tree-Build-17.json ../output/
+```
+mkdir downloads
+cd downloads
+```
+mtDNA:
+```
+wget https://www.phylotree.org/builds/mtDNA_tree_Build_17.zip
+unzip mtDNA_tree_Build_17.zip 
+mv mtDNA\ tree\ Build\ 17.htm mtDNA-tree-Build-17.htm
+../shell/mtDNA-tree-to-all.sh mtDNA-tree-Build-17.htm
+cp mtDNA-tree-Build-17.SNP_Positions_used.txt ../output/
+cp mtDNA-tree-Build-17.json ../output/
+```
 yDNA:
  - GeneticHomeland:
- -- perl ../shell/YHaplogroups-GeneticHomeland-csv-to-indented.pl
+```
+perl ../shell/YHaplogroups-GeneticHomeland-csv-to-indented.pl
+```
  - ISOGG:
- -- ../shell/get_YDNA_rsid.sh
- -- ../shell/get_YDNA_trees.sh
- -- ../shell/YDNA-tree-to-all.sh p
- -- cp YDNA_HAPGRP-Build37.SNP_Positions_used.txt ../output/
- -- cp YHaplogroups-GeneticHomeland-stub.json ../output/
-
+```
+../shell/get_YDNA_rsid.sh
+../shell/get_YDNA_trees.sh
+../shell/YDNA-tree-to-all.sh p
+cp YDNA_HAPGRP-Build37.SNP_Positions_used.txt ../output/
+cp YHaplogroups-GeneticHomeland-stub.json ../output/
+```
 To Use:
-
-- mkdir test-data
-- cd test-data
-
+```
+mkdir test-data
+cd test-data
+```
 Copy in a couple of autosmoal files, and or the combined output of the script above, then try something like:
 ```
 ../shell/YDNA_file_SNPS_in_Haplotree.sh AncestryDNA.txt ../output/YDNA_HAPGRP-Build37.SNP_Positions_used.txt
