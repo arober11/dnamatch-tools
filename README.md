@@ -237,6 +237,7 @@ Requires:
 3: the name of the haplotree, within the JSON file, default "mt-MRCA(RSRS)"
 
 Usage:
+```
  lookup_Haplogroup.py -s  <SNP_file> [-t <haplogroup_file> -n <haplotree_name>]
 
  lookup_Haplogroup.py -snpfl=<SNP_file> [--treefl=<haplogroup_file> --name=<haplotree_name>]
@@ -244,9 +245,9 @@ Usage:
  lookup_Haplogroup.py -h
 
  lookup_Haplogroup.py --help
-
+```
 e.g.
-
+```
 python lookup_Haplogroup.py -s test-data/AncestryDNA.txt_mtDNA.SNPS.csv -t output/mtDNA-tree-Build-17.json
 
 Haplotree file: ../output/mtDNA-tree-Build-17.json
@@ -340,7 +341,7 @@ Nb: The longest chain of satisfied mutations possibly indicates the Haplogroup
 
 Possibly Satisfied: 10  Missing Calls: 4284  Overridden downstream: 6004  Bad: 0  Total: 10298
 
-
+```
 **Usage**: refer to comments in the script, and see example output in the output folder
 
 ## HELP and HINTS
@@ -423,7 +424,7 @@ Indicates the SNPS per chromosome in an autosmal file from the like of Ancestry,
 Along with counts of the CALLS and NO CALLS per chromosome
 
 Usage:   DNA_file_state.sh <rawfile[.txt|.csv]> [,]
-
+```
 Purpose: Reports SNP counts, per chromosome, with a count of calls, and no calls.
 
 defaults: 
@@ -431,7 +432,7 @@ defaults:
   deliminator  = tab (AncestryDNA)
 
 Nb: To use the with a FTDNA raw file, sepcify a deliminator of ',' withoug (the quotes).
-
+```
 **Usage**: refer to comments in the script, and see example output in the output folder
 
 ### DNA_file_mtDNA_diff.sh		
@@ -440,7 +441,7 @@ Compares the mtDNA SNPS between two autosmal files, be they from Ancestry, 23And
 Indicating if the SNPS present in BOTH files match or differ
 
 Usage:   DNA_file_mtDNA_diff.sh <rawfile1[.txt|.csv]> <rawfile2[.txt|.csv]> [M|Missing]
-
+```
 Purpose: Diff the mtDNA calls between two DNA files.
 
 Opions - [M|Missing]  - List SNPS in one file but not the other
@@ -448,7 +449,7 @@ Opions - [M|Missing]  - List SNPS in one file but not the other
 defaults: 
   rawfile = DNA1.txt
           = DNA2.txt
-
+```
 **Usage**: refer to comments in the script
 
 ### DNA_file_YDNA_diff.sh
@@ -457,7 +458,7 @@ Compares the YDNA SNPS between two autosmal files, be they from Ancestry, 23AndM
 Indicating if the SNPS present in BOTH files match or differ
 
 Usage:   DNA_file_YDNA_diff.sh <rawfile1[.txt|.csv]> <rawfile2[.txt|.csv]> [M|Missing]
-
+```
 Purpose: Diff the YDNA calls between two DNA files.
 
 Opions - [M|Missing]  - List SNPS in one file but not the other
@@ -521,7 +522,7 @@ Notes
        type 0     - transitions    - upper case (e.g., G->A)
        type 3     - deletions      - “del”
        type 4     - insertions     - "ins"
-
+```
 **Usage**: refer to comments in the script
 
 ### dup_RSID_names.sh		
@@ -529,9 +530,9 @@ Notes
 Identifies the SNPS that are reported under multiple names in an autosmal file the like of Ancestry, 23AndMe, FTDNA, ... , or a combined file
 
 Usage:   dup_RSID_names.sh <rawfile1[.txt|.csv]> 
-
+```
 Purpose: Identify the duplicate RSID names in a genotype file.
-
+```
 **Usage**: refer to comments in the script
 
 ### mtDNA_file_SNPS_in_Haplotree.sh
@@ -539,7 +540,7 @@ Purpose: Identify the duplicate RSID names in a genotype file.
 Identifies the mtDNA SNPS from a Ancestry, 23AndMe, FTDNA, ... , or combined file that are common with those of a mtDNA HaploTree, and those not in the tree.
 
 Usage:   mtDNA_file_SNPS_in_Haplotree.sh <rawfile1[.txt|.csv]> [<mtDNA-tree-Build-##_SNP_Positions_used.txt>]
-
+```
 Purpose: lookup mtDNA calls from an autosomal DNA file and a published mtDNA haplotree
 
 defaults: 
@@ -564,7 +565,7 @@ outputs:
   rawfile-mtDNA-snps = <rawfile1>_mtDNA           - mtDNA data as it appeared in the rawfile
   rawfile-mtDNA-snps = <rawfile1>_mtDNA.SNPS.txt  - mtDNA SNP list from the rawfile
   rawfile-mtDNA-snps = <rawfile1>_mtDNA.SNPS.csv  - mtDNA SNP calls from the rawfile
-
+```
 **Usage**: refer to comments in the script, and see example output in the output folder
 
 ### YDNA_file_SNPS_in_Haplotree.sh	
@@ -572,7 +573,7 @@ outputs:
 Identifies the YDNA SNPS from a Ancestry, 23AndMe, FTDNA, ... , or combined file that are common with those of a YDNA HaploTree, and those not in the tree.
 
 Usage:   YDNA_file_SNPS_in_Haplotree.sh <rawfile1[.txt|.csv]> [<YDNA-tree-Build-##_SNP_Positions_used.txt>]
-
+```
 Purpose: lookup YDNA calls from an autosomal DNA file and a published YDNA haplotree
 
 defaults:
@@ -626,11 +627,11 @@ defaults:
   output-Haplogroup-Names-file = mtDNA-tree-Build-17_Haplogroups.txt
   output-Haplogroup-Mutiaions  = mtDNA-tree-Build-17_mutations.csv
   output-mtDNA-Haplogroup-JSON = mtDNA-tree-Build-17.json
-
+```
 **Usage**: refer to comments in the scrip, and see example output in the output folder
 
 ### get_YDNA_trees.sh
-
+```
 Purpose: Attempt to download and combine and convert the ISOGG YDNAi tree files from https://isogg.org/tree/index.html
 
     - Outputs: 
@@ -688,12 +689,12 @@ Purpose: Attempt to download and combine and convert the ISOGG YDNAi tree files 
     type 3     - deletions      - “del”
     type 4     - insertions     - "ins"
    - the 'YDNA-tree-to-all.sh' script will attempt to convert the output from this script and the 'get_YDNA_rsid.sh' script into a single JSON file
-
+```
 **Usage**: refer to comments in the scrip, and see example output in the output folder
 
 ### YDNA-tree-to-all.sh
-
- Purpose: Attempt to combine and convert the ISOGG YDNA files from https://isogg.org/tree/index.html
+```
+Purpose: Attempt to combine and convert the ISOGG YDNA files from https://isogg.org/tree/index.html
 
 Note:
    - Source Google sheets have a growing collection of comments / annotations, along with some unhelpful / incosistent foratting, that needs to be removed,
@@ -720,11 +721,11 @@ Notes:
     type 0     - transitions    - upper case (e.g., G->A)
     type 3     - deletions      - “del”
     type 4     - insertions     - "ins"
-
+```
 **Usage**: refer to comments in the scrip, and see example output in the output folder
 
 ### to_AncestryFromat.sh
-
+```
 Reformat a combined file, or one of the other formats, into something thatlooks a bit like an AncestryDNA file, to use elsewhere.
 Usage:   to_AncestryFromat.sh <combined_file.csv> [<outputAncestryFromatFileName> [<outputAncestryFromatArchive>]]
 
@@ -733,7 +734,7 @@ Purpose: Reformats, and packages the atDNA combined output CSV file, in Ancestry
 defaults: 
   outputAncestryFromatFileName = AncestryDNA.txt
   outputAncestryFromatArchive  = 
-
+```
 **Usage**: refer to comments in the script
 
 ### YHaplogroups-GeneticHomeland-csv-to-indented.pl
@@ -757,6 +758,7 @@ Check you have, if not install via the respective package manager:
 -- GNU sed
 
 e.g.
+```
 # Debin / Ububtu
 sudo apt-get update
 sudo apt-get install wget grep sed dos2unix bc
@@ -768,7 +770,7 @@ sudo port install wget grep gsed dos2unix bc
 # RedHat / Fedora / centOS / ...
 sudo yum update
 sudo yum install wget grep sed dos2unix bc
-
+```
 To rebuild the Haplotree Files
 COMMON commands:
  - mkdir downloads
@@ -796,7 +798,7 @@ To Use:
 - cd test-data
 
 Copy in a couple of autosmoal files, and or the combined output of the script above, then try something like:
-
+```
 ../shell/YDNA_file_SNPS_in_Haplotree.sh AncestryDNA.txt ../output/YDNA_HAPGRP-Build37.SNP_Positions_used.txt
 ../shell/mtDNA_file_SNPS_in_Haplotree.sh AncestryDNA.txt ../output/mtDNA-tree-Build-17.SNP_Positions_used.txt
 
@@ -811,4 +813,4 @@ python3 ../lookup_Haplogroup.py -s AncestryDNA.txt_YDNA.SNPS.txt -t ../output/YH
 python3 ../lookup_Haplogroup.py -s AncestryDNA.txt_YDNA.SNPS.txt -t ../output/YHaplogroups-GeneticHomeland-stub.json -n PLAY-YDNA-FILE -p
 python3 ../lookup_Haplogroup.py -s AncestryDNA.txt_YDNA.SNPS.txt -t ../output/YDNA_ISOGG_Haplogrp_Tree.json -n ISOGG-YDNA-BUILD-37
 python3 ../lookup_Haplogroup.py -s combined-output.csv_YDNA.SNPS.csv -t ../output/YDNA_ISOGG_Haplogrp_Tree.json -n ISOGG-YDNA-BUILD-37
-
+```
