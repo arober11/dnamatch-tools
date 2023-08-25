@@ -479,7 +479,7 @@ Download the latest ISOGG YDNA SNP list,
                -- A9832,2 swapped for A9832.2
                -- ; removed
                -- 'Notes' blanked
-               -- Haplogroup names with a spave between the name and a '~' suffix removed
+               -- Haplogroup names with a space between the name and a '~' suffix removed
                -- 'Freq. Mut. SNP in ' removed from Haplogroup names
             - Outputs:
               -- YDNA_SNPS.csv                               - Downloaded file with above alterations
@@ -797,6 +797,10 @@ perl ../shell/YHaplogroups-GeneticHomeland-csv-to-indented.pl
 ../shell/get_YDNA_trees.sh
 ../shell/YDNA-tree-to-all.sh p
 cp YDNA_HAPGRP-Build37.SNP_Positions_used.txt ../output/
+```
+ - GeneticHomeland:
+```
+perl ../shell/YHaplogroups-GeneticHomeland-csv-to-indented.pl
 cp YHaplogroups-GeneticHomeland-stub.json ../output/
 ```
 To Use:
