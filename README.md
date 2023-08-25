@@ -246,8 +246,100 @@ Usage:
  lookup_Haplogroup.py --help
 
 e.g.
-python ~/lookup_Haplogroup.py -s mtDNA_SNPS_combined.csv  -t output/mtDNA-tree-Build-17.json -n "mt-MRCA(RSRS)"
-python ~/lookup_Haplogroup.py -snpfl=some_YDNA.csv -treefl=output/YDNA_ISOGG_Haplogrp_Tree.json -n "ISOGG-YDNA-BUILD-37"
+
+python lookup_Haplogroup.py -s test-data/AncestryDNA.txt_mtDNA.SNPS.csv -t output/mtDNA-tree-Build-17.json
+
+Haplotree file: ../output/mtDNA-tree-Build-17.json
+SNPS file:      test-data/AncestryDNA.txt_mtDNA.SNPS.csv
+Tree name:      mt-MRCA(RSRS)
+
+
+Haplogroups the SNP set Satisfy (called SNPS match ALL the KEY mutations from trunk to leaf), and if requested those that the are Possible (called SNPS match the KEY mutations of the leaf and with omissions / NOCALLS the KEY mutations from trunk to leaf).
+
+Haplogroup = State
+======================================================
+Satisfied:
+
+L3b'f<-L3<-L3'4<-L3'4'6<-L2'3'4'6<-L2'3'4'5'6<-L1'2'3'4'5'6<-mt-MRCA(RSRS) - Satisfied
+Depth:  7
+
+N9a1'3<-N9a<-N9<-N<-L3<-L3'4<-L3'4'6<-L2'3'4'6<-L2'3'4'5'6<-L1'2'3'4'5'6<-mt-MRCA(RSRS) - Satisfied
+Depth:  10
+
+H20a1<-H20a<-H20<-H<-HV<-R0<-R<-N<-L3<-L3'4<-L3'4'6<-L2'3'4'6<-L2'3'4'5'6<-L1'2'3'4'5'6<-mt-MRCA(RSRS) - Satisfied
+Depth:  14
+
+H99<-H<-HV<-R0<-R<-N<-L3<-L3'4<-L3'4'6<-L2'3'4'6<-L2'3'4'5'6<-L1'2'3'4'5'6<-mt-MRCA(RSRS) - Satisfied
+Depth:  12
+
+Nb: The longest chain of satisfied mutations possibly indicates the Haplogroup
+======================================================
+
+Possibly Satisfied: 12  Missing Calls: 1099  Overridden downstream: 22  Bad: 4304  Total: 5437
+
+
+$ python2 lookup_Haplogroup.py -s test-data/combined-output.csv_mtDNA.SNPS.csv -t output/mtDNA-tree-Build-17.json -n "mt-MRCA(RSRS)"
+
+Haplotree file: output/mtDNA-tree-Build-17.json
+SNPS file:      test-data/combined-output.csv_mtDNA.SNPS.csv
+Tree name:      mt-MRCA(RSRS)
+
+
+Haplogroups the SNP set Satisfy (called SNPS match ALL the KEY mutations from trunk to leaf), and if requested those that the are Possible (called SNPS match the KEY mutations of the leaf and with omissions / NOCALLS the KEY mutations from trunk to leaf).
+
+Haplogroup = State
+======================================================
+Satisfied:
+
+L3b'f<-L3<-L3'4<-L3'4'6<-L2'3'4'6<-L2'3'4'5'6<-L1'2'3'4'5'6<-mt-MRCA(RSRS) - Satisfied
+Depth:  7
+
+HV0a<-HV0<-HV<-R0<-R<-N<-L3<-L3'4<-L3'4'6<-L2'3'4'6<-L2'3'4'5'6<-L1'2'3'4'5'6<-mt-MRCA(RSRS) - Satisfied
+Depth:  12
+
+H99<-H<-HV<-R0<-R<-N<-L3<-L3'4<-L3'4'6<-L2'3'4'6<-L2'3'4'5'6<-L1'2'3'4'5'6<-mt-MRCA(RSRS) - Satisfied
+Depth:  12
+
+Nb: The longest chain of satisfied mutations possibly indicates the Haplogroup
+======================================================
+
+Possibly Satisfied: 7  Missing Calls: 133  Overridden downstream: 27  Bad: 5270  Total: 5437
+
+$ python3 lookup_Haplogroup.py -s test-data/AncestryDNA.txt_YDNA.SNPS.csv -t output/YDNA_ISOGG_Haplogrp_Tree.json -n ISOGG-YDNA-BUILD-37
+
+Haplotree file: output/YDNA_ISOGG_Haplogrp_Tree.json
+SNPS file:      test-data/AncestryDNA.txt_YDNA.SNPS.csv
+Tree name:      ISOGG-YDNA-BUILD-37
+
+
+Haplogroups the SNP set Satisfy (called SNPS match ALL the KEY mutations from trunk to leaf), and if requested those that the are Possible (called SNPS match the KEY mutations of the leaf and with omissions / NOCALLS the KEY mutations from trunk to leaf).
+
+Haplogroup = State
+======================================================
+Satisfied:
+
+I2a1b1a1a<-I2a1b1a1<-I2a1b1a~<-I2a1b1~<-I2a1b<-I2a1<-I2a<-I2~<-I<-H3~<-H~<-G<-GHIJK<-F<-B3~<-B~<-BT<-A1c~<-A1<-A0-T<-A00-T~<-A000-T<-Y<-ISOGG-YDNA-BUILD-37 - Satisfied
+Depth:  23
+
+J1a2a1a<-J1a2a1~<-J1a2a~<-J1a2~<-J1a<-J1<-J<-H3~<-H~<-G<-GHIJK<-F<-B3~<-B~<-BT<-A1c~<-A1<-A0-T<-A00-T~<-A000-T<-Y<-ISOGG-YDNA-BUILD-37 - Satisfied
+Depth:  21
+
+O1b1a1a1a1a1a1a1a<-O1b1a1a1a1a1a1a1<-O1b1a1a1a1a1a1a<-O1b1a1a1a1a1a1<-O1b1a1a1a1a1a<-O1b1a1a1a1a1<-O1b1a1a1a1a<-O1b1a1a1a1<-O1b1a1a1a<-O1b1a1a1<-O1b1a1a<-O1b1a1<-O1b1a<-O1b1<-O1b<-O1<-O_or_K2a1b<-NO1_or_K2a1<-NO_or_K2a<-K2<-K~<-H~<-G<-GHIJK<-F<-B3~<-B~<-BT<-A1c~<-A1<-A0-T<-A00-T~<-A000-T<-Y<-ISOGG-YDNA-BUILD-37 - Satisfied
+Depth:  34
+
+S1a1b1<-S1a1b<-S1a1<-S1a~<-S1<-S_or_K2b1a<-K2b1<-K2b<-K2<-K~<-H~<-G<-GHIJK<-F<-B3~<-B~<-BT<-A1c~<-A1<-A0-T<-A00-T~<-A000-T<-Y<-ISOGG-YDNA-BUILD-37 - Satisfied
+Depth:  23
+
+...
+
+R2a2b1b2b3a<-R2a2b1b2b3<-R2a2b1b2b<-R2a2b1b2<-R2a2b1b<-R2a2b1<-R2a2b<-R2a2<-R2a<-R2<-R_or_K2b2a2<-P1~_or_K2b2a~<-P_or_K2b2<-K2b<-K2<-K~<-H~<-G<-GHIJK<-F<-B3~<-B~<-BT<-A1c~<-A1<-A0-T<-A00-T~<-A000-T<-Y<-ISOGG-YDNA-BUILD-37 - Satisfied
+Depth:  29
+
+Nb: The longest chain of satisfied mutations possibly indicates the Haplogroup
+======================================================
+
+Possibly Satisfied: 10  Missing Calls: 4284  Overridden downstream: 6004  Bad: 0  Total: 10298
+
 
 **Usage**: refer to comments in the script, and see example output in the output folder
 
