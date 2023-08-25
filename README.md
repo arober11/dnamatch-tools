@@ -592,7 +592,7 @@ outputs:
   rawfile-YDNA-snps = <rawfile1>_YDNA.SNPS.csv  - YDNA SNP calls from the rawfile
 
 See: get_YDNA_rsid.sh for obtaining the SNP position list
-
+```
 **Usage**: refer to comments in the script
 
 ### mtDNA-tree-to-all.sh	
@@ -616,7 +616,7 @@ Notes:
 
  - To make the JSON more readable there are numerous beautifiers, like:
     python -m json.tool mtDNA-tree-Build-*.json
-
+```
 Usage:   mtDNA-tree-to-csv.sh [<mtDNA-tree-Build-##.htm>]
 
 Purpose: Extract the mtDNA Haplogroup names as a text file and the assosiated mutations from the Revised Cambridge / Sapienb sequence as a JSON file
