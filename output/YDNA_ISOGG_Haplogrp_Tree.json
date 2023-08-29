@@ -426,13 +426,19 @@
 {"haplogroup":"D1a2a1a2b1a","mutations":[
 {"posStart":"19358622","ancestral":"C","descendant":"T","type":"0","display":"C19358622T","label":"CTS10268","alias":"PF5103","rsid":"rs201853885","optional":"N"}]
 ,"children":[
-{"haplogroup":"D1a2a1a2b1a1"},
+{"haplogroup":"D1a2a1a2b1a1","mutations":[
+{"posStart":"21916474","ancestral":"A","descendant":"T","type":"0","display":"A21916474T","label":"Z1504","alias":"CTS10511","rsid":"rs201933142","optional":"N"}]
+},
 {"haplogroup":"D1a2a1a2b1a1~","children":[
 {"haplogroup":"D1a2a1a2b1a1a","mutations":[
 {"posStart":"17831592","ancestral":"T","descendant":"C","type":"0","display":"T17831592C","label":"CTS8093","alias":"PF4746","rsid":"rs749682631","optional":"N"}]
 ,"children":[
-{"haplogroup":"D1a2a1a2b1a1a1","children":[
-{"haplogroup":"D1a2a1a2b1a1a1a","children":[
+{"haplogroup":"D1a2a1a2b1a1a1","mutations":[
+{"posStart":"2776538","ancestral":"G","descendant":"C","type":"0","display":"G2776538C","label":"FGC6373","alias":"Z6607","rsid":"rs758128710","optional":"N"}]
+,"children":[
+{"haplogroup":"D1a2a1a2b1a1a1a","mutations":[
+{"posStart":"9791250","ancestral":"G","descendant":"A","type":"0","display":"G9791250A","label":"L137.3","alias":"S166.1","rsid":"rs34441307","optional":"N"}]
+,"children":[
 {"haplogroup":"D1a2a1a2b1a1a1a1~"},
 {"haplogroup":"D1a2a1a2b1a1a1a2~"},
 {"haplogroup":"D1a2a1a2b1a1a1a3~"}]
@@ -4840,7 +4846,7 @@
 }]
 },
 {"haplogroup":"G2a2b1a1b2a2","mutations":[
-{"posStart":"14845919","ancestral":"C","descendant":"T","type":"0","display":"C14845919T","label":"PH1471","alias":"Y14790","rsid":"rs752726566","optional":"N"}]
+{"posStart":"14429514","ancestral":"C","descendant":"T","type":"0","display":"C14429514T","label":"PH1227^^","alias":"F6919-Y12798","rsid":"rs749473798","optional":"N"}]
 ,"children":[
 {"haplogroup":"G2a2b1a1b2a2a1~"},
 {"haplogroup":"G2a2b1a1b2a2a2~","children":[
@@ -5067,7 +5073,7 @@
 }]
 },
 {"haplogroup":"G2a2b1b1a2b","mutations":[
-{"posStart":"15616381","ancestral":"C","descendant":"T","type":"0","display":"C15616381T","label":"Y68554","alias":"Z45590","rsid":" ","optional":"N"}]
+{"posStart":"15616381","ancestral":"C","descendant":"T","type":"0","display":"C15616381T","label":"Y68554","alias":"Z45590","optional":"N"}]
 }]
 },
 {"haplogroup":"G2a2b1b1a3~"}]
@@ -5076,7 +5082,9 @@
 }]
 },
 {"haplogroup":"G2a2b1c~"},
-{"haplogroup":"G2a2b1d"}]
+{"haplogroup":"G2a2b1d","mutations":[
+{"posStart":"18034589","ancestral":"C","descendant":"T","type":"0","display":"C18034589T","label":"CTS8450","alias":"S4387","rsid":"rs746734642","optional":"N"}]
+}]
 },
 {"haplogroup":"G2a2b2","mutations":[
 {"posStart":"14326884","ancestral":"C","descendant":"G","type":"0","display":"C14326884G","label":"CTS2488","alias":"M6389","rsid":"rs749526736","optional":"N"}]
@@ -6050,9 +6058,11 @@
 {"posStart":"8594446","ancestral":"C","descendant":"T","type":"0","display":"C8594446T","label":"Z44661","alias":"M3014","optional":"N"}]
 ,"children":[
 {"haplogroup":"G2a2b2a1a1b1a1a2a2b1a","mutations":[
+{"posStart":"16456662","ancestral":"T","descendant":"A","type":"0","display":"T16456662A","label":"Y96394","alias":"BY28096-Z45371","optional":"N"}]
+,"children":[
+{"haplogroup":"G2a2b2a1a1b1a1a2a2b1a1","mutations":[
 {"posStart":"15258064","ancestral":"G","descendant":"A","type":"0","display":"G15258064A","label":"Y93363","alias":"FGC74367","optional":"N"}]
 ,"children":[
-{"haplogroup":"G2a2b2a1a1b1a1a2a2b1a1","children":[
 {"haplogroup":"G2a2b2a1a1b1a1a2a2b1a1a~"},
 {"haplogroup":"G2a2b2a1a1b1a1a2a2b1a1b~"}]
 }]
@@ -6492,7 +6502,7 @@
 ,"children":[
 {"haplogroup":"G2a2b2a1a1b1a1c1a1~"},
 {"haplogroup":"G2a2b2a1a1b1a1c1a2","mutations":[
-{"posStart":"16482709","ancestral":"A","descendant":"C","type":"0","display":"A16482709C","label":"BY108111","alias":" ","rsid":" ","optional":"N"}]
+{"posStart":"16482709","ancestral":"A","descendant":"C","type":"0","display":"A16482709C","label":"BY108111","alias":"FGC32469","optional":"N"}]
 ,"children":[
 {"haplogroup":"G2a2b2a1a1b1a1c1a2a~"}]
 }]
@@ -12327,8 +12337,7 @@
 {"haplogroup":"J2a1a1a2a2b2c~"},
 {"haplogroup":"J2a1a1a2a2b2d~","children":[
 {"haplogroup":"J2a1a1a2a2b2d1~","children":[
-{"haplogroup":"J2a1a1a2a2b2d1a~"},
-{"haplogroup":"J2a1a1a2a2b2d1b~"}]
+{"haplogroup":"J2a1a1a2a2b2d1a~"}]
 }]
 }]
 }]
@@ -13354,7 +13363,7 @@
 }]
 },
 {"haplogroup":"L2","mutations":[
-{"posStart":"14653101","ancestral":"C","descendant":"T","type":"0","display":"C14653101T","label":"Page6","alias":"PF5751","optional":"N"}]
+{"posStart":"14653101","ancestral":"C","descendant":"T","type":"0","display":"C14653101T","label":"PF5751","alias":"Page6","optional":"N"}]
 },
 {"haplogroup":"L2~"}]
 },
@@ -14524,7 +14533,7 @@
 }]
 },
 {"haplogroup":"O1a1a1a1a1a1b1c","mutations":[
-{"posStart":"19321757","ancestral":"C","descendant":"A","type":"0","display":"C19321757A","label":"MF20310","alias":"Y135916","optional":"N"}]
+{"posStart":"6081627","ancestral":"G","descendant":"C","type":"0","display":"G6081627C","label":"FGC66158^^","alias":"BZ1440.2","optional":"N"}]
 ,"children":[
 {"haplogroup":"O1a1a1a1a1a1b1c1","mutations":[
 {"posStart":"14396992","ancestral":"T","descendant":"C","type":"0","display":"T14396992C","label":"FGC66166","alias":"BZ1440.2","optional":"N"}]
@@ -14537,7 +14546,9 @@
 {"posStart":"21317232","ancestral":"C","descendant":"A","type":"0","display":"C21317232A","label":"ACT5041","alias":"Y149831","optional":"N"}]
 }]
 },
-{"haplogroup":"O1a1a1a1a1a1b1d"},
+{"haplogroup":"O1a1a1a1a1a1b1d","mutations":[
+{"posStart":"19321757","ancestral":"C","descendant":"A","type":"0","display":"C19321757A","label":"MF20310","alias":"Y135916","optional":"N"}]
+},
 {"haplogroup":"O1a1a1a1a1a1b1e","mutations":[
 {"posStart":"14059544","ancestral":"A","descendant":"C","type":"0","display":"A14059544C","label":"Y146817","alias":"Z16771","optional":"N"}]
 ,"children":[
@@ -14949,7 +14960,7 @@
 {"posStart":"14074744","ancestral":"C","descendant":"T","type":"0","display":"C14074744T","label":"Z24089","alias":"S10469","optional":"N"}]
 ,"children":[
 {"haplogroup":"O1b1a1a1a1a1a1a1","mutations":[
-{"posStart":"24517335","ancestral":"T","descendant":"A","type":"0","display":"T24517335A","label":"F3671","alias":"Z19214","optional":"N"}]
+{"posStart":"17184198","ancestral":"C","descendant":"G","type":"0","display":"C17184198G","label":"F2411","alias":"PF3399","optional":"N"}]
 ,"children":[
 {"haplogroup":"O1b1a1a1a1a1a1a1a","mutations":[
 {"posStart":"21269809","ancestral":"C","descendant":"","type":"3","display":"C21269809del","label":"A15721","alias":"BY27799-Y35360","optional":"N"}]
@@ -15696,7 +15707,7 @@
 {"posStart":"17233978","ancestral":"A","descendant":"C","type":"0","display":"A17233978C","label":"F2427","alias":"M2218-S19333","rsid":"rs751396944","optional":"N"}]
 ,"children":[
 {"haplogroup":"O2a1b1a1a1a1a1a1a1a1","mutations":[
-{"posStart":"8801983","ancestral":"G","descendant":"A","type":"0","display":"G8801983A","label":"F1418","alias":"Y20147","rsid":" ","optional":"N"}]
+{"posStart":"8801983","ancestral":"G","descendant":"A","type":"0","display":"G8801983A","label":"F1418","alias":"Y20147","optional":"N"}]
 },
 {"haplogroup":"O2a1b1a1a1a1a1a1a1a2","mutations":[
 {"posStart":"21068746","ancestral":"T","descendant":"C","type":"0","display":"T21068746C","label":"MF16203","alias":"ACT1456","optional":"N"}]

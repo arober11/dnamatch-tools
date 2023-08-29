@@ -1923,12 +1923,12 @@ G1a1a2b1a2b~
 G1a1a2b1a3~
 G1a1a2b1b~
 G1a1a2b1c
-G1a1a2b1c1~@
-G1a1a2b1c1~@
-G1a1a2b1c2
-G1a1a2b1c2a~
-G1a1a2b1c2b~
-G1a1a2b1c2b1
+G1a1a2b1c1~
+G1a1a2b1c1a~
+G1a1a2b1c1b
+G1a1a2b1c1b1~
+G1a1a2b1c1b2~
+G1a1a2b1c1b2a
 G1a1a2b2
 G1a1a2b2a
 G1a1a2b2a1
@@ -2196,7 +2196,6 @@ G2a2a1b2a~
 G2a2a1b2b~
 G2a2a2
 G2a2a2a
-G2a2a2a1
 G2a2a2a1~
 G2a2a2a2~
 G2a2a2a3~
@@ -2517,10 +2516,10 @@ G2a2b2a1a1a1b1b1a~
 G2a2b2a1a1a1b1b1b
 G2a2b2a1a1a1b1b1b~
 G2a2b2a1a1a1b1b1b1
-G2a2b2a1a1a1b1b1b1a1
-G2a2b2a1a1a1b1b1b1a1a~
-G2a2b2a1a1a1b1b1b1a2
-G2a2b2a1a1a1b1b1b1a2a~
+G2a2b2a1a1a1b1b1b1a
+G2a2b2a1a1a1b1b1b1a1~
+G2a2b2a1a1a1b1b1b1b
+G2a2b2a1a1a1b1b1b1b1~
 G2a2b2a1a1a1b1b1b2
 G2a2b2a1a1a1b1b1b2a
 G2a2b2a1a1a1b1b1b2a~
@@ -2908,8 +2907,8 @@ G2a2b2a1a1b1a1a2b2b~
 G2a2b2a1a1b1a1a2b2c~
 G2a2b2a1a1b1a1a2c
 G2a2b2a1a1b1a1a2c1
-G2a2b2a1a1b1a1a2c1a1
-G2a2b2a1a1b1a1a2c1a2
+G2a2b2a1a1b1a1a2c1a
+G2a2b2a1a1b1a1a2c1b
 G2a2b2a1a1b1a1a2c2~
 G2a2b2a1a1b1a1a2d~
 G2a2b2a1a1b1a1a2e~
@@ -2942,7 +2941,7 @@ G2a2b2a1a1b1a1b1a2a2a
 G2a2b2a1a1b1a1b1a2a2a~
 G2a2b2a1a1b1a1b1a2a2a1~
 G2a2b2a1a1b1a1b1a2a2a2~
-G2a2b2a1a1b1a1b1a2a2b~@
+G2a2b2a1a1b1a1b1a2a2b~
 G2a2b2a1a1b1a1b1a2a2c
 G2a2b2a1a1b1a1b1a2a3
 G2a2b2a1a1b1a1b1a2a3a
@@ -2952,7 +2951,7 @@ G2a2b2a1a1b1a1b1a2b2
 G2a2b2a1a1b1a1b1a2b2a
 G2a2b2a1a1b1a1b1a2b2a1~
 G2a2b2a1a1b1a1b1a2b2a2~
-G2a2b2a1a1b1a1b1a2a2b~@
+G2a2b2a1a1b1a1b1a2b2b~
 G2a2b2a1a1b1a1b1a2c
 G2a2b2a1a1b1a1b1a2c1
 G2a2b2a1a1b1a1b1a3~
@@ -5962,7 +5961,6 @@ J2a1a1a2a2b2c~
 J2a1a1a2a2b2d~
 J2a1a1a2a2b2d1~
 J2a1a1a2a2b2d1a~
-J2a1a1a2a2b2d1b~
 J2a1a1a2b
 J2a1a1a2b1
 J2a1a1a2b1a~
@@ -6389,8 +6387,8 @@ J2b2b2~
 J2b2b2a~
 K
 K~
-LT or K1
-L or K1a
+LT_or_K1
+L_or_K1a
 L~
 L1
 L1~
@@ -6484,7 +6482,7 @@ L1b3
 L1b3a
 L2
 L2~
-T or K1b
+T_or_K1b
 T1
 T1~
 T1a
@@ -6569,9 +6567,9 @@ T1a3b2a1b
 T1a3b2a1b1
 T2
 K2
-NO or K2a
-NO1 or K2a1
-N or K2a1a
+NO_or_K2a
+NO1_or_K2a1
+N_or_K2a1a
 N~
 N1
 N1~
@@ -6926,7 +6924,7 @@ N1b2b~
 N2~
 N2a~
 N2a1~
-O or K2a1b
+O_or_K2a1b
 O1
 O1a
 O1a1
@@ -7857,7 +7855,7 @@ O2b2
 O2b2a
 K2b
 K2b1
-S or K2b1a
+S_or_K2b1a
 S1
 S1a
 S1a~
@@ -7900,7 +7898,7 @@ S2a~
 S2b~
 S3~
 S4~
-M or K2b1b
+M_or_K2b1b
 M1
 M1~
 M1a
@@ -7940,10 +7938,10 @@ M2
 M2~
 M2a
 M3
-P or K2b2
-P1 or K2b2a
-P1~ or K2b2a~
-Q or K2b2a1
+P_or_K2b2
+P1_or_K2b2a
+P1~_or_K2b2a~
+Q_or_K2b2a1
 Q1
 Q1a
 Q1a1
@@ -8370,7 +8368,7 @@ Q2b2a2~
 Q2b2b~
 Q2b3
 Q2b3a~
-R or K2b2a2
+R_or_K2b2a2
 R1
 R1a
 R1a~

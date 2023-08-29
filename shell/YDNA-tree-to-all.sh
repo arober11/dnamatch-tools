@@ -208,10 +208,10 @@ then
 
       #Tidy - remove blank lines, empty "children" arrays, and add some other new lines
       $SED -i -e '/^$/d' -e 's/\n//g' -e 's/,{2,}/,/g' -e 's/"children":[][]{2,}//g' -e 's/[[:space:],]+([]}])/\1/g' -e 's/]/]\n/g' -e 's/\{/\n{/g'  "$HAPLOS_JSON" 
-      echo "SED retrun code $?"
+      echo "SED return code $?"
       echo "checking JSON with a: python -m json.tool $HAPLOS_JSON > /dev/null"
       python -m json.tool $HAPLOS_JSON > /dev/null
-      echo "PYTHON retrun code $?"
+      echo "PYTHON return code $?"
       mv $YDNA_TRUNK_MERGED_TMP $YDNA_TRUNK_MERGED
    fi
   else

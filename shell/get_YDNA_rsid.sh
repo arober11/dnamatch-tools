@@ -86,7 +86,7 @@ then
   rm -f $YDNA_RSIDS $YDNA_MUTS $YDNA_HAPGRP_MUTS $YDNA_RSID_MUTS $YDNA_HAPGRP_MUTS_PRIME
 
   #Tidy a couple of Haplogroup names
-  $SED -i -e 's/#REF!/C1a2b1b2/' -e 's/^"A9832,2"/A9832.2/' -e 's/^",//' -e 's/["]//g' -e 's/; /-/g' -e 's/[ ]*\(Notes\)//' -e 's/ ~/~/g' -e 's/Freq. Mut. SNP in //' -e 's/ [[]([A-Za-z0-9~]+)[]]([,~])/_or_\1\2/' -e 's/ or /_or_/' $YDNA_SNPS
+  $SED -i -e 's/#REF!/C1a2b1b2/' -e 's/^"A9832,2"/A9832.2/' -e 's/^",//' -e 's/["]//g' -e 's/; /-/g' -e 's/[ ]*\(Notes\)//' -e 's/ ~/~/g' -e 's/Freq. Mut. SNP in //' -e 's/ [[]([A-Za-z0-9~]+)[]]([,~])/_or_\1\2/' -e 's/ or /_or_/' -e 's/[ ]+,/,/g' $YDNA_SNPS
   echo "Tidied: $YDNA_SNPS"
 
   #Remove square brackets

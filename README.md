@@ -763,12 +763,14 @@ sudo apt-get update
 sudo apt-get install wget grep sed dos2unix bc
 # Suse / openSuse
 sudo zypper install wget grep sed dos2unix bc
-# macOS (via MacPort)
+# macOS (via MacPorts)
 sudo port selfupdate
 sudo port install wget grep gsed dos2unix bc
-# RedHat / Fedora / centOS / ...
+# RedHat / Fedora / centOS / Oracle / ...
 sudo yum update
 sudo yum install wget grep sed dos2unix bc
+ #or:
+sudo dnf install wget grep sed dos2unix bc
 ```
 To rebuild the Haplotree Files
 COMMON commands:

@@ -180,10 +180,10 @@ function strip_tree_files () {
   #echo $INFILE
   dos2unix $INFILE 2>/dev/null 1>/dev/null
   $SED -i -e 's/[ ]+,/,/g' -e 's/,[ ]+/,/g' $INFILE # remove spaces before or after a comma
-  $SED -i -e 's/,,Fami,,/,,,,/g' $INFILE            # delete the comment "Fami" next to a Haplogroup
-  $SED -i -e '/^,+$/d' $INFILE                      # delete lines only containing commas 
-  $SED -i -e '/^$/d' $INFILE                        # delete blank lines
-  $SED -i -e 's/[ \t\r]+$//' $INFILE                # delete tailing whitespace
+  $SED -i -e 's/,,Fami,,/,,,,/g'            $INFILE # delete the comment "Fami" next to a Haplogroup
+  $SED -i -e '/^,+$/d'                      $INFILE # delete lines only containing commas 
+  $SED -i -e '/^$/d'                        $INFILE # delete blank lines
+  $SED -i -e 's/[ \t\r]+$//'                $INFILE # delete tailing whitespace
 
   # Remove various comments, and notes writen on the tree  (order important!!!!)
   grep 'A0000=Denisovan'                            $INFILE 2>/dev/null 1>/dev/null && $SED -i -e '1,/A0000=Denisovan/d' $INFILE 
@@ -205,6 +205,7 @@ function strip_tree_files () {
   $SED -i -e 's/ [ ]+/ /g'                $INFILE   # Remove douple spacing
   $SED -i -e 's/ \[[^]]* [^]]*\][ ,]*//'  $INFILE   # Remove comments in square brackets ([]) eg. [these may instead be at M8 tree level], [H2 formerly called F3], [maybe L333]
   $SED -i -e 's/[ \t]+"/"/g'              $INFILE   # Remove spaces before a double quote 
+  $SED -i -e 's/[ ]+,/,/g'                $INFILE   # delete spaces before a comma
   $SED -i -e 's/ [[]([A-Za-z0-9~]+)[]]([,~])/_or_\1\2/' -e 's/ or /_or_/' $INFILE    # Standardise ALTERNATE haplogroup names 
 
   #Tweak a few names to match those used in the TRUNK
